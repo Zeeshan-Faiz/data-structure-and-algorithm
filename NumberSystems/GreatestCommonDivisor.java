@@ -104,6 +104,8 @@ public class GreatestCommonDivisor {
         else
             System.out.println("There's no GCD between " + n1 + " and " + n2);
         
+    
+        sc.close();
     }
 
 }
