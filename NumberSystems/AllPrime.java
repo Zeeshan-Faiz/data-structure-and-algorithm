@@ -75,7 +75,6 @@ public class AllPrime {
 
     }
 
-
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -85,7 +84,5 @@ public class AllPrime {
         //approach1(n);
         approach2(n);
     }
-
-
 
 }
