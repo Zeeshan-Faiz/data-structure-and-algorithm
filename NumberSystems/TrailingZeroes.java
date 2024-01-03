@@ -95,6 +95,7 @@ public class TrailingZeroes {
 		int noOfZeroes = approach2(n);
 		System.out.println("Number of trailing zeroes in " + n + "! = " + noOfZeroes);
 
+		sc.close();
 	}
 
 }
