@@ -71,6 +71,7 @@ public class LeastCommonMultiple {
         int lcm = approach2(n1, n2);
         System.out.println("Lowest Common Multiple between " + n1 + " and " + n2 + " : " + lcm);
 
+        sc.close();
     }
 
 
