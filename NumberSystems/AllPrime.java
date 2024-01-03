@@ -83,6 +83,8 @@ public class AllPrime {
 
         //approach1(n);
         approach2(n);
+
+        sc.close();
     }
 
 }
