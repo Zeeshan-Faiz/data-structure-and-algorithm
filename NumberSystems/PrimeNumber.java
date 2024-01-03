@@ -8,7 +8,6 @@ public class PrimeNumber {
      * 
      */
 
-
      /*
       *Approach 1 (Brute Force) : We'll run a for loop and check whether the provided number
       * has any factor other than 1 or itself
@@ -64,9 +63,6 @@ public class PrimeNumber {
         return true;
     }
 
-
-
-
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -76,8 +72,5 @@ public class PrimeNumber {
         //System.out.println("Is the number " + n + " Prime? " + approach1(n));
         System.out.println("Is the number " + n + " Prime? " + approach2(n));
     }
-
-
-
 
 }
