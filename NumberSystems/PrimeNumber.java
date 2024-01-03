@@ -71,6 +71,8 @@ public class PrimeNumber {
 
         //System.out.println("Is the number " + n + " Prime? " + approach1(n));
         System.out.println("Is the number " + n + " Prime? " + approach2(n));
+
+        sc.close();
     }
 
 }
