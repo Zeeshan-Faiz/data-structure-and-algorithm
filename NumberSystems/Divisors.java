@@ -45,13 +45,13 @@ public class Divisors {
         for(i = 1; i <= Math.sqrt(n); i++){
 
             if(n % i == 0)
-                System.out.println(i + ", ");
+                System.out.print(i + ", ");
         }
 
         for( ; i>= 1; i--){
 
             if(n % i == 0 && i != (n/i)) //taking care of duplicates if any   
-                System.out.println(n/i);
+                System.out.print((n/i) + ", ");
         }
 
     } 
@@ -63,7 +63,7 @@ public class Divisors {
 		System.out.println("Enter a number: ");
 		int n = sc.nextInt();
 
-        approach1(n);
+        approach2(n);
 
         sc.close();
     }
