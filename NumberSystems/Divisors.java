@@ -9,6 +9,7 @@ public class Divisors {
      * divisors of 40 = 1,2,4,5,8,10,20,40
      * 
      */
+    
 
     /*
      * Approach 1 (Brute Force) : Run a for loop from 1 to the number and print all the
