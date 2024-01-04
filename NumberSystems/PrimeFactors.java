@@ -6,7 +6,7 @@ public class PrimeFactors {
      * Write a program to print all the prime factors of a given number
      * 
      * Example = 900
-     * Prime factors = 2,3,5
+     * Prime factors = 2,2,3,3,5,5
      * 
      */
 
@@ -52,14 +52,14 @@ public class PrimeFactors {
 
             while(n % i == 0){
 
-                System.out.println(i + ", ");
+                System.out.print(i + ", ");
                 n = n / i;
             }
             i++;
         }
 
         if(n > 1)
-            System.out.println(n);
+            System.out.print(n);
 
     }
 
@@ -73,7 +73,8 @@ public class PrimeFactors {
 		System.out.println("Enter a number: ");
 		int n = sc.nextInt();
 
-        approach1(n);
+        //approach1(n);
+        approach2(n);
 
         sc.close();
     }
