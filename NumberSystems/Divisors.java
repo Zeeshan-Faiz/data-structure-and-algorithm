@@ -63,6 +63,7 @@ public class Divisors {
 		System.out.println("Enter a number: ");
 		int n = sc.nextInt();
 
+        //approach1(n);
         approach2(n);
 
         sc.close();
