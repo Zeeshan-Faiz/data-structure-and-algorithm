@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ToggleithBit {
     
      /*
-     * Write a program to input a number to toggle (ON/OFF) the ith bit in it's binary equivalent
+     * Write a program to input a number and toggle (ON/OFF) the ith bit in it's binary equivalent
      * Example (n=36) = 0 0 1 0 0 1 0 0 
      *                      i    
      *            O/P = 0 0 0 0 1 1 0 0
@@ -36,7 +36,7 @@ public class ToggleithBit {
         Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number ");
 		int n = sc.nextInt();
-        System.out.println("Enter the position you want to switch ON");
+        System.out.println("Enter the position you want to toggle ON/OFF");
         int i = sc.nextInt();
 
         toggleBit(n,i);
