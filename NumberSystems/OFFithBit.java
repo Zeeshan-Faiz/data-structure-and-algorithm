@@ -38,7 +38,7 @@ public class OFFithBit {
         Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number ");
 		int n = sc.nextInt();
-        System.out.println("Enter the position you want to switch ON");
+        System.out.println("Enter the position you want to switch OFF");
         int i = sc.nextInt();
 
         switchOff(n,i);
