@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class CheckBit {
 
-	
     /*
      * Write a program to input a number and check the ith bit is ON or OFF in it's binary equivalent
      * Example (n=36, i=5) = 0 0 1 0 0 1 0 0 
