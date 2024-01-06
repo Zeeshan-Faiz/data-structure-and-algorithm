@@ -6,7 +6,7 @@ public class CheckBit {
      * Write a program to input a number and check the ith bit is ON or OFF in it's binary equivalent
      * Example (n=36, i=5) = 0 0 1 0 0 1 0 0 
      *                           i    
-     *                 O/P = ON
+     *                 O/P = ON 
      * 
      * Approach : There are two approaches that we can follow to get the desired output,
      * first is to convert the given number in binary and then find the ith element and
