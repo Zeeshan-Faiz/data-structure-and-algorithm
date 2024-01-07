@@ -25,7 +25,6 @@ public class CountSetBit {
      * 
     */
 
-
     static void approach2(int n){
 
         int count = 0;
@@ -49,9 +48,5 @@ public class CountSetBit {
         sc.close();
 
     }
-
-
-
-
 
 }
