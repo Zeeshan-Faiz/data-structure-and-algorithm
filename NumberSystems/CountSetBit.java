@@ -16,7 +16,7 @@ public class CountSetBit {
     */
 
     /*
-     * Approah 2 (Efficient Approach) [Brian Kerniighan Algorithm]: We've noticed that
+     * Approah 2 (Efficient Approach) [Brian Kernighan Algorithm]: We've noticed that
      * If we do AND operation between n & (n-1) the Right Most Set Bit is set to 0, similarly
      * if we iterate this process we'll be able to count the set bits with the number of 
      * iterations it took to make the given number as 0.
