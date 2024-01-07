@@ -6,7 +6,7 @@ public class RightMostSetBit {
      * Write a program to find the position of the right most set bit.(A set bit is a bit
      * whose value is 1)
      * Example: n = 10 ; 0 0 0 0 1 0 1 0 
-     *                              ⬆️(RMSB)
+     *                               ⬆️(RMSB)
     */
 
     /*
