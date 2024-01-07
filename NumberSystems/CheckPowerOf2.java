@@ -38,7 +38,7 @@ public class CheckPowerOf2 {
         if(n == 0)
             return false;
         else
-            return (n & (n - 1)) == 0; // true only if 1 bit is set to 1
+            return (n & (n - 1)) == 0; // true only if a single bit is set to 1
 
     }
 
