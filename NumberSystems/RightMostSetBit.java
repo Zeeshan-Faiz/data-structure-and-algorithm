@@ -7,7 +7,7 @@ public class RightMostSetBit {
      * whose value is 1)
      * Example: n = 10 ; 0 0 0 0 1 0 1 0 
      *                              ⬆️(RMSB)
-     */
+    */
 
     /*
     * Approach 1 (Brute Force) : Iterate each bit from last and return the first bit's position
@@ -65,7 +65,6 @@ public class RightMostSetBit {
 
     }
 
-
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -80,11 +79,9 @@ public class RightMostSetBit {
 
         else
             System.out.println("There's no RMSB for the given number " +  n);
+        
         sc.close();
 
     }
-
-
-
 
 }
