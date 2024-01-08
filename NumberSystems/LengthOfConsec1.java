@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class LengthOfConsec1 {
     
     /*
-     * Write a program to find the length of consecutive 1's in its binary representation
+     * Write a program to input a number and find the length of consecutive 1's in its binary representation
      * Example n = 101; 0 1 1 0 0 1 0 1
      * length of consecutive 1's = 2
      * 
@@ -13,7 +13,7 @@ public class LengthOfConsec1 {
     */
 
     /*
-     * Approach : Observation 1: If we do n & (n<<1), and if n has any consecutive 1's then
+     * Approach : Observation 1: If we do (n & (n<<1)), and if n has any consecutive 1's then
      * n will never be 0 OR (n & (n<<1)) ≠ 0 (for consecutive 1's)
      * 
      * Example n = 101, 
@@ -26,7 +26,7 @@ public class LengthOfConsec1 {
      *          n << 1 = 1 0 0 1 0 0 1 0 (AND)
      *                 = 0 0 0 0 0 0 0 0 = 0 (no consecutive 1's)        
      * 
-     * Now that whether a number has consectuive 1's or not we can now proceed to our next
+     * Now that we know whether a number has consectuive 1's or not we can now proceed to our next
      * next step.
      * If we do (n & (n <<1)) and itertate over it until n becomes zero and keep a track
      * of each iterations, we'll get the same count as the number of consecutive 1's
