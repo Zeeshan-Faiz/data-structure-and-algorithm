@@ -13,9 +13,9 @@ public class CheckPowerOf2 {
     */
 
     /*
-     * Approach 1 (Brute Force) : We'll take 2 and check whether it's equal to tge given number
+     * Approach 1 (Brute Force) : We'll take 2 and check whether it's equal to the given number
      * if YES then it's power of 2 otherwise we'll make 2 x 2 and check for the same, if the value of
-     * 2 goes beyond the given number and still it wasn't able to divide the given number 
+     * the power of 2 goes beyond the given number and still it wasn't able to divide the given number 
      * we'll directly print 'NO'
      * 
     */
