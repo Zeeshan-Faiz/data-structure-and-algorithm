@@ -13,7 +13,6 @@ public class LonelyInteger {
      * 
     */
 
-
     /*
      * Approach 1 (Brute Force) :  We'll try to sort the given array and then check whether
      * the number present at the ith position is equal to the number present at (i+1)th position
@@ -39,7 +38,7 @@ public class LonelyInteger {
     /*
      * Approach 2 (Efficient) :  Using set --> A data structure that only stores unique element
      * We'll start adding elements in the set one by one, and element which is getting 
-     * added in the set is already present before then we'll that element from the set,
+     * added in the set is already present before then we'll remove that element from the set,
      * by repeating this step we'll have only 1 element in the set which doesn't has any
      * duplicate.
      * 
@@ -74,6 +73,7 @@ public class LonelyInteger {
      * So using this logic if there are pair in the array using XOR operations all duplicate
      * elements will cancel out each other and what left will be the Lonely Integer.
      * 
+     * Time Complexity = O(N), without using extra space
     */
 
     static int approach3(int arr[]){
@@ -85,7 +85,6 @@ public class LonelyInteger {
         }
         return res;
     }
-
 
     public static void main(String[] args) {
         
@@ -100,14 +99,11 @@ public class LonelyInteger {
         }
 
         //int lonelyInteger = approach1(arr , n);
-        int lonelyInteger = approach2(arr);
+        //int lonelyInteger = approach2(arr);
+        int lonelyInteger = approach3(arr);
         System.out.println("Lonely Integer in the given array is : " + lonelyInteger);
 
         sc.close();
     }
-
-
-
-
 
 }
