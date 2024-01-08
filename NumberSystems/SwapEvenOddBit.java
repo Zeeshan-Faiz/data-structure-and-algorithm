@@ -14,14 +14,14 @@ public class SwapEvenOddBit {
      * -1431655766 (O x AAAAAAAA) [.........0 1 0 1 0 1 0 1 0 1 0 1]
      *  1431655765 (O x 55555555) [.........1 0 1 0 1 0 1 0 1 0 1 0]
      * 
-     * so if n = 181;   (8 7 6 5 4 3 2 1)
+     * so if n = 181;   (8   6   4   2  )
      *                 = 1 0 1 1 0 1 0 1
      * (O x AAAAAAAA)  = 1 0 1 0 1 0 1 0 (AND)
      *                 = 1 0 1 0 0 0 0 0 
      *         (>>> 1) = 0 1 0 1 0 0 0 0 (we can observe that all even bits are now shited to odd position)
      * 
      * 
-     * Similary n = 181; (8 7 6 5 4 3 2 1)
+     * Similary n = 181; (  7   5   3   1)
      *                  = 1 0 1 1 0 1 0 1
      * (O x 55555555)   = 0 1 0 1 0 1 0 1 (AND)
      *                  = 0 0 0 1 0 1 0 1
