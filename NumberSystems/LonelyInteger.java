@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class LonelyInteger {
@@ -23,7 +24,7 @@ public class LonelyInteger {
      * 
     */
 
-    static int approach2(int arr[], int n){
+    static int approach1(int arr[], int n){
 
         Arrays.sort(arr);
         for(int i = 0; i <= n-2; i = i+2){
@@ -34,6 +35,36 @@ public class LonelyInteger {
         return arr[n-1];
 
     }
+
+    /*
+     * Approach 2 (Efficient) :  Using set --> A data structure that only stores unique element
+     * We'll start adding elements in the set one by one, and element which is getting 
+     * added in the set is already present before then we'll that element from the set,
+     * by repeating this step we'll have only 1 element in the set which doesn't has any
+     * duplicate.
+     * 
+     * Time Complexity = O(N), we have increased the space complexity by using a set.
+    */
+
+    static int approach2(int arr[], int n){
+
+        HashSet<Integer> set = new HashSet<>();
+        for(int i : arr){
+
+            if(set.contains(i))
+                set.remove(i);
+
+            else
+                set.add(i);
+        }
+        for(int i : set)
+            return i;
+
+        return -1;
+
+    }
+
+
 
     public static void main(String[] args) {
         
@@ -47,6 +78,7 @@ public class LonelyInteger {
             arr[i] = sc.nextInt();
         }
 
+        //int lonelyInteger = approach1(arr , n);
         int lonelyInteger = approach2(arr , n);
         System.out.println("Lonely Integer in the given array is : " + lonelyInteger);
 
