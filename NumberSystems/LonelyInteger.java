@@ -46,7 +46,7 @@ public class LonelyInteger {
      * Time Complexity = O(N), we have increased the space complexity by using a set.
     */
 
-    static int approach2(int arr[], int n){
+    static int approach2(int arr[]){
 
         HashSet<Integer> set = new HashSet<>();
         for(int i : arr){
@@ -64,6 +64,27 @@ public class LonelyInteger {
 
     }
 
+    /*
+     * Approach 3 (Most Optimized) : Using XOR operations.
+     * As we know that XOR Operation is a commutative operation therefore
+     * 5 ^ 5 ^ 4 = 5 ^ 4 ^ 5
+     *   0 ^ 4   =   1 ^ 5
+     *     4     =     4
+     * 
+     * So using this logic if there are pair in the array using XOR operations all duplicate
+     * elements will cancel out each other and what left will be the Lonely Integer.
+     * 
+    */
+
+    static int approach3(int arr[]){
+
+        int res = 0;
+        for(int i : arr){
+
+            res = res ^ i;
+        }
+        return res;
+    }
 
 
     public static void main(String[] args) {
@@ -79,7 +100,7 @@ public class LonelyInteger {
         }
 
         //int lonelyInteger = approach1(arr , n);
-        int lonelyInteger = approach2(arr , n);
+        int lonelyInteger = approach2(arr);
         System.out.println("Lonely Integer in the given array is : " + lonelyInteger);
 
         sc.close();
