@@ -13,7 +13,8 @@ public class TrailingZeroesInBit {
      * 
     */
 
-    /* We could observe that we need to count the number of trailing zeroes after the 
+    /* 
+     * We could observe that we need to count the number of trailing zeroes after the 
      * Right Most Set Bit (RMSB). For that we'll try to find the RMSB using the already
      * known formula ==> (n & (n-1)) = mask
      * ==> n ^ mask = gives the position of the RMSV which in other hand will give us the
