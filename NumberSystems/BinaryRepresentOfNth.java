@@ -34,7 +34,6 @@ public class BinaryRepresentOfNth {
      * 
     */
 
-
     static void calPalindromicString(int n){
 
         int l = 0, count = 0;
