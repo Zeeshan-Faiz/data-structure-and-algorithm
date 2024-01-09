@@ -86,5 +86,4 @@ public class BinaryRepresentOfNth {
         sc.close();
     }
 
-
 }
