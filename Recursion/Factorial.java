@@ -19,7 +19,6 @@ public class Factorial {
         return n * fact(n-1);
     }
 
-
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -30,6 +29,5 @@ public class Factorial {
 
         sc.close();
     }
-
 
 }
