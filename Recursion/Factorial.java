@@ -11,6 +11,15 @@ public class Factorial {
      * 
     */
 
+    /*
+     * Approach :
+     * To find the factorial of any number (n) we can have a generalize formula
+     *  ==> n! = n x (n-1)!
+     * 
+     * And we know that 1! = 1, therefore our base condition will be (n == 1)
+     * 
+    */
+
     static int fact(int n){
 
         if(n == 1)
