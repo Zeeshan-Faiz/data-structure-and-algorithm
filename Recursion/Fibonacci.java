@@ -6,10 +6,14 @@ public class Fibonacci {
      * Write a program to print the Fibonacci Number of nth term using recursion.
      * 
      * Example n = 5;
-     * O/P = 1, 1, 2, 3, 5
+     * O/P = 5
+     * Explanation : First 5 term of fibonacci series is = 1, 1, 2, 3, 5
+     * Therefore the 5th term of the series = 5
      * 
      * Example n = 8;
-     * o/P = 1, 1, 2, 3, 5, 8, 13, 21
+     * O/P = 21
+     * Explanation : First 8 term of fibonacci series is = 1, 1, 2, 3, 5, 8, 13, 21
+     * Therefore the 8th term of the series = 21
      * 
     */
 
