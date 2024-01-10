@@ -17,7 +17,16 @@ public class Fibonacci {
      * 
     */
 
-
+    /*
+     * Approach :
+     * Suppose we need to find the number in Fibonacci Series of 5th term = 4th term + 3rd term
+     * or in a generic way we can write the same formula as nth term = (n-1) term + (n-2) term
+     * 
+     * And we all know that 1st term and 2nd term of a Fibonacci Series is always = 1
+     * Therefore our base condition will be (n == 1) || (n == 2)
+     * 
+     * 
+    */
 
     static int fibo(int n) {
 
@@ -38,9 +47,5 @@ public class Fibonacci {
 
         sc.close();
     }
-
-    
-
-
 
 }
