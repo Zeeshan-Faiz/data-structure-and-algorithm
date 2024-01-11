@@ -17,7 +17,6 @@ public class SumOfElements {
      *
     */
 
-
     static int sumOfElements(int arr[], int i){
 
         if(i == arr.length)
@@ -43,5 +42,4 @@ public class SumOfElements {
         sc.close();
     }
 
-    
 }
