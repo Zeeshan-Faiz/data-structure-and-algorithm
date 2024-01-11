@@ -11,7 +11,7 @@ public class SumOfDigits {
     */
 
     /*
-     * Approach : For counting the number of digits we'll follow the recurrence relation:
+     * Approach : For finding the sum of digits we'll follow the recurrence relation:
      * sumOfDigits(n) = sumOfDigits(n/10) + (n%10)
      * 
      * and our base condition is (n == 0)
