@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class SumOfDigits {
     
-
     /*
      * Write a program to input a number and find the sum of digits using recursion.
      * Example n = 5251
@@ -25,8 +24,6 @@ public class SumOfDigits {
 
         return sumOfDigits(n/10) + (n%10);
     }
-
-
 
     public static void main(String[] args) {
         
