@@ -25,8 +25,6 @@ public class ReverseString {
         return reverseString(str, rev + str.charAt(i), i-1);
     }
 
-
-
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -37,7 +35,5 @@ public class ReverseString {
 
         sc.close();
     }
-
-
 
 }
