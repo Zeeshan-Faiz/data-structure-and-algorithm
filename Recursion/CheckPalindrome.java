@@ -27,7 +27,6 @@ public class CheckPalindrome {
      * 
     */
 
-
     static boolean isPalindrome(String str, int i, int j){
 
         if(str.charAt(i) != str.charAt(j))
@@ -50,8 +49,5 @@ public class CheckPalindrome {
 
         sc.close();
     }
-
-
-
 
 }
