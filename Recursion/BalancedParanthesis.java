@@ -5,7 +5,7 @@ public class BalancedParanthesis {
     /*
      * Write a program to generate all the balanced paranthesis using recursion.
      * Example n = 2
-     * O/P = ()() and (())
+     * O/P = ()(), (())
      * 
      * Example n = 3
      * O/P = ()()(), (())(), ()(()), ((())), (()())
@@ -13,7 +13,7 @@ public class BalancedParanthesis {
     */
 
     /*
-     * To find the solution for this problem we'll be having o and c variable to check for
+     * To find the solution for this problem we'll be having o and c variable to add 
      * open and close paranthesis.
      * As we all know that everytime a paranthesis starts with opening, so in this case
      * we can directly make the first position with an open '(' paranthesis.
@@ -53,7 +53,6 @@ public class BalancedParanthesis {
      *              (c<o)   0 1 2 3
      * 
      * Base condition : if(i == arr.length)
-     * 
     */
 
     static void balParanthesis(char arr[], int n, int i, int o, int c){
@@ -83,7 +82,5 @@ public class BalancedParanthesis {
 
         sc.close();
     }
-
-
 
 }
