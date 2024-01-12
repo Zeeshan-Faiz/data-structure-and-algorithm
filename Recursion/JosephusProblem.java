@@ -51,7 +51,7 @@ public class JosephusProblem {
      * general formula=>
      * 
      *     (k)  (n) 
-     * (0 + 3) % 7 = 3 (Here 3 signifies that if person (D) was standing with 6 other people then he should stand at position 3 in order to survive)
+     * (0 + 3) % 7 = 3 
      * (1 + 3) % 7 = 4
      * (2 + 3) % 7 = 5
      * (3 + 3) % 7 = 6
