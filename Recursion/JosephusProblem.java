@@ -15,7 +15,7 @@ public class JosephusProblem {
      * In Josephus problem people are standing in circle we can represent the same in an
      * array. And suppose we have Number of people(n) as 7 and killing(k) factor is 3.
      * 
-     * And the person at position 0 starts killing the person at position 3 (killing factor = 3
+     * And the person at position 0 starts killing the person at position 2 (killing factor = 3;
      * the count starts from the person who's going to kill)
      * 
      * 
@@ -42,10 +42,10 @@ public class JosephusProblem {
      *        0 1
      *        A D
      * 
-     *        0
-     *        D (This signifies that if there are 7 people in a circle and the first person(A) starts killing the
-     *          person after 3 positions and this goes until only one person is left then in that case person(D)
-     *          who was standing in position 4 will survive) 
+     *         0
+     *         D (This signifies that if there are 7 people in a circle and the first person(A) starts killing the
+     *            person after 3 positions and this goes until only one person is left then in that case person(D)
+     *            who was standing in position 4 will survive) 
      * 
      * To find a relation between n and K and the position at which if a person stands will survive, we can produce a 
      * general formula=>
