@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class JosephusProblem {
     
     /*
-     * Write a program to input the number of people(n) and the killing factor(k), and
+     * Write a program to input the number of people(n) and killing factor(k), and
      * find the position in which a person should stand in order to survive the killing.
      * 
      * Example n = 7 & k = 3
@@ -81,7 +81,9 @@ public class JosephusProblem {
         System.out.println("Enter the Killing factor : ");
         int k = sc.nextInt();
 
-        System.out.println("A person should stand at position "+ jos(n, k) + " to survive.");
+        int position = jos(n, k) + 1;
+
+        System.out.println("A person should stand at position "+ position + " to survive.");
         
 
         sc.close();
