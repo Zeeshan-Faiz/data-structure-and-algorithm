@@ -7,7 +7,7 @@ public class JosephusProblem {
      * find the position in which a person should stand in order to survive the killing.
      * 
      * Example n = 7 & k = 3
-     * O/P = 4th position.
+     * O/P = 3rd position.
      * 
     */
 
@@ -45,7 +45,7 @@ public class JosephusProblem {
      *         0
      *         D (This signifies that if there are 7 people in a circle and the first person(A) starts killing the
      *            person after 3 positions and this goes until only one person is left then in that case person(D)
-     *            who was standing in position 4 will survive) 
+     *            who was standing in position 3 will survive) 
      * 
      * To find a relation between n and K and the position at which if a person stands will survive, we can produce a 
      * general formula=>
@@ -81,7 +81,7 @@ public class JosephusProblem {
         System.out.println("Enter the Killing factor : ");
         int k = sc.nextInt();
 
-        int position = jos(n, k) + 1;
+        int position = jos(n, k);
 
         System.out.println("A person should stand at position "+ position + " to survive.");
         
