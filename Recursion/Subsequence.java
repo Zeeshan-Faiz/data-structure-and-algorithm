@@ -36,10 +36,10 @@ public class Subsequence {
             return;
         }
             
-        //pick
+        //pick a character
         getSequence(str.substring(1), ans + str.charAt(0));
 
-        //not pick
+        //not pick a character
         getSequence(str.substring(1), ans);
 
     }
@@ -55,6 +55,5 @@ public class Subsequence {
 
         sc.close();
     }
-
 
 }
