@@ -89,6 +89,4 @@ public class JosephusProblem {
         sc.close();
     }
 
-
-
 }
