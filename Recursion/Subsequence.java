@@ -17,16 +17,13 @@ public class Subsequence {
     /*
      * To find the Number of subsequences in a given string = 2^(length of String) => 2^3 = 8
      * 
-     * Suppose instead of generating the subsequence of "abc" we'll directly pick c first
+     * Suppose instead of generating the subsequence of "abc" we'll directly pick c first and print it's subsequence
      * c --> _ , c
-     * then we'll pick b as well
+     * then we'll pick b as well and print all of the subsequences of bc
      * bc --> _ , c , b , bc
-     * then we'll pick a at last
+     * then we'll pick a at last and print all the 8 subsequences of abc
      * abc --> _ , c , b , bc , a , ac , ab , abc 
-     * 
-     * Similary we'll start from selecting only c and find it's subsequence then bc and find it's subsequence
-     * and at last we'll pick abc and find all of it's subsequences using recursion.
-     * 
+     *  
      * Base condition : if(str.length == 0)
     */
 
@@ -42,7 +39,7 @@ public class Subsequence {
         //pick
         getSequence(str.substring(1), ans + str.charAt(0));
 
-        //not picl
+        //not pick
         getSequence(str.substring(1), ans);
 
     }
