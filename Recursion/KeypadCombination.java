@@ -6,15 +6,13 @@ public class KeypadCombination {
      * Write a program to find the letter combination of phone keypad. We all have seen the
      * keypad on phones where each number is associated with the different alphabets.
      * 2(ABC), 3(DEF), 4(GHI), 5(JKL), 6(MNO), 7(PQRS), 8(TUV), 9(WXYZ)
-     * 
-     * where as 0 and 1 can be ignored.
+     * (where as 0 and 1 can be ignored)
      * 
      * Now if you are given a string then print all the letter combinations that is possible
      * with the key pressed.
      * 
      * Example str = "846"
      * O/P = TGM,TGN,TGO,THM,THN,THO,TIM,TIN,TIO,UGM,UGN,UGO,UHM,UHN,UHO,UIM,UIN,UIO,VGM,VGN,VGO,VHM,VHN,VHO,VIM,VIN,VIO
-     *
     */
 
     /*
@@ -32,7 +30,7 @@ public class KeypadCombination {
      *                      VGM,VGN,VGO,VHM,VHN,VHO,VIM,VIN,VIO
      * 
      * 
-     * Base Confition = if(str == 0)
+     * Base Confition = if(str.length() == 0)
     */
 
     //We'll represent all the number keypad with respect to array index.
@@ -42,7 +40,6 @@ public class KeypadCombination {
     static void  possibleWords(String str, String ans){
 
         if(str.length() == 0){
-
             System.out.print(ans + ",");
             return;
         }
@@ -50,7 +47,6 @@ public class KeypadCombination {
         String key = keypad[str.charAt(0)-48]; //to convert String 8 to Decimal 8
 
         for(int i = 0; i < key.length(); i++){
-
             possibleWords(str.substring(1), ans + key.charAt(i));
         }
 
