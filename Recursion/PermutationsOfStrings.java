@@ -17,11 +17,11 @@ public class PermutationsOfStrings {
      *          3x2x1 = 6
      *          _ _ _
      * 
-     * The first block can have three different combinations from which we can choose to add either A or B or C
+     * The first block can have three different combinations from which we can choose from and we can add either A or B or C
      * the second block contains two different combinations and the last block has only one combination.
      * 
      * We'll write our code in such a way that for first call to our function, we'll add A to our first block and then
-     * add other characters doing permutations, and similarly we can choose B or C and fill the 2nd and 3rd blocks.
+     * fill other two blocks using other characters by doing permutations, and similarly we can choose B or C and fill the 2nd and 3rd blocks simultaneously.
      * We'll also use an index variable fi to keep the track of our block.
      * 
      * Base Condition = if(fi == arr.length-1)
