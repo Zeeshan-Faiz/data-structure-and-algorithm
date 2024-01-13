@@ -14,16 +14,15 @@ public class KeypadCombination {
      * 
      * Example str = "846"
      * O/P = TGM,TGN,TGO,THM,THN,THO,TIM,TIN,TIO,UGM,UGN,UGO,UHM,UHN,UHO,UIM,UIN,UIO,VGM,VGN,VGO,VHM,VHN,VHO,VIM,VIN,VIO
-     * 
-     * 
+     *
     */
 
     /*
-     * We can break this problem into small sub-problem, suppose for the given input 846 instead of finding
+     * We can break this problem into small sub-problems, suppose for the given input 846 instead of finding
      * it's letter combination, we'll try to find the letter combination of 46 and to find it's letter combination
      * we'll find the letter combination of 6 and then call our function recursively to get all the combinations.
      * 
-     * str                  ans
+     * str                  ans(different combinations)
      * 6(MNO)               M,N,O
      * 46(GHIMNO)           GM,GN,GO
      *                      HM,HN,HO
@@ -36,10 +35,9 @@ public class KeypadCombination {
      * Base Confition = if(str == 0)
     */
 
+    //We'll represent all the number keypad with respect to array index.
     //                          0  1   2      3      4      5      6      7       8       9
     static String keypad [] = {"","","ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
-
-    //We'll represent all the number keypad with respect to array index.
 
     static void  possibleWords(String str, String ans){
 
