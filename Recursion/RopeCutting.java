@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class RopeCutting {
     
     /*
@@ -45,6 +47,22 @@ public class RopeCutting {
         
         return pieces + 1;
 
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter length of rope : ");
+		int n = sc.nextInt();
+
+        System.out.println("Enter 3 values of a,b,c");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        System.out.println("Maximum number of pieces that can be cut when the length of rope is " + n + " : " + maxPieces(n, a, b, c));
+
+        sc.close();
     }
 
 }
