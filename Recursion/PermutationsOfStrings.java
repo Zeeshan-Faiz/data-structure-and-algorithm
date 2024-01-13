@@ -37,7 +37,7 @@ public class PermutationsOfStrings {
         for(int i = fi; i< arr.length; i++){
             swap(arr,i,fi);
             permutations(arr, fi+1);
-            swap(arr,i,fi);//just to bring back the original array which might have got changed fue to previous swapping
+            swap(arr,i,fi);//just to bring back the original array which might have got changed due to previous swapping
         }
     }
 
