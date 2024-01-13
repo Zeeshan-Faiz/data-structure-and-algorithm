@@ -24,8 +24,6 @@ public class SubsetSum {
      * Now if we get new sum value as 0, it means we've got the first subset and we'll return 1
      * if we get sum value as < 0, it means we can't have a subset with this number and we'll return 0.
      * and if we reach the end of the array (i == arr.length) then there's no other number left to check for the new sum and hence we'll return 0.
-     * 
-     * 
     */
 
     static int countSubsets(int arr[],int sum, int i){
@@ -60,7 +58,5 @@ public class SubsetSum {
 
         sc.close();
     }
-
-
 
 }
