@@ -8,6 +8,8 @@ public class SubsetSum {
      * 
      * Example arr = {10,20,15,5} ; sum = 25
      * O/P = 2; (10,15) & (20,5)
+     * Here 2 means that we can have 2 subsets from the given array which when added together gives the
+     * same sum as the given sum.
     */
 
     /*
