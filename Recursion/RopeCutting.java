@@ -24,8 +24,27 @@ public class RopeCutting {
      * greater than the actual length of the rope. In this scenario we'll return -1.
      * And when we selected 5,the new length of the rope will be (5-5) = 0, in this case we'll return 0.
      * 
-     * We'll do the above steps recursively until we select all the numbers and try to find the subsets.
+     * We'll do the above steps recursively until we select all the numbers and try to find the subsets until we get our maximum number of pieces.
     */
 
+    static int maxPieces(int n, int a, int b, int c){
+
+        if(n < 0)
+            return -1;
+        else if(n == 0)
+            return 0;
+
+        int temp1 = maxPieces(n-a, a, b, c);
+        int temp2 = maxPieces(n-b, a, b, c);
+        int temp3 = maxPieces(n-c, a, b, c);
+
+        int pieces = Math.max(temp3, Math.max(temp1, temp2));
+
+        if(pieces == -1)
+            return -1;
+        
+        return pieces + 1;
+
+    }
 
 }
