@@ -63,7 +63,5 @@ public class KeypadCombination {
 
         sc.close();
     }
-
-
-
+    
 }
