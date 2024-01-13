@@ -6,8 +6,7 @@ public class PermutationsOfStrings {
      * Write a program to find the permutations of all Strings using recursions.
      * 
      * Example str = "ABC"
-     * O/P = "ABC","ACB","BAC","BCA","CBA","CAB"
-     * 
+     * O/P = "ABC","ACB","BAC","BCA","CBA","CAB" 
     */
 
     /*
@@ -21,10 +20,8 @@ public class PermutationsOfStrings {
      * The first block can have three different combinations from which we can choose to add either A or B or C
      * the second block contains two different combinations and the last block has only one combination.
      * 
-     * 
      * We'll write our code in such a way that for first call to our function, we'll add A to our first block and then
      * add other characters doing permutations, and similarly we can choose B or C and fill the 2nd and 3rd blocks.
-     * 
      * We'll also use an index variable fi to keep the track of our block.
      * 
      * Base Condition = if(fi == arr.length-1)
@@ -60,7 +57,7 @@ public class PermutationsOfStrings {
 
         System.out.println("All combinations of String " + str + " is : " );
         permutations(str.toCharArray(), 0);
-        
+
         sc.close();
     }
 
