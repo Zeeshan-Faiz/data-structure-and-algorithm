@@ -11,7 +11,7 @@ public class SubsetSum {
      * Here 2 means that we can have 2 subsets from the given array which when added together gives the
      * same sum as the given sum.
     */
-
+ 
     /*
      * Approach : To find the subsets from the given array such that it's sum is equal to the given sum,
      * we'll try to pick an element at ith position once and ignore it in the second instance, so for example
