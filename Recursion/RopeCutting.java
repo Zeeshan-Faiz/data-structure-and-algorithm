@@ -14,7 +14,7 @@ public class RopeCutting {
      * or
      * we can have all 3 small pieces of length 5 and hence the output is 3
     */
-
+ 
 
     /*
      * Approach : We can start by cutting the original rope of length 15 into three different
