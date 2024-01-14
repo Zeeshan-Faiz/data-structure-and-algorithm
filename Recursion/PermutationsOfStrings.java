@@ -7,7 +7,7 @@ public class PermutationsOfStrings {
      * 
      * Example str = "ABC"
      * O/P = "ABC","ACB","BAC","BCA","CBA","CAB" 
-    */
+    */ 
 
     /*
      * Approach : As we know that the number of permutations combinations can be derived from the length of given
