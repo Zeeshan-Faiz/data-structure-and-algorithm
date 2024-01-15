@@ -39,8 +39,21 @@ public class PowerOfNumber {
      * 
      * So for example if x = 5 , y = 4 then,
      * 5^4 = 5^2 * 5^2
-     * 
     */
+
+    static long approach2(int x, int y){
+
+        if(y == 0)
+            return 1;
+
+        if(y % 2 == 0)
+            return approach1(x, y/2) * approach1(x, y/2); 
+        else
+            return approach1(x, y-1) * x;
+    }
+
+
+
 
     public static void main(String[] args) {
         
@@ -49,7 +62,7 @@ public class PowerOfNumber {
 		int x = sc.nextInt();
         int y = sc.nextInt();
 
-        System.out.println("Power of " + x + "^" + y + " is : " + approach1(x,y));
+        System.out.println("Power of " + x + "^" + y + " is : " + approach2(x,y));
 
         sc.close();
     }
