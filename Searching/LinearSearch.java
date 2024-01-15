@@ -8,6 +8,8 @@ public class LinearSearch {
      * 
      * Example arr = {50,10,33,40,26} ; key = 40
      * O/P = 3
+     * 
+     * Time Complexity = O(n)
     */
 
     static int linearSearch(int arr[], int key){
