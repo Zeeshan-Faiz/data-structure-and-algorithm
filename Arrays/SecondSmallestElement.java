@@ -9,7 +9,7 @@ public class SecondSmallestElement {
      * O/P = 20
     */
 
-    static int secLargest(int arr[]){
+    static int secSmallest(int arr[]){
 
         int min1=0, min2=0;
         if(arr[0] < arr[1]){
@@ -32,8 +32,6 @@ public class SecondSmallestElement {
         return min2;
     }
 
-
-    
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -46,7 +44,7 @@ public class SecondSmallestElement {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println("Second Smallest element in the given array is = " + secLargest(arr));
+        System.out.println("Second Smallest element in the given array is = " + secSmallest(arr));
         
         sc.close();
 
