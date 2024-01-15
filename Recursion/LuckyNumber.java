@@ -21,8 +21,8 @@ public class LuckyNumber {
 
     /*
      * Approach : We can observe that the very first condition is if the counter > number, then surely our given
-     * is a lucky number.
-     * And every time the counter increases the number series decreases, we can assume our given number's position
+     * number is a lucky number.
+     * And every time the counter increases the number series decreases, we can assume our given number
      * to check whether it's divisible by the incremented counter, if it's divisible then surely our given number is not
      * a lucky number otherwise it is.
      * 
