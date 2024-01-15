@@ -66,12 +66,9 @@ public class PowerOfNumber {
             return 1;
 
         if(y % 2 == 0){
-
             long res = approach1(x, y/2);
             return res * res;
-
         }
-            
         else
             return approach1(x, y-1) * x;
 
