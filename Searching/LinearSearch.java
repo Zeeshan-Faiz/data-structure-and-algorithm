@@ -9,6 +9,13 @@ public class LinearSearch {
      * Example arr = {50,10,33,40,26} ; key = 40
      * O/P = 3
      * 
+    */
+
+    /*
+     * Approach : With the given key we'll traverse each element of the array and check whether the given key
+     * is equal to the array element. If yes then we'll directly return the position of the element otherwise
+     * we'll return -1 stating that the given key is not present in the array.
+     * 
      * Time Complexity = O(n)
     */
 
