@@ -34,7 +34,6 @@ public class TowerOfHanoi {
         towerOfHenoi(n-1,src,dest,aux);
         towerOfHenoi(1,src,aux,dest);
         towerOfHenoi(n-1,aux,src,dest);
-
     }
 
     public static void main(String[] args) {
