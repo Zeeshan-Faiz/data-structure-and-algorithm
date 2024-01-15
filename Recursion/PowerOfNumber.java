@@ -52,8 +52,30 @@ public class PowerOfNumber {
             return approach1(x, y-1) * x;
     }
 
+    /*
+     * Approach 3: We've tackled the continuous increase of stack memory by dividing the power value to half at
+     * each recursive calls, however there's one last thing to be noticed, that in our approach 2, we're calling the same function twice
+     * which will generate the same output [approach1(x, y/2) * approach1(x, y/2)].
+     * In this case we'll store the value of one function and store it in a variable and then directly return the
+     * calculated variable multiplied by itself in order to save computing power.
+    */
 
+    static long approach3(int x, int y){
 
+        if(y == 0)
+            return 1;
+
+        if(y % 2 == 0){
+
+            long res = approach1(x, y/2);
+            return res * res;
+
+        }
+            
+        else
+            return approach1(x, y-1) * x;
+
+    }
 
     public static void main(String[] args) {
         
@@ -62,12 +84,9 @@ public class PowerOfNumber {
 		int x = sc.nextInt();
         int y = sc.nextInt();
 
-        System.out.println("Power of " + x + "^" + y + " is : " + approach2(x,y));
+        System.out.println("Power of " + x + "^" + y + " is : " + approach3(x,y));
 
         sc.close();
     }
-
-
-
 
 }
