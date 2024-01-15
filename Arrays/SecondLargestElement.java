@@ -21,7 +21,7 @@ public class SecondLargestElement {
             max2 = arr[0];
         }
 
-        for(int i = 2; i< arr.length; i++){
+        for(int i = 2; i < arr.length; i++){
             if(arr[i] > max1){
                 max2 = max1;
                 max1 = arr[i];
@@ -31,7 +31,6 @@ public class SecondLargestElement {
         }
         return max2;
     }
-
 
     public static void main(String[] args) {
         
@@ -50,7 +49,5 @@ public class SecondLargestElement {
         sc.close();
 
     }
-
-
     
 }
