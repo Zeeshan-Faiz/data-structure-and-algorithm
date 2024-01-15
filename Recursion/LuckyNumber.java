@@ -28,6 +28,8 @@ public class LuckyNumber {
      * to check whether it's divisible by the incremented counter, if it's divisible then surely our given number is not
      * a lucky number otherwise it is.
      * 
+     * After every recursive calls we'll increase the counter and deduce the given number to
+     * n-(n/counter)
     */
 
     static boolean isLucky(int n, int counter){
@@ -51,6 +53,5 @@ public class LuckyNumber {
 
         sc.close();
     }
-
 
 }
