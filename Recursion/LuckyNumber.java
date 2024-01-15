@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LuckyNumber {
     
     /*
@@ -28,7 +30,27 @@ public class LuckyNumber {
      * 
     */
 
-    
+    static boolean isLucky(int n, int counter){
+
+        if(n < counter)
+            return true;
+
+        if(n % counter == 0)
+            return false;
+        
+        return isLucky(n - (n/counter), counter+1);
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		int n = sc.nextInt();
+
+        System.out.println("Is the given number " + n + " lucky ? " + isLucky(n,2));
+
+        sc.close();
+    }
 
 
 }
