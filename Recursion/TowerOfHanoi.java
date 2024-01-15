@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class TowerOfHanoi {
     
     /*
@@ -8,7 +10,6 @@ public class TowerOfHanoi {
      * 
      * Example n = 3
      * O/P = A -> C , A -> B , C -> B , A -> C , B -> A , B -> C , A -> C
-     * 
     */
 
     /*
@@ -21,11 +22,31 @@ public class TowerOfHanoi {
      *                        for(n-1) disc ==> towerOfHenoi(n-1,src,dest,aux)
      *                           for 1 disc ==> towerOfHenoi(1,src,aux,dest)
      *                        for(n-1) disc ==> towerOfHenoi(n-1,aux,src,dest)
-     * 
     */
 
     static void towerOfHenoi(int n, char src, char aux, char dest){
 
+        if(n == 1){
+            System.out.println(src + "-->" + dest);
+            return;
+        }
+
+        towerOfHenoi(n-1,src,dest,aux);
+        towerOfHenoi(1,src,aux,dest);
+        towerOfHenoi(n-1,aux,src,dest);
+
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of discs: ");
+		int n = sc.nextInt();
+
+        System.out.println("Moves required to solve the game is : ");
+        towerOfHenoi(n, 'A', 'B', 'C');
+
+        sc.close();
     }
 
 
