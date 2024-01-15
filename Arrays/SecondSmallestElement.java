@@ -45,9 +45,7 @@ public class SecondSmallestElement {
         }
 
         System.out.println("Second Smallest element in the given array is = " + secSmallest(arr));
-        
         sc.close();
-
     }
 
 }
