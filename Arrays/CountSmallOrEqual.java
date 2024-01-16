@@ -14,7 +14,8 @@ public class CountSmallOrEqual {
     */
 
     /*
-     * Approach : 
+     * Approach : As the number of elements can be similar to index mid + 1, we'll be using mid variable to find
+     * the total count of elements less than or equal to the given key.
     */
 
     static int countSmallOrEqual(int[] arr, int key){
@@ -25,11 +26,27 @@ public class CountSmallOrEqual {
             mid = (low+high)/2;
             if(key == arr[mid]){
 
-                //check for duplicates and increase the count accordingly
+                //check for duplicates and increase the count accordingly, also check that the mid has not exceed array length
+                if((mid+1) < arr.length && key == arr[mid+1]){
+                    mid++;
+                }
+                   
+            break;
             }
+            else if(key < arr[mid])
+                high = mid - 1;
+            else
+                low = mid + 1;
+
         }
 
-
+    //check if key doesn't exist(If the key doesn't exist then once the loop terminates our mid will be pointing to the next largest number
+    //Hence we can return mid itself which will give the count of all numbers less than the key itself)
+    if(arr[mid] > key)
+        return mid;
+    else
+        return -1;
     }
+    
 
 }
