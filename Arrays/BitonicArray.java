@@ -14,7 +14,7 @@ public class BitonicArray {
     */
 
     /*
-     * Approach : We'll first try to find the element where we can split the given array.
+     * Approach : We'll first try to find the element (Bitonic Element) where we can split the given array.
      * We can search for Bitonic element which is the maximum value in a bitonic sequence and the index associated
      * with this element is called bitonic index.
      * We'll then check if the number to be searched is at the bitonic index, if YES we'll directly return bitonic
@@ -29,7 +29,27 @@ public class BitonicArray {
      *                 = O(Log N) + O(Log N) + O(Log N) = O(3 Log N) ~ O(Log N)
     */
 
+    static int findBitonicPoint(int [] arr){
+
+        int l = 0, r = arr.length-1, mid = 0;
+        while(l <= r){
+
+            mid = (l+r)/2;
+            if(arr[mid] > arr[mid-1] && arr[mid] > arr[mid+1]){ //we got the bitnoic index
+                return mid;
+            }
+            else if(arr[mid] > arr[mid-1] && arr[mid] < arr[mid+1]){ //we are still at the left side of array move l to mid
+                l = mid;
+            }
+            else //we are at the right side of array move r to mid
+                r = mid;
+        }
+        return -1;
+
+    }
+
     
+
 
 
 }
