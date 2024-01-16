@@ -1,7 +1,7 @@
 public class CountSmallOrEqual {
     
     /*
-     * Write a program to print the count of smaller or equal elements in a sorted array.
+     * Write a program to print the count of smaller or equal elements to the value of given K in a sorted array.
      * 
      * Example arr = {2,6,12,18,21,26,33,42} ; K = 26
      * O/P = 6 (count of numbers less than or equal to K=26)
@@ -14,8 +14,8 @@ public class CountSmallOrEqual {
     */
 
     /*
-     * Approach : As the number of elements can be similar to index mid + 1, we'll be using mid variable to find
-     * the total count of elements less than or equal to the given key.
+     * Approach : While using Binary Search the K value in the array will always be pointed out by mid variable hence of we do index mid + 1
+     * we'll be able to get the count of all the numbers less than or equal to the given K.
     */
 
     static int countSmallOrEqual(int[] arr, int key){
@@ -41,7 +41,7 @@ public class CountSmallOrEqual {
         }
     
     //check if key doesn't exist(If the key doesn't exist then once the loop terminates our mid will be pointing to the next largest number
-    //Hence we can return mid itself which will give the count of all numbers less than the key itself)
+    //Hence we can return mid which will give the count of all numbers less than the key itself)
         if(arr[mid] > key)
             return mid;
         else
