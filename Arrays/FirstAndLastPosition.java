@@ -9,7 +9,7 @@ public class FirstAndLastPosition {
     */
 
     /*
-     * Approach : For this particular problem we'll take an array of length 2 popualted with [-1,-1]
+     * Approach : For this particular problem we'll take an array of length 2 & popualte it with [-1,-1]
      * And then run two different Binary search in order to get the first and last position of the given number
      * in the array.
      * Time Complexity (for 2 Binary Search) = O(Log N) + O(Log N) = O(2 Log N) ~ O(Log N)
@@ -40,7 +40,7 @@ public class FirstAndLastPosition {
         while(low <= high){
 
             mid = (low+high)/2;
-            if(key == arr[mid]){ //check for the first occurence of the given number
+            if(key == arr[mid]){ //check for the last occurence of the given number
                 res[1] = mid;
                 low = mid + 1;
             }
@@ -53,7 +53,14 @@ public class FirstAndLastPosition {
 
     }
 
-    
+    public static void main(String[] args){
 
-    
+        int arr[] = {3,4,4,4,4,4,4,4,4,6};
+        int key = 4;
+
+        System.out.println("Range of the given numer " + key  + " : ");
+
+        int result[] = searchRange(arr, key);
+        System.out.println("["+result[0] + "," + result[1] + "]");
+    }
 }
