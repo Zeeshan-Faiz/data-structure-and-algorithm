@@ -9,7 +9,7 @@ public class CountSmallOrEqual {
      * Example arr = {2,6,12,18,21,26,26,26} ; K = 26
      * O/P = 8 (count of numbers less than or equal to k=26 (count of similar elements also included))
      * 
-     * Example arr = {2,6,12,24,26,26,28,30} ; K = 35
+     * Example arr = {2,6,12,24,26,26,28,30} ; K = 25
      * O/P = 4 (count of numbers less than K=25)
     */
 
@@ -27,7 +27,7 @@ public class CountSmallOrEqual {
             if(key == arr[mid]){
 
                 //check for duplicates and increase the count accordingly, also check that the mid has not exceed array length
-                if((mid+1) < arr.length && key == arr[mid+1]){
+                while((mid+1) < arr.length && key == arr[mid+1]){
                     mid++;
                 }
                    
@@ -39,14 +39,23 @@ public class CountSmallOrEqual {
                 low = mid + 1;
 
         }
-
+    
     //check if key doesn't exist(If the key doesn't exist then once the loop terminates our mid will be pointing to the next largest number
     //Hence we can return mid itself which will give the count of all numbers less than the key itself)
-    if(arr[mid] > key)
-        return mid;
-    else
-        return -1;
+        if(arr[mid] > key)
+            return mid;
+        else
+            return mid+1;//normal count(where k exists in the array)
     }
     
+    public static void main(String[] args) {
+        
+        //int arr [] = {2,6,12,18,21,26,33,42};
+        int arr[] = {2,6,12,18,21,26,26,26};
+        //int arr[] = {2,6,12,24,26,26,28,30};
+        int K = 26;
+
+        System.out.println("Count of elements smaller or equal to " + K + " is : " + countSmallOrEqual(arr, K));
+    }
 
 }
