@@ -14,7 +14,7 @@ public class CountSmallOrEqual {
     */
 
     /*
-     * Approach : While using Binary Search the K value in the array will always be pointed out by mid variable hence of we do index mid + 1
+     * Approach : While using Binary Search the K value in the array will always be pointed out by mid variable hence if we do index mid + 1
      * we'll be able to get the count of all the numbers less than or equal to the given K.
     */
 
@@ -26,7 +26,7 @@ public class CountSmallOrEqual {
             mid = (low+high)/2;
             if(key == arr[mid]){
 
-                //check for duplicates and increase the count accordingly, also check that the mid has not exceed array length
+                //check for duplicates and increase the count accordingly, also check that the mid has not exceeded array length
                 while((mid+1) < arr.length && key == arr[mid+1]){
                     mid++;
                 }
