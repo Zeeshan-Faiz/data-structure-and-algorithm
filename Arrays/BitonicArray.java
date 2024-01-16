@@ -45,7 +45,6 @@ public class BitonicArray {
                 r = mid;
         }
         return -1;
-
     }
 
     static int ascBinarySearch(int[] arr, int key, int bIndex){
@@ -99,7 +98,6 @@ public class BitonicArray {
             return res2;
             
         return -1;
-
     }
 
     public static void main(String[] args){
@@ -110,6 +108,5 @@ public class BitonicArray {
         int bIndex = findBitonicPoint(arr);
         System.out.println("Position of the target element in the Bitonic array is : " + searchElement(arr, b, bIndex));
     }
-
 
 }
