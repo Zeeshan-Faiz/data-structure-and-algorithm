@@ -48,7 +48,40 @@ public class BitonicArray {
 
     }
 
-    
+    static int ascBinarySearch(int[] arr, int key, int bIndex){
+
+        int low = 0, high = bIndex-1, mid = 0;
+        while(low <= high){
+
+            mid = (low+high)/2;
+            if(arr[mid] == key)
+                return mid;
+            if(arr[mid] > key)
+                high = mid - 1;
+            else
+                low = mid + 1;
+            
+        }
+        return -1;
+    }
+
+    static int descBinarySearch(int[] arr, int key, int bIndex){
+
+        int low = bIndex-1, high = arr.length-1, mid = 0;
+
+        while(low <= high){
+
+            mid = (low+high)/2;
+            if(arr[mid] == key)
+                return mid;
+            if(arr[mid] > key)
+                high = mid - 1;
+            else
+                low = mid + 1;
+            
+        }
+        return -1;
+    }
 
 
 
