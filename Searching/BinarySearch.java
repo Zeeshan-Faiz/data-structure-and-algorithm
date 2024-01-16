@@ -42,7 +42,7 @@ public class BinarySearch {
             mid = (low+high)/2;
             if(arr[mid] == key)
                 return mid;
-            if(arr[mid] >= key)
+            if(arr[mid] > key)
                 high = mid - 1;
             else
                 low = mid + 1;
