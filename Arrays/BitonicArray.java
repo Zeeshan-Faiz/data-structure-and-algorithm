@@ -83,6 +83,33 @@ public class BitonicArray {
         return -1;
     }
 
+    static int searchElement(int[] arr, int key, int bIndex){
+
+        if(key == arr[bIndex])
+            return bIndex;
+        if(key > arr[bIndex])
+            return -1;
+        
+        int res1 = ascBinarySearch(arr, key, bIndex);
+        if(res1 != -1)
+            return res1;
+            
+        int res2 = descBinarySearch(arr, key, bIndex);
+        if(res2 != -1)
+            return res2;
+            
+        return -1;
+
+    }
+
+    public static void main(String[] args){
+
+        int arr[] = {5,6,7,8,9,10,3,2,1};
+        int b = 8;
+
+        int bIndex = findBitonicPoint(arr);
+        System.out.println("Position of the target element in the Bitonic array is : " + searchElement(arr, b, bIndex));
+    }
 
 
 }
