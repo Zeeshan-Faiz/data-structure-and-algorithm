@@ -86,11 +86,9 @@ public class WoodCutting {
             else
                 h = mid;
         }
+        
         return -1;
-
-
     }
-
     public static void main(String[] args) {
         
         int[] ht = {20,15,10,17};
@@ -99,5 +97,4 @@ public class WoodCutting {
         System.out.println(machineHeight(ht, b));
 
     }
-
 }
