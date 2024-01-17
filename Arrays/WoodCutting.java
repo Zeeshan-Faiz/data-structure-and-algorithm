@@ -50,11 +50,46 @@ public class WoodCutting {
      * Now when we try to cut the tree with the blade height of 15 we'll get
      * (5+0+0+2) = 7 ~ b(7)
      * 
-     * Hence we can conclude that to get the blade height to 15 metres will give us exactly 7 metre of food when
+     * Hence we can conclude that to get the blade height to 15 metres will give us exactly 7 metre of wood when
      * 4 trees in a row of hight 20,15,10,17 respectively are cut down.
-     * 
-     * 
     */
+
+    static int findWood(int[] ht, int m){
+
+        int wc = 0;
+        for(int i = 0; i < ht.length; i++){
+            if(ht[i] > m)
+                wc = wc +(ht[i]-m);
+        }
+
+        return wc;
+    }
+
+    static int machineHeight(int[] ht, int b){
+
+        int max = 0;
+        for(int i = 0; i< ht.length; i++){
+            if(ht[i] > max)
+                max = ht[i];
+        }
+
+        int l = 0, h = max , mid = 0;
+        while(l <= h){
+
+            mid = (l+h)/2;
+
+            int wc = findWood(ht, mid);
+            if(wc == b || l == mid) //stopping point
+                return mid;
+            else if(wc > mid)
+                l = mid;
+            else
+                h = mid;
+        }
+        return -1;
+
+
+    }
 
 
 }
