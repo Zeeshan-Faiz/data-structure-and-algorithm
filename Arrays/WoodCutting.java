@@ -91,5 +91,13 @@ public class WoodCutting {
 
     }
 
+    public static void main(String[] args) {
+        
+        int[] ht = {20,15,10,17};
+        int b = 7;
+
+        System.out.println(machineHeight(ht, b));
+
+    }
 
 }
