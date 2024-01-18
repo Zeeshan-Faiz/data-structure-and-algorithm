@@ -27,7 +27,7 @@ public class BookAllocation {
      * Approach : Lowest page that can be allocated to a student = 12
      * Maximum page that can be allocate to a student (12+34+67+90) = 208
      * 
-     * Here l = 0, h = 203 and m = (l+h)/2
+     * Here l = 12, h = 203 and m = (l+h)/2
      * We'll be using binary search to find whether when the all the books are allocated to all students then the
      * out of all maximum number of pages that the students can get we are able to return the minimum number of page.
      * 
