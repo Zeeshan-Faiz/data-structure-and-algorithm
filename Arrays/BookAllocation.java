@@ -12,7 +12,6 @@ public class BookAllocation {
      * to different students.
      * 
      * Example arr = {12,34,67,90} b = 2(no. of students)
-     * 
      * Different combination of allocating the books to two students:
      * 
      *      Student 1                   Student 2
@@ -21,9 +20,48 @@ public class BookAllocation {
      *      12 Pages                    34,67,90 = 191 Pages
      * 
      * Here if we need to find the min(113,157,191) = 113 which denotes that out of 3 maximum value of pages 113
-     * is the minimum.
-     * 
+     * is the minimum pages that can be distributed among 2 students.
     */
+
+    /*
+     * Approach : Lowest page that can be allocated to a student = 12
+     * Maximum page that can be allocate to a student (12+34+67+90) = 208
+     * 
+     * Here l = 0, h = 203 and m = (l+h)/2
+     * We'll be using binary search to find whether when the all the books are allocated to all students then the
+     * out of all maximum number of pages that the students can get we are able to return the minimum number of page.
+     * 
+     * We'll also be having students and spc and res as variable to store number of students, student page count and
+     * final result respectively.
+    */
+
+    static int maxPage(int[] ar, int b){
+
+        //check number of students are more than the actual number of books
+        if(b > ar.length)
+            return -1;
+        
+        //find minimum page and the total number of pages
+        int l = ar[0], h = 0;
+        for(int i = 0; i < ar.length; i++){
+            if(ar[i] < l)
+                l = ar[i];
+            
+            h = h + ar[i];
+        }
+
+        int res = -1;
+        while(l <= h){
+            int m = (l+h)/2;
+            if(isPossibleSol(m)){
+                res = m;
+                h = m - 1;
+            }
+            else
+                l = m + 1;
+        }
+        return res;
+    }
 
 
 }
