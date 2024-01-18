@@ -101,8 +101,7 @@ public class MedianOf2SortedArray {
      * 
      * m2 = ((len(ar1) + len(ar2))+1)/2 - m1
      * ar2 = {5,6,7,19,21,25}
-     * 
-     * 
+     *
      * i)Taking 3 elements from array 1(m1 = 3) and 2 elements from array 2(m2 = 2)
      *  
      *      ar1 -> 3  |  ar2 -> 2
@@ -167,15 +166,11 @@ public class MedianOf2SortedArray {
 
     }
 
-
     public static void main(String[] args) {
         
         int[] ar1 = {1,3,8,17};
         int[] ar2 = {5,6,7,19,21,25};
 
-        System.out.println(findMedian1(ar1, ar2));
+        System.out.println(findMedian2(ar1, ar2));
     }
-
-
-
 }
