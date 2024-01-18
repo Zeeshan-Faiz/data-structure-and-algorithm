@@ -85,6 +85,4 @@ public class PaintersPartition {
         int b = 2;
         System.out.println(maxTime(ar,a,b));
     }
-
-
 }
