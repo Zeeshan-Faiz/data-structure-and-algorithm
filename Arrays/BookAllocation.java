@@ -53,7 +53,7 @@ public class BookAllocation {
         int res = -1;
         while(l <= h){
             int m = (l+h)/2;
-            if(isPossibleSol(m)){
+            if(isPossibleSol(ar,b,m)){
                 res = m;
                 h = m - 1;
             }
@@ -61,6 +61,28 @@ public class BookAllocation {
                 l = m + 1;
         }
         return res;
+    }
+
+    static boolean isPossibleSol(int[] ar, int b, int m){
+
+        int students = 1, spc = 0;
+        for(int i = 0; i < ar.length; i++){
+
+            //check the number of pages is greater than the assumed highest number of page
+            if(ar[i] > m)
+                return false;
+            
+            if(spc + ar[i] <= m)
+                spc = spc + ar[i];
+            else{
+                students++;
+                if(students > b)
+                    return false;
+                
+                spc = ar[i];
+            }
+        }
+        return true;
     }
 
 
