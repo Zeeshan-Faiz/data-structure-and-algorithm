@@ -33,6 +33,8 @@ public class BookAllocation {
      * 
      * We'll also be having students and spc and res as variable to store number of students, student page count and
      * final result respectively.
+     * Time Complexity = n + Log(sum(ar)) + n
+     *                 = 2n Log(sum(ar)) ~ n Log(sum(ar))
     */
 
     static int maxPage(int[] ar, int b){
@@ -85,5 +87,10 @@ public class BookAllocation {
         return true;
     }
 
-
+    public static void main(String[] args) {
+        
+        int[] ar = {12,34,67,90};
+        int b = 2;
+        System.out.println(maxPage(ar, b));
+    }
 }
