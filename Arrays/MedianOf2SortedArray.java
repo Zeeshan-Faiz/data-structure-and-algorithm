@@ -17,7 +17,7 @@ public class MedianOf2SortedArray {
     /*
      * Approach 1 (Brute Force) : To find the median of two sorted arrays, first we need to combine both the array
      * and then find the median depending upon the total number of elements being even or odd.
-     * To merge two arrays we'll have two indexes i & j amd a third empty array with the index k.
+     * To merge two arrays we'll have two indexes i & j and a third empty array with the index k.
      * 
      * Time Complexity = O(m+n), where m & n are the length of two arrays
      *
@@ -64,6 +64,21 @@ public class MedianOf2SortedArray {
         }
 
     }
+
+    /*
+     * As the median depends only untill the middle of the merged array in that case we don't need to have the 
+     * the merged array to be filled completely instead if we are able to get atleast half of the elements that
+     * will suffice for calculating the median.
+     * 
+     * So in the above mentioned approach we can have a new condition like:
+     * while(i < ar1.length && j < ar2.length && k <= m.length/2)
+     * while(i < ar1.length && k <= m.length/2)
+     * while(j < ar2.length && k <= m.length/2)
+     * 
+     * By doing this we don't need to traverse the whole length of both the arrays.
+     * Time Complexity = O((m+n)/2) ~ O(m+n)
+     * 
+    */
 
     public static void main(String[] args) {
         
