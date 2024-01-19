@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class SquareRoot {
     
     /*
@@ -35,7 +37,7 @@ public class SquareRoot {
             return n;
 
         int l = 2, h = n/2, res = 0;
-        while(l < h){
+        while(l <= h){
             int m = (l+h)/2;
             if(m * m == n)
                 return m;
@@ -49,6 +51,16 @@ public class SquareRoot {
                 h = m - 1;
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		int n = sc.nextInt();
+
+        System.out.println("The square root of "+ n + " is : " + sqrt(n));
+        sc.close();
     }
 
 }
