@@ -28,6 +28,29 @@ public class RemoveDuplicates {
         return temp;
     }
 
+    /*
+     * Appraoch 2 : Without using extra temporary array to reduce space complexity. Our idea is to replace duplicate
+     * elements in the array itself such that all the non-duplicate values will start from the left hand side of the array.
+     * For example ar = {2,2,3,3,4,6,6}
+     * after our logic is applied = {2,3,4,6,4,6,6}
+     * 
+     * We'll be having indexes i and rd to help us iterate over the array.
+    */
+
+    static int approach2(int[] ar){
+
+        int rd = 0;
+        for(int i = 1; i < ar.length ; i++){
+            if(ar[rd] != ar[i]){
+                rd++;
+                ar[rd] = ar[i];
+            }
+        }
+        return rd;
+    }
+
+
+
     public static void main(String[] args){
 
         int ar[] = {0,0,2,2,3,3,4,6,6};
@@ -36,11 +59,17 @@ public class RemoveDuplicates {
             System.out.print(ar[i] + " ");
         }
 
-        int[] temp = approach1(ar);
+        int rd = approach2(ar);
         System.out.println("\nArray After removing duplicates :");
         for(int i = 0; i <= rd ; i++){
-                System.out.print(temp[i] + " ");
+                System.out.print(ar[i] + " ");
         }
+
+        // int[] temp = approach1(ar);
+        // System.out.println("\nArray After removing duplicates :");
+        // for(int i = 0; i <= rd ; i++){
+        //         System.out.print(temp[i] + " ");
+        // }
     }
 
 
