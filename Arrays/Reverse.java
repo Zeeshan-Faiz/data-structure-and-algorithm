@@ -32,8 +32,5 @@ public class Reverse {
         for(int i = 0; i < ar.length ; i++){
             System.out.print(ar[i] + " ");
         }
-        
     }
-
-
 }
