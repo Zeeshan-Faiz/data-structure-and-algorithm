@@ -65,10 +65,10 @@ public class MakingBouquets {
             int mid = (l+h)/2;
             if(isPossibleSol(ar,m,k,mid)){
                 res = mid;
-                h = m - 1;
+                h = mid - 1;
             }
             else
-                l = m + 1;
+                l = mid + 1;
         }
         return res;
 
@@ -79,20 +79,33 @@ public class MakingBouquets {
         int adj = 0, bc = 0;
         for(int i = 0; i < ar.length; i++){
             
-            if(ar[i] <= mid){
+            if(ar[i] <= mid)
+            {
                 adj++;
-                if(adj == k){
+
+                if(adj == k)
+                {
                     bc++;
+
                     if(bc == m)
                         return true;
+                        
+                    adj = 0;
                 }
-                adj = 0;
             }   
             else
-                adj = 0;
+                adj = 0;     
+            
         }
-        return true;
+        return false;
     }
 
+    public static void main(String[] args) {
+        
+        int ar[] = {1,10,3,9,10,2};
+        int m = 3, k = 2;
+
+        System.out.println(minDaysBouquet(ar, m, k));
+    }
 
 }
