@@ -49,8 +49,6 @@ public class RemoveDuplicates {
         return rd;
     }
 
-
-
     public static void main(String[] args){
 
         int ar[] = {0,0,2,2,3,3,4,6,6};
@@ -64,13 +62,10 @@ public class RemoveDuplicates {
         for(int i = 0; i <= rd ; i++){
                 System.out.print(ar[i] + " ");
         }
-
         // int[] temp = approach1(ar);
         // System.out.println("\nArray After removing duplicates :");
         // for(int i = 0; i <= rd ; i++){
         //         System.out.print(temp[i] + " ");
         // }
     }
-
-
 }
