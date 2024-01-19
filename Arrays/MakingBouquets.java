@@ -74,5 +74,25 @@ public class MakingBouquets {
 
     }
 
+    static boolean isPossibleSol(int[] ar, int m, int k, int mid){
+
+        int adj = 0, bc = 0;
+        for(int i = 0; i < ar.length; i++){
+            
+            if(ar[i] <= mid){
+                adj++;
+                if(adj == k){
+                    bc++;
+                    if(bc == m)
+                        return true;
+                }
+                adj = 0;
+            }   
+            else
+                adj = 0;
+        }
+        return true;
+    }
+
 
 }
