@@ -38,6 +38,7 @@ public class SquareRoot {
 
         int l = 2, h = n/2, res = 0;
         while(l <= h){
+            
             int m = (l+h)/2;
             if(m * m == n)
                 return m;
@@ -62,5 +63,4 @@ public class SquareRoot {
         System.out.println("The square root of "+ n + " is : " + sqrt(n));
         sc.close();
     }
-
 }
