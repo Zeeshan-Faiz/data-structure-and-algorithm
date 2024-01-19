@@ -34,7 +34,8 @@ public class RemoveDuplicates {
      * For example ar = {2,2,3,3,4,6,6}
      * after our logic is applied = {2,3,4,6,4,6,6}
      * 
-     * We'll be having indexes i and rd to help us iterate over the array.
+     * We'll be having indexes i and rd to help us iterate over the array. And while printing the array we'll have our rd index which
+     * contains the array range until which there's no duplicates.
     */
 
     static int approach2(int[] ar){
