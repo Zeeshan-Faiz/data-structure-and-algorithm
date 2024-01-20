@@ -42,9 +42,5 @@ public class InverseOfArray {
         for(int i = 0; i < br.length ; i++){
             System.out.print(br[i] + " ");
         }
-
-
-
-    }
-    
+    } 
 }
