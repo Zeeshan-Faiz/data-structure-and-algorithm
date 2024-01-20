@@ -1,5 +1,3 @@
-import java.util.concurrent.SynchronousQueue;
-
 public class LeadersInArray {
     
     /*
@@ -39,6 +37,27 @@ public class LeadersInArray {
         }
     }
 
+    /*
+     * Approach 2 (Optimized) : As we know that the rightmost element is always the leader, we'll start finding
+     * leaders from the ending of the array all to the way to the beginning. By doing this we can reduce the time
+     * complexity as well.
+     * 
+     * Time Complexity = O(n)
+    */
+
+    static void printLeadersApproach2(int[] ar){
+
+        //to get the rightmost element
+        int currentLeader = ar[ar.length-1];
+
+        for(int i = ar.length-2; i >= 0; i--){
+            if(ar[i] > currentLeader){
+                currentLeader = ar[i];
+                System.out.print(currentLeader + " ");
+            }
+        }
+    }
+
     public static void main(String[] args){
 
         int ar[] = {8,11,5,11,7,6,5};
@@ -48,9 +67,7 @@ public class LeadersInArray {
         }
 
         System.out.println("are :");
-        printLeadersApproach1(ar);
+        printLeadersApproach2(ar);
 
     }
-
-
 }
