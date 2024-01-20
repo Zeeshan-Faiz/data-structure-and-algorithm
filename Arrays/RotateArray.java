@@ -62,9 +62,9 @@ public class RotateArray {
      *      40,30,20,10 | 90,80,70,60,50
      * 
      * And now when we join both the parts of the array and once again reverse it we'll get
-     * 50,60,70,80,90,10,20,30,40 , which is the required output.
+     * 50,60,70,80,90,10,20,30,40 which is the required output.
      * 
-     * We'll be having two different methods one to reverse the subparts of array and one to find the reverse.
+     * We'll be having two different methods one to reverse the subparts of array and one to find the rotation.
      * Time Complexity = O(n+n+n) = O(3n) ~ O(n)
     */
 
