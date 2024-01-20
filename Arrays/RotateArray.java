@@ -50,6 +50,24 @@ public class RotateArray {
         for(int i = 0; i <= k; i++)
             rotateByOne(ar);
     }
+    
+    /*
+     * Approach 2 (Optimized) : Suppose that we have the array = {10,20,30,40,50,60,70,80,90} and k = 4
+     * we'll divide the array in two halves with respect to the value of k.
+     * 
+     *      (0 to k-1)  | (k to ar.length)
+     *      10,20,30,40 | 50,60,70,80,90
+     * 
+     * And we'll reverse both the parts of array which will give:
+     *      40,30,20,10 | 90,80,70,60,50
+     * 
+     * And now when we join both the parts of the array and once again reverse it we'll get
+     * 50,60,70,80,90,10,20,30,40 , which is the required output.
+     * Time Complexity = O(n+n+n) = O(3n) ~ O(n)
+    */
+
+
+    
 
     public static void main(String[] args){
 
