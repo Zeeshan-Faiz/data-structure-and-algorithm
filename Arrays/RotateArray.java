@@ -41,5 +41,29 @@ public class RotateArray {
         ar[ar.length - 1] = temp;
     }
 
+    static void rotateApproach1(int[] ar, int k){
 
+        k = k % ar.length;
+        if(k < 0)
+            k = k + ar.length;
+        
+        for(int i = 0; i <= k; i++)
+            rotateByOne(ar);
+    }
+
+    public static void main(String[] args){
+
+        int ar[] = {1,2,3,4,5};
+        int k = 2;
+        System.out.println("Array before rotating :");
+        for(int i = 0; i < ar.length ; i++){
+            System.out.print(ar[i] + " ");
+        }
+
+        rotateApproach1(ar, k);
+        System.out.println("\nArray After rotating by " + k + " times :");
+        for(int i = 0; i < ar.length ; i++){
+                System.out.print(ar[i] + " ");
+        }
+    }
 }
