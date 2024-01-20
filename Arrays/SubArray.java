@@ -9,8 +9,8 @@ public class SubArray {
 
     /*
      * Approach : If we look closely into all the subarrays of {1,2,3,4,5} we can find a common pattern which can 
-     * be seen below, here if we take two indexes i,j and start iterating over the array with respect to  taking the boundary 
-     * bwteen i and j we'll be able to get all the sub arrays.
+     * be seen below, here if we take two indexes i,j and start iterating over the array with respect to taking the boundary 
+     * bewteen i and j we'll be able to get all the sub arrays.
      * 
      * i - j 
      * 0 - 0 (1)
