@@ -1,4 +1,4 @@
-public class Reverse {
+public class ReverseOfArray {
     
     /*
      * Write a program to reverse an array.
