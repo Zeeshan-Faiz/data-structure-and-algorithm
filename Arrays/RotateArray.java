@@ -63,22 +63,43 @@ public class RotateArray {
      * 
      * And now when we join both the parts of the array and once again reverse it we'll get
      * 50,60,70,80,90,10,20,30,40 , which is the required output.
+     * 
+     * We'll be having two different methods one to reverse the subparts of array and one to find the reverse.
      * Time Complexity = O(n+n+n) = O(3n) ~ O(n)
     */
 
+    static void reverse(int[] ar,int start, int end){
 
-    
+        while(start < end){
+            int temp = ar[start];
+            ar[start] = ar[end];
+            ar[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    static void rotateApproach2(int[] ar, int k){
+
+        k = k % ar.length;
+        if(k < 0)
+            k = k + ar.length;
+        
+        reverse(ar, 0, k-1);
+        reverse(ar, k, ar.length-1);
+        reverse(ar, 0, ar.length-1);
+    }
 
     public static void main(String[] args){
 
         int ar[] = {1,2,3,4,5};
-        int k = 2;
+        int k = 3;
         System.out.println("Array before rotating :");
         for(int i = 0; i < ar.length ; i++){
             System.out.print(ar[i] + " ");
         }
 
-        rotateApproach1(ar, k);
+        rotateApproach2(ar, k);
         System.out.println("\nArray After rotating by " + k + " times :");
         for(int i = 0; i < ar.length ; i++){
                 System.out.print(ar[i] + " ");
