@@ -1,3 +1,5 @@
+import java.util.concurrent.SynchronousQueue;
+
 public class LeadersInArray {
     
     /*
@@ -10,7 +12,7 @@ public class LeadersInArray {
      * Example ar2 = {50,60,70} (sorted in ascending order)
      * O/P = 70
      * 
-     * Example ar3 = {100,90,80}
+     * Example ar3 = {100,90,80} (sorted in descending order)
      * O/P = 100,90,80
     */
 
@@ -21,6 +23,34 @@ public class LeadersInArray {
      * 
      * Time Compplexity = O(nxn)
     */
+
+    static void printLeadersApproach1(int[] ar){
+
+        for(int i = 0; i < ar.length; i++){
+            boolean isLeader = true;
+            for(int j = i+1; j < ar.length; j++){
+                if(ar[j] >= ar[i]){
+                    isLeader = false;
+                    break;
+                }
+            }
+            if(isLeader)
+                System.out.print(ar[i] + " ");
+        }
+    }
+
+    public static void main(String[] args){
+
+        int ar[] = {8,11,5,11,7,6,5};
+        System.out.println("Leaders in array :");
+        for(int i = 0; i < ar.length ; i++){
+            System.out.print(ar[i] + " ");
+        }
+
+        System.out.println("are :");
+        printLeadersApproach1(ar);
+
+    }
 
 
 }
