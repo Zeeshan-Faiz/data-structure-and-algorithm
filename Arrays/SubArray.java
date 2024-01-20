@@ -8,7 +8,9 @@ public class SubArray {
     */
 
     /*
-     * Approach : To print all the sub arary we can follow a simple logic:
+     * Approach : If we look closely into all the subarrays of {1,2,3,4,5} we can find a common pattern which can 
+     * be seen below, here if we take two indexes i,j and start iterating over the array with respect to  taking the boundary 
+     * bwteen i and j we'll be able to get all the sub arrays.
      * 
      * i - j 
      * 0 - 0 (1)
@@ -23,10 +25,9 @@ public class SubArray {
      * 2 - 2 (3)
      * 2 - 3 (3,4)
      * 2 - 4 (3,4,5)
-     *  
-     * 
-     * 
-     * 
+     * 3 - 3 (4)
+     * 3 - 4 (4,5)
+     * 4 - 4 (5)
     */
 
     static void subArray(int[] ar){
