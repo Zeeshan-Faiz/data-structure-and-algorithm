@@ -32,7 +32,6 @@ public class MoveZeroes {
             else
             nz++;
         }
-        
     }
 
     public static void main(String[] args){
@@ -49,6 +48,4 @@ public class MoveZeroes {
             System.out.print(ar[i] + " ");
         }
     }
-
-
 }
