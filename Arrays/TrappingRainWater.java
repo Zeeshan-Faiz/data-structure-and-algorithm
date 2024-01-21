@@ -16,6 +16,10 @@ public class TrappingRainWater {
      * ending bar. 
      * 
      *     
+     *          🟫
+     *          🟫
+     *          🟫🟫
+     *          🟫🟫
      *            4 2  0 3  2 5
      * 
      * Total trapped water = (2+4+1+2) = 9 units of water 
