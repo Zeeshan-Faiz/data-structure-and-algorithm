@@ -27,4 +27,10 @@ public class FrequescyOfElements {
     }
 
 
+    public static void main(String[] args){
+
+        int ar[] = {20,20,30,30,30,40};
+        frequency(ar);
+    }
+
 }
