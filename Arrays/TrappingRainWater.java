@@ -15,7 +15,7 @@ public class TrappingRainWater {
      * iii)As 1st and last bar can't store water itself, we'll be considering from 2nd starting bar and 2nd last
      * ending bar. 
      * 
-     *                       🟫
+     *                      🟫
      *          🟫🟦🟦🟦🟦🟫
      *          🟫🟦🟦🟫🟦🟫
      *          🟫🟫🟦🟫🟫🟫
@@ -97,7 +97,6 @@ public class TrappingRainWater {
         for(int i = 1; i < ar.length; i++){
             res = res + Math.min(lb[i], rb[i]) - ar[i];
         }
-
         return res;
     }
 
@@ -138,8 +137,7 @@ public class TrappingRainWater {
 
     public static void main(String[] args){
 
-            int ar[] = {4,2,0,3,2,5};
-            System.out.println(trap3(ar));
-        }
-
+        int ar[] = {4,2,0,3,2,5};
+        System.out.println(trap3(ar));
+    }
 }
