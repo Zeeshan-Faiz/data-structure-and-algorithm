@@ -33,5 +33,38 @@ public class TrappingRainWater {
      * Time Complexity = O(n) x O(n) x O(n) = O(n^3)
     */
 
+    static int trap1(int[] ar){
+        int res = 0;
+        for(int i = 1; i <= ar.length - 2; i++){
+            int lb = ar[i];
+            for(int j = 0; j < i; j++){
+                if(ar[j] > lb)
+                    lb = ar[j];
+            }
+
+            int rb = ar[i];
+            for(int j = i+1; j < ar.length; j++){
+                if(ar[j] > rb)
+                    rb = ar[j];
+            }
+
+            int wl;
+            if(rb > lb)
+                wl = lb;
+            else
+                wl = rb;
+            
+            int trappedWater = wl - ar[i];
+            res = res + trappedWater;
+        }
+        return res;
+    }
+
+
+    public static void main(String[] args){
+
+            int ar[] = {4,2,0,3,2,5};
+            System.out.println(trap1(ar));
+        }
 
 }
