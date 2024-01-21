@@ -41,6 +41,17 @@ public class MaxSubArraySum {
         return maxSum;
     }
 
+    /*
+     * approach 2 (Kadane's Algorithm) : This algorithm is based on the idea of maintaining a running sum of the 
+     * elements and resetting the sum to zero whenever it becomes negative, as a negative sum would only reduce 
+     * the maximum subarray sum. The algorithm iterates through the array, updating the current sum and keeping 
+     * track of the maximum sum encountered so far.
+     * 
+     * Time Complexity = O(n)
+    */
+
+    
+
     public static void main(String[] args){
 
         int ar[] = {-1,3,4,-2};
