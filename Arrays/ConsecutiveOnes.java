@@ -12,7 +12,7 @@ public class ConsecutiveOnes {
      * Time Complexity = O(n^2)
     */
 
-    static int Approach1(int[] ar){
+    static int approach1(int[] ar){
 
         int maxCount = 0;
         for(int i = 0; i < ar.length; i++){
@@ -27,6 +27,12 @@ public class ConsecutiveOnes {
         }
 
         return maxCount;
+    }
+
+    public static void main(String[] args){
+
+        int ar[] = {0,1,1,0,0,1,1,1,0};
+        System.out.println(approach1(ar));
     }
 
 
