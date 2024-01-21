@@ -36,18 +36,22 @@ public class TrappingRainWater {
     static int trap1(int[] ar){
         int res = 0;
         for(int i = 1; i <= ar.length - 2; i++){
+            
+            //finding left bar
             int lb = ar[i];
             for(int j = 0; j < i; j++){
                 if(ar[j] > lb)
                     lb = ar[j];
             }
 
+            //finding right bar
             int rb = ar[i];
             for(int j = i+1; j < ar.length; j++){
                 if(ar[j] > rb)
                     rb = ar[j];
             }
 
+            //Finding the minimum water level that can be trapped between rb and lb
             int wl;
             if(rb > lb)
                 wl = lb;
@@ -70,9 +74,32 @@ public class TrappingRainWater {
      * ar = 4  2  0  3  2  4
      * rb = 5  5  5  5  5  5
      *                  <----
-     * 
      * Time Complexity = O(n) + O(n) + O(n) = O(3n) ~ O(n) 
     */
+
+    static int trap2(int[] ar){
+
+        int res = 0;
+        int[] lb = new int[ar.length];
+        int[] rb = new int[ar.length];
+        
+        //finding left bar
+        lb[0] = ar[0];
+        for(int i = 1; i < ar.length; i++)
+            lb[i] = Math.max(ar[i], lb[i-1]);
+
+        //finding right bar
+        rb[ar.length-1] = ar[ar.length-1];
+        for(int i = ar.length-2; i >= 0; i--)
+            rb[i] = Math.max(ar[i], rb[i+1]);
+
+        //calculating trapped water
+        for(int i = 1; i < ar.length; i++){
+            res = res + Math.min(lb[i], rb[i]) - ar[i];
+        }
+
+        return res;
+    }
 
     public static void main(String[] args){
 
