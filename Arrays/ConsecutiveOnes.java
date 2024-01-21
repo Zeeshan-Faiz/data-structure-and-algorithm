@@ -8,7 +8,7 @@ public class ConsecutiveOnes {
     */
 
     /*
-     * Approach 1 (Brute Force) 
+     * Approach 1 (Brute Force) : We'll take two indexes i & j and try to count the occurence of ones.
      * Time Complexity = O(n^2)
     */
 
@@ -25,9 +25,15 @@ public class ConsecutiveOnes {
             }
             maxCount = Math.max(maxCount, count);
         }
-
         return maxCount;
     }
+
+    /*
+     * Approach 2 (Optimized) : We'll try to use only ith index to find the maximum consecutive 1's in the array
+     * Time Complexity = O(n)
+    */
+
+    
 
     public static void main(String[] args){
 
