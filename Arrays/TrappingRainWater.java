@@ -15,12 +15,12 @@ public class TrappingRainWater {
      * iii)As 1st and last bar can't store water itself, we'll be considering from 2nd starting bar and 2nd last
      * ending bar. 
      * 
-     *     
-     *          🟫
-     *          🟫
-     *          🟫🟫
-     *          🟫🟫
-     *            4 2  0 3  2 5
+     *                       🟫
+     *          🟫🟦🟦🟦🟦🟫
+     *          🟫🟦🟦🟫🟦🟫
+     *          🟫🟫🟦🟫🟫🟫
+     *          🟫🟫🟦🟫🟫🟫
+     *           4 2  0 3  2 5
      * 
      * Total trapped water = (2+4+1+2) = 9 units of water 
      * 
