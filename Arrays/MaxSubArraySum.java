@@ -50,12 +50,24 @@ public class MaxSubArraySum {
      * Time Complexity = O(n)
     */
 
-    
+    static int maxSubArray2(int[] ar){
+
+        int sum = ar[0], maxSum = ar[0];
+        for(int i = 1; i < ar.length; i++){
+            if(sum >= 0)
+                sum = sum + ar[i];
+            else
+                sum = ar[i];
+            if(sum > maxSum)
+                maxSum = sum;
+        }
+        return maxSum;
+    }
 
     public static void main(String[] args){
 
         int ar[] = {-1,3,4,-2};
-        System.out.println(maxSubArray1(ar));
+        System.out.println(maxSubArray2(ar));
     }
 
 
