@@ -101,10 +101,45 @@ public class TrappingRainWater {
         return res;
     }
 
+    /*
+     * Approach 3 (Using two pointers) : The logic which we are going to apply here is that for any particular bar
+     * to trap water both the bar to it's left and the bar to it's right should be greater than it's own height.
+     * We'll be taking two indexes l & r which will work according to our logic and we'll increment result only when
+     * the condition specified by us is true.
+     * 
+     * Time Complexity = O(n) 
+    */
+
+    static int trap3(int[] ar){
+
+        int res = 0, l = 0, r = ar.length-1;
+        int lhb = ar[0], rhb = ar[ar.length-1];
+
+        while(l <= r){
+
+            if(lhb <= rhb){
+                if(ar[l] >= lhb)
+                    lhb = ar[l];
+                else
+                    res = res + lhb - ar[l];
+                l++;
+            }
+            else{
+                if(ar[r] >= rhb)
+                    rhb = ar[r];
+                else
+                    res = res + rhb - ar[l];
+                r--;
+            }
+        }
+        return res;
+    }
+
+
     public static void main(String[] args){
 
             int ar[] = {4,2,0,3,2,5};
-            System.out.println(trap1(ar));
+            System.out.println(trap3(ar));
         }
 
 }
