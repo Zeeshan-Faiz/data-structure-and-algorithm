@@ -60,6 +60,19 @@ public class TrappingRainWater {
         return res;
     }
 
+    /*
+     * Approach 2 (Optimized) : As we can see that the time complexity of approach 1 was O(n^3), which is not good
+     * we'll try to reduce that by creating two differnet arrays lb[] & rb[] which will store the left bar value and 
+     * right bar value for each element and then we can accordingly find the trapped water units.
+     *   
+     *      ---->
+     * lb = 4  4  4  4  4  5
+     * ar = 4  2  0  3  2  4
+     * rb = 5  5  5  5  5  5
+     *                  <----
+     * 
+     * Time Complexity = O(n) + O(n) + O(n) = O(3n) ~ O(n) 
+    */
 
     public static void main(String[] args){
 
