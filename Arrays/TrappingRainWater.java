@@ -15,7 +15,7 @@ public class TrappingRainWater {
      * iii)As 1st and last bar can't store water itself, we'll be considering from 2nd starting bar and 2nd last
      * ending bar. 
      * 
-     *                       🟫
+     *                      🟫
      *          🟫🟦🟦🟦🟦🟫
      *          🟫🟦🟦🟫🟦🟫
      *          🟫🟫🟦🟫🟫🟫
