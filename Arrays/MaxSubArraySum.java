@@ -28,5 +28,24 @@ public class MaxSubArraySum {
      *Time Complexity = O(n^2) 
     */
 
+    static int maxSubArray1(int[] ar){
+
+        int maxSum = 0;
+        for(int i = 0; i < ar.length; i++){
+            int sum = 0;
+            for(int j = i; j < ar.length; j++){
+                sum = sum + ar[j];
+                maxSum = Math.max(maxSum, sum);
+            }
+        }
+        return maxSum;
+    }
+
+    public static void main(String[] args){
+
+        int ar[] = {-1,3,4,-2};
+        System.out.println(maxSubArray1(ar));
+    }
+
 
 }
