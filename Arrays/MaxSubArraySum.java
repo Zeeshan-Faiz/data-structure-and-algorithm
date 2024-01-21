@@ -69,6 +69,4 @@ public class MaxSubArraySum {
         int ar[] = {-1,3,4,-2};
         System.out.println(maxSubArray2(ar));
     }
-
-
 }
