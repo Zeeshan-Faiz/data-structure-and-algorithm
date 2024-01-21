@@ -26,11 +26,9 @@ public class FrequescyOfElements {
             System.out.println(ar[i-1] + " " + freq);
     }
 
-
     public static void main(String[] args){
 
         int ar[] = {20,20,30,30,30,40};
         frequency(ar);
     }
-
 }
