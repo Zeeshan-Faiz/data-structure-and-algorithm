@@ -57,5 +57,4 @@ public class AlternateEvenOdd {
         int ar[] = {8,10,13,14};
         System.out.println(maxEvenOdd2(ar));
     }
-
 }
