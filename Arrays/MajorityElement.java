@@ -19,7 +19,7 @@ public class MajorityElement {
 
         for(int i = 0; i < ar.length; i++){
             int count = 1;
-            for(int j = i=1; j < ar.length; j++){
+            for(int j = i; j < ar.length; j++){
                 if(ar[i] == ar[j])
                     count++;
             }
@@ -29,7 +29,11 @@ public class MajorityElement {
         return -1;
     }
 
-    
+    public static void main(String[] args){
+
+        int ar[] = {8,5,8,1,2,8,8};
+        System.out.println(majorityElement1(ar));
+    }
 
 
 
