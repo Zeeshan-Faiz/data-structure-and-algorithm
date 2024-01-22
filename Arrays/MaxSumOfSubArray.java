@@ -34,6 +34,27 @@ public class MaxSumOfSubArray {
         return maxSum;
     }
 
+    /*
+     * Approach 2(Optimized - Sliding window technique) : It involves maintaining a set of elements within a 
+     * "window" that moves through the array and updating the window at each step.
+     * 
+     * Example ar = {2,9,31,-4,21,7} k = 3(size of sub array)
+     *                  
+     * sliding window = 🟧🟧🟧
+     * Our idea is to move the window forward in the given array "remove" the element from the left side of the window
+     * by subtracting the left element and "add" one right element into the window by addition of the right element.
+     * 
+     * 2+9+31 = 42
+     * 9+31-4 = 36
+     * 31-4+21 = 48
+     * -4+21+7 = 24
+     * we'll store the max sum which in this case is 48 and return it.
+     * 
+     * Time Complexity = O(n)
+    */
+
+    
+
     public static void main(String[] args){
 
         int ar[] = {2,9,31,-4,21,7};
