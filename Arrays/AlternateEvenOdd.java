@@ -31,10 +31,31 @@ public class AlternateEvenOdd {
         return maxCount;
     }
 
+    /*
+     * Approach 2 (Optimized) : Instead of using 2 different arrays to find the maximum length of alternating elements
+     * we'll try to use one loop and try to find the max lenght of alternating elements.
+     * 
+     * Time Complexity = O(n)
+    */
+
+    static int maxEvenOdd2(int[] ar){
+
+        int count = 1, maxCount = 1;
+        for(int i = 1; i < ar.length-1; i++){
+            if(ar[i]%2 == 0 && ar[i+1]%2 !=0 || ar[i]%2 != 0 && ar[i+1]%2 ==0){
+                count++;
+                maxCount = Math.max(maxCount, count);
+            }
+            else   
+                count = 1;
+        }
+        return maxCount;
+    }
+
     public static void main(String[] args){
 
         int ar[] = {8,10,13,14};
-        System.out.println(maxEvenOdd1(ar));
+        System.out.println(maxEvenOdd2(ar));
     }
 
 }
