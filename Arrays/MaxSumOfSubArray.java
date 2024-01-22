@@ -61,6 +61,7 @@ public class MaxSumOfSubArray {
         for(int i = 0; i < k; i++)
             wSum = wSum + ar[i];
 
+        //moving the window forward, removing the left most element(-) and adding the right element(+)
         for(int i = k; i < ar.length; i++){
             wSum = wSum - ar[i-k] + ar[i];
             maxSum = Math.max(maxSum, wSum);
