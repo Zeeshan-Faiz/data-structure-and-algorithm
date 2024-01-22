@@ -49,15 +49,26 @@ public class MajorityElement {
 
     static int majorityElement2(int[] ar){
 
-        
+        int maj = ar[0];
+        int count = 1;
+        for(int i = 1; i < ar.length; i++){
+            if(ar[i] == maj)
+                count++;
+            else
+                count --;
+
+            if(count == 0){
+                maj = ar[i];
+                count = 1;
+            }
+        }
+        return maj;
     }
 
     public static void main(String[] args){
 
         int ar[] = {8,5,8,1,2,8,8};
-        System.out.println(majorityElement1(ar));
+        System.out.println(majorityElement2(ar));
+
     }
-
-
-
 }
