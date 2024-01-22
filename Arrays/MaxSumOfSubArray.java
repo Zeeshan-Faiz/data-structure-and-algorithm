@@ -20,7 +20,7 @@ public class MaxSumOfSubArray {
      * Time Complexity = O(n^2)
     */
 
-    static int maxSum(int[] ar, int k){
+    static int maxSum1(int[] ar, int k){
 
         int cSum = 0, maxSum = Integer.MIN_VALUE, l = k;
         for(int i = 0; i < ar.length-k; i++){
@@ -53,11 +53,24 @@ public class MaxSumOfSubArray {
      * Time Complexity = O(n)
     */
 
-    
+    static int maxSum2(int[] ar, int k){
+
+        int wSum = 0, maxSum = Integer.MIN_VALUE;
+
+        //store the sum of first k elements
+        for(int i = 0; i < k; i++)
+            wSum = wSum + ar[i];
+
+        for(int i = k; i < ar.length; i++){
+            wSum = wSum - ar[i-k] + ar[i];
+            maxSum = Math.max(maxSum, wSum);
+        }
+        return maxSum;
+    }
 
     public static void main(String[] args){
 
         int ar[] = {2,9,31,-4,21,7};
-        System.out.println(maxSum(ar,3));
+        System.out.println(maxSum2(ar,3));
     }
 }
