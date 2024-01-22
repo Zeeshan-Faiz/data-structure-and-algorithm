@@ -22,15 +22,21 @@ public class MaxSumOfSubArray {
 
     static int maxSum(int[] ar, int k){
 
-        int cSum = 0, maxSum = Integer.MAX_VALUE;
-        for(int i = 0; i < ar.length; i++){
-            for(int j = i; j <= k; j++){
+        int cSum = 0, maxSum = Integer.MIN_VALUE, l = k;
+        for(int i = 0; i < ar.length-k; i++){
+            for(int j = i; j < l; j++){
                 cSum = cSum + ar[j];
             }
             maxSum = Math.max(maxSum, cSum);
+            cSum = 0;
+            l++;
         }
         return maxSum;
     }
-    
 
+    public static void main(String[] args){
+
+        int ar[] = {2,9,31,-4,21,7};
+        System.out.println(maxSum(ar,3));
+    }
 }
