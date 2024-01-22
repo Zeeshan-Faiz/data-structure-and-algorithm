@@ -20,7 +20,7 @@ public class AlternateEvenOdd {
         int maxCount = 0;
         for(int i = 0; i < ar.length; i++){
             int count = 1;
-            for(int j = i+1; j < ar.length; j++){
+            for(int j = i+1; j < ar.length-1; j++){
                 if(ar[j]%2 == 0 && ar[j+1]%2 !=0 || ar[j]%2 != 0 && ar[j+1]%2 ==0)
                     count++;
                 else 
@@ -29,6 +29,12 @@ public class AlternateEvenOdd {
             maxCount = Math.max(maxCount, count);
         }
         return maxCount;
+    }
+
+    public static void main(String[] args){
+
+        int ar[] = {8,10,13,14};
+        System.out.println(maxEvenOdd1(ar));
     }
 
 }
