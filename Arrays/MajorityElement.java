@@ -41,8 +41,6 @@ public class MajorityElement {
      * iii)If the counter is 0, update the candidate to the current element.
      * iv)If the current element is equal to the candidate, increment the counter; otherwise, decrement the counter.
      * v)After the iteration, the candidate is a potential majority element.
-     * vi)Verify whether the candidate is a true majority element by counting its occurrences in the sequence. If it appears
-     * more than n/2 times, it is the majority element; otherwise, there is no majority element.
      * 
      * Time Complexity = O(n)
     */
