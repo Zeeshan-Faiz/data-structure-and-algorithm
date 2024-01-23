@@ -21,4 +21,17 @@ public class SearchElement {
      * Time Complexity = O(mxn)
     */
 
+    static boolean searchElement1(int[][] ar, int target){
+
+        for(int i = 0; i < ar.length; i++){
+            for(int j = 0; j < ar[i].length; j++){
+                if(ar[i][j] == target)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    
+
 }
