@@ -2,7 +2,8 @@ public class MinConsecutiveFlips {
  
     /*
      * You are given an array containing only 1 and 0. You have to find the minimum consecutive flips that will
-     * make the whole array either all 0 or all 1. Remeber that flipping happens groupwise if possible.
+     * make the whole array either all 0 or all 1. Remeber that flipping happens groupwise or if the element is single
+     * then flip just that single element if possible.
      *  
      *               0 1 2 3 4 5 6 7 8 9 10
      * Example ar = {1,1,0,0,1,1,0,0,0,1,1}
