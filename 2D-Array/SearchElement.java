@@ -1,7 +1,7 @@
 public class SearchElement {
     
     /*
-     * Write a program to seach for an element in mxn matrix. NOTE: Integers in each row of the matrix are sorted
+     * Write a program to search for an element in mxn matrix. NOTE: Integers in each row of the matrix are sorted
      * in ascending order from left to right and Integers in each column are sorted in ascending order from top to
      * bottom of the matrix.
      * Return true or false depending whether the target element is present in the matrix or not.
