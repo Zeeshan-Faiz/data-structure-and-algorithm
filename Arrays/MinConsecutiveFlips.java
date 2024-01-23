@@ -22,6 +22,9 @@ public class MinConsecutiveFlips {
      * Example ar = {1,1,0,0,1,1,0,0,0,1,1}
      * We have 3 groups of 1 and 2 groups of 0 (As group of 0 is minimum it's better if we try to flip 0)
      * 
+     * Also if both groups of 1 and 0 are same
+     * Example ar = {1,1,0,0,1,1,0,0,0}
+     * We have 2 groups of 1 and 2 groups of 0. In this case we can flip either 0 or 1
     */
 
     static void flipElements(int[] ar){
@@ -48,6 +51,4 @@ public class MinConsecutiveFlips {
         int ar[] = {1,1,0,0,1,1,0,0,0,1,1};
         flipElements(ar);
     }
-
-
 }
