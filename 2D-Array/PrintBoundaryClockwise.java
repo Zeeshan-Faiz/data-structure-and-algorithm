@@ -41,8 +41,6 @@ public class PrintBoundaryClockwise {
         j = 0;
         for(i = ar.length-2; i > 0; i--)
             System.out.print(ar[i][j]  + "  ");
-
-
     }
 
     public static void main(String[] args){
@@ -55,5 +53,4 @@ public class PrintBoundaryClockwise {
 
         printBoundary(ar);
     }
-
 }
