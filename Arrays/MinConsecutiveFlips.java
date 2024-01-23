@@ -33,7 +33,7 @@ public class MinConsecutiveFlips {
 
                 //check if the current element is not the same as the first element of the array(so that we can flip it)
                 if(ar[i] != ar[0])
-                    System.out.println(i + " - ");
+                    System.out.print(i + " - ");
                 else   
                     System.out.println(i-1);
             }
@@ -41,6 +41,12 @@ public class MinConsecutiveFlips {
         //handling if both groups of 1 and 0 are same
         if(ar[0] != ar[ar.length-1])
             System.out.println(ar.length-1);
+    }
+
+    public static void main(String[] args){
+
+        int ar[] = {1,1,0,0,1,1,0,0,0,1,1};
+        flipElements(ar);
     }
 
 
