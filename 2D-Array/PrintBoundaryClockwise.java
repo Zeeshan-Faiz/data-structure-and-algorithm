@@ -32,8 +32,27 @@ public class PrintBoundaryClockwise {
         for(i = 1; 1 < ar.length; i++)
             System.out.print(ar[i][j]);
 
+        //print last row
+        i = ar.length-1;
+        for(j = ar.length-2; j >= 0; j--)
+            System.out.print(ar[i][j]);
+
+        //print first column
+        j = 0;
+        for(i = ar.length-2; i > 0; i--)
+            System.out.print(ar[i][j]);
 
 
+    }
+
+    public static void main(String[] args){
+
+        int ar[][] = {{1,2,3,4},
+                      {5,6,7,8},
+                      {9,10,11,12},
+                      {13,14,15,16}};
+
+        printZigZag(ar);
     }
 
 }
