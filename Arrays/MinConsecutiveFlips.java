@@ -24,6 +24,24 @@ public class MinConsecutiveFlips {
      * 
     */
 
+    static void flipElements(int[] ar){
+
+        for(int i = 1; i < ar.length; i++){
+            
+            //check if the current element is different than the previous element
+            if(ar[i] != ar[i-1]){
+
+                //check if the current element is not the same as the first element of the array(so that we can flip it)
+                if(ar[i] != ar[0])
+                    System.out.println(i + " - ");
+                else   
+                    System.out.println(i-1);
+            }
+        }
+        //handling if both groups of 1 and 0 are same
+        if(ar[0] != ar[ar.length-1])
+            System.out.println(ar.length-1);
+    }
 
 
 }
