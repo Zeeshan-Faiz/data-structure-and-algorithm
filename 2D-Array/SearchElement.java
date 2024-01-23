@@ -18,7 +18,7 @@ public class SearchElement {
     /*
      * Approach 1 (Brute Force) : Check for target element by traversing all the elements of the matrix.
      * 
-     * Time Complexity : O(mxn)
+     * Time Complexity = O(mxn)
     */
 
     static boolean searchElement1(int[][] ar, int target){
@@ -38,8 +38,23 @@ public class SearchElement {
      * from last element of the 1st row i.e 15.
      * If the target element is smaller than 15 we'll move one column backward(j--) otherwise we'll move one row forward(i++)
      * 
-     * Time Complexity : O(m+n)
+     * Time Complexity = O(m+n)
     */
+
+    static boolean searchElement2(int[][] ar, int target){
+
+        int i = 0, j = ar.length-1;
+        while(i < ar.length && j >= 0){
+            
+            if(ar[i][j] == target)
+                return true;
+            else if(target < ar[i][j])
+                j--;
+            else
+                i++;
+        }
+        return false;
+    }
 
     public static void main(String[] args){
 
@@ -49,7 +64,6 @@ public class SearchElement {
                       {10,13,14,17,24},
                       {18,21,23,26,30}};
 
-        System.out.println(searchElement1(ar,5));
+        System.out.println(searchElement2(ar,5));
     }
-
 }
