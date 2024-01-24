@@ -9,7 +9,6 @@ public class FindMedian {
      * Example ar = {{5,11,20,35,45},
      *              {1,2,3,4,6},
      *              {13,15,16,19,21}}
-     * 
      * O/P = 15
     */
 
@@ -44,12 +43,12 @@ public class FindMedian {
      * and the last column will have all the largest elements, therefore we'll accordingly search the first and last
      * column to find the min and max element.
      * 
-     * Time Complexity = O(n Log n)
+     * Time Complexity = O(n^2 Log n)
     */
 
     static int findMedian2(int[][] mat){
 
-        int min = mat[0][0], max = mat[mat[0].length-1][0];
+        int min = mat[0][0], max = mat[0][mat[0].length-1];
         
         //finding min and max in the matrix
         for(int i = 0; i < mat.length; i++){
@@ -94,17 +93,12 @@ public class FindMedian {
         return count;
     }
 
-
     public static void main(String[] args){
 
         int mat[][] = {{5,11,20,35,45},
                       {1,2,3,4,6},
                       {13,15,16,19,21}};
 
-        System.out.println(findMedian1(mat));
+        System.out.println(findMedian2(mat));
     }
-
-
-
-
 }
