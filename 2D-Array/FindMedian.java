@@ -36,6 +36,15 @@ public class FindMedian {
         return ar[ar.length/2];
     }
 
+    public static void main(String[] args){
+
+        int mat[][] = {{5,11,20,35,45},
+                      {1,2,3,4,6},
+                      {13,15,16,19,21}};
+
+        System.out.println(findMedian1(mat));
+    }
+
 
 
 
