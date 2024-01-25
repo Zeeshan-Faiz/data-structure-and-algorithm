@@ -57,7 +57,6 @@ public class Transpose {
         }
     }
 
-
     static void printMatrix(int[][] mat){
 
         for(int i = 0; i < mat.length; i++){
