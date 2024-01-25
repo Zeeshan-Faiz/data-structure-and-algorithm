@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class SprialOrder {
     
     /*Give a mxn matrix return a list of elements of matrix in spiral order.
@@ -27,8 +30,47 @@ public class SprialOrder {
      * iv)⬆️(bottom_to_top) : mat[bottom-->top][left] 
      * 
      * By following the above order we'll be able to get all the elements from the given matrix in spiral order.
-     * 
     */
+
+    static List<Integer> spiralOrder(int[][] mat){
+
+        ArrayList<Integer> res = new ArrayList<>();
+        int top = 0, bottom = mat.length-1;
+        int left = 0, right = mat[0].length-1;
+
+        while(left <= bottom || left <= right){
+
+            //going left to right in the matrix
+            for(int i = left; i <= right; i++){
+                res.add(mat[top][i]);
+            }
+            top++;
+
+            //going top to bottom in the matrix
+            for(int i = top; i <= bottom; i++){
+                res.add(mat[i][right]);
+            }
+            right--;
+
+            //taking edge case
+            if(!(top <= bottom || left <= right))
+                break;
+
+            //going left to right in the matrix
+            for(int i = right; i >= left; i++){
+                res.add(mat[bottom][i]);
+            }
+            bottom--;
+
+            //going bottom to top in the matrix
+            for(int i = bottom; i >= top; i--){
+                res.add(mat[i][left]);
+            }
+            left--;
+
+        }
+        return res;
+    }
 
 
 }
