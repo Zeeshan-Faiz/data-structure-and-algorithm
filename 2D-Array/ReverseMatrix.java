@@ -61,7 +61,7 @@ public class ReverseMatrix {
         printMatrix(mat);
         System.out.println();
 
+        reverseMatrix(mat);
+        printMatrix(mat);
     }
-
-
 }
