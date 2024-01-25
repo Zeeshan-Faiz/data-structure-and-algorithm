@@ -7,16 +7,16 @@ public class SprialOrder {
      * 
      * Example ar = {{1,2,3,4},
      *              {5,6,7,8},
-     *              {9,10,11,12}},
+     *              {9,10,11,12}}
      * 
      * O/P = [1,2,3,4,8,12,11,10,9,5,6,7]
     */
 
     /*
      * Approach :  
-     *                         left         right
-     *                          ⬇️           ⬇️
-     * Example =       (top)➡️{{1,2,3,4,5,6,7,8},
+     *                         left               right
+     *                          ⬇️                 ⬇️
+     * Example =       (top)➡️{{1, 2, 3, 4, 5, 6, 7,8},
      *                         {9,10,11,12,13,14,15,16},
      *                         {17,18,19,20,21,22,23,24},
      *              (bottom)➡️{25,26,27,28,29,30,31,32}}
@@ -38,7 +38,8 @@ public class SprialOrder {
         int top = 0, bottom = mat.length-1;
         int left = 0, right = mat[0].length-1;
 
-        while(left <= bottom || left <= right){
+        while(left <= bottom || left <= right)
+        {
 
             //going left to right in the matrix
             for(int i = left; i <= right; i++){
@@ -52,12 +53,12 @@ public class SprialOrder {
             }
             right--;
 
-            //taking edge case
-            if(!(top <= bottom || left <= right))
+            //tackling edge case
+            if(!(top < bottom || left < right))
                 break;
 
             //going left to right in the matrix
-            for(int i = right; i >= left; i++){
+            for(int i = right; i >= left; i--){
                 res.add(mat[bottom][i]);
             }
             bottom--;
@@ -66,11 +67,21 @@ public class SprialOrder {
             for(int i = bottom; i >= top; i--){
                 res.add(mat[i][left]);
             }
-            left--;
+            left++;
 
         }
         return res;
     }
 
+    public static void main(String[] args){
 
+        int mat[][] = {{1,2,3,4},
+                      {5,6,7,8},
+                      {9,10,11,12}};
+
+        
+        List<Integer> res = spiralOrder(mat);
+        for(int value : res)
+            System.out.print(value +", ");
+    }
 }
