@@ -20,8 +20,25 @@ public class ReverseMatrix {
      *                            |   
      * the last element in this row is swapped with the first element, and the second last element is swapped with
      * second element and so on.
-     * We'll be having two indexes left and right to help us swap elements accordingly.
+     * We'll be having two indexes left and right to help us swap elements accordingly amd will do the same steps
+     * for all the rows of the matrix to get the desired output.
     */
+
+    static void reverseMatrix(int[][] mat){
+
+        for(int i = 0; i < mat.length; i++){
+            
+            int left = 0, right = mat[0].length-1;
+            while(left < right)
+            {
+                int temp = mat[i][left];
+                mat[i][left] = mat[i][right];
+                mat[i][right] = temp;
+                left++;
+                right--;
+            }
+        }
+    }
 
 
 }
