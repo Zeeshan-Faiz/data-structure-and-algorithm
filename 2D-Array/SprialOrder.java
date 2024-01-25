@@ -5,7 +5,7 @@ public class SprialOrder {
     
     /*Give a mxn matrix return a list of elements of matrix in spiral order.
      * 
-     * Example ar = {{1,2,3,4},
+     * Example mat = {{1,2,3,4},
      *              {5,6,7,8},
      *              {9,10,11,12}}
      * 
