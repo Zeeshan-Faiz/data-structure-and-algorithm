@@ -45,6 +45,19 @@ public class Transpose {
      * Space Complexity = O(1)
     */
 
+    static void transpose2(int[][] mat){
+
+        //We should note that our ith index will go until mat.length-2
+        for(int i = 0; i < mat.length-1; i++){
+            for(int j = i+1; j < mat.length; j++){
+                int temp = mat[i][j];
+                mat[i][j] = mat[j][i];
+                mat[j][i] = temp;
+            }
+        }
+    }
+
+
     static void printMatrix(int[][] mat){
 
         for(int i = 0; i < mat.length; i++){
@@ -65,8 +78,9 @@ public class Transpose {
 
         printMatrix(mat);
         System.out.println();
-        int[][] res = transpose1(mat);
-        printMatrix(res);
+        // int[][] res = transpose1(mat);
+        // printMatrix(res);
+        transpose2(mat);
+        printMatrix(mat);
     }
-
 }
