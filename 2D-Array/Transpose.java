@@ -24,4 +24,25 @@ public class Transpose {
      * Space Complexity = O(n^2)
     */
 
+    static int[][] transpose1(int[][] mat){
+
+        int[][] res = new int[mat.length][mat.length];
+        for(int i = 0; i < mat.length; i++){
+            for(int j = 0; j < mat.length; j++){
+                res[j][i] = mat[i][j];
+            }
+        }
+        return res;
+    }
+
+    static void printMatrix(int[][] mat){
+
+        for(int i = 0; i < mat.length; i++){
+            for(int j = 0; j < mat.length; j++){
+                System.out.print(mat[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
 }
