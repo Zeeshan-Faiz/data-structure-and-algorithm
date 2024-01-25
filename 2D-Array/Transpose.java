@@ -39,7 +39,7 @@ public class Transpose {
      * Approach 2 (Optimized) : Finding the transpose of a matrix without creating a new matrix. If we look closely
      * into the transposed matrix and the original matrix we can find a common pattern which is like:
      * mat[0][1] swap with mat[1][0]
-     * similary mat[0][2] swap with mat[2][0] and we can iterate the whole matrix and swapping the elements.
+     * similary mat[0][2] swap with mat[2][0] and we can iterate the whole matrix and swap the elements to get the transpose.
      * 
      * Time Complexity = O(n^2)
      * Space Complexity = O(1)
