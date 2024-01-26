@@ -1,3 +1,7 @@
+/*
+    * Write a program to add element at the end of Linked List.
+*/
+
 class Node{
     
     int data;
@@ -41,10 +45,6 @@ class LinkedList{
 }
 
 public class AddElementAtEnd {
-    
-    /*
-     * Write a program to add element at the end of Linked List.
-    */
 
     public static void main(String[] args) {
         
@@ -58,6 +58,4 @@ public class AddElementAtEnd {
         ll.printLinkedList();
 
     }
-
-
 }
