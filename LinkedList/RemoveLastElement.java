@@ -114,6 +114,4 @@ public class RemoveLastElement {
         ll.printLinkedList();
 
     }
-
-
 }
