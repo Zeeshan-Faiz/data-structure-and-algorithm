@@ -27,7 +27,7 @@ class LinkedList{
 
     Node head;
 
-    void printLinkedList(Node head){
+    void printLinkedList(){
 
         Node curr = head;
         while(curr != null){
@@ -50,12 +50,11 @@ public class IntroToLinkedList {
         Node p4 = new Node(40);
 
         //linking each node with it's next node
-        Node head = p1;
         p1.next = p2;
         p2.next = p3;
         p3.next = p4;
 
         LinkedList ll = new LinkedList();
-        ll.printLinkedList(head);
+        ll.printLinkedList();
     }
 }
