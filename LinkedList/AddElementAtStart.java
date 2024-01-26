@@ -24,6 +24,35 @@ class LinkedList{
             System.out.print(curr.data + " ");
             curr = curr.next;
         }
+        System.out.println();
+    }
+
+    void addAtEnd(int e){
+
+        Node temp = new Node(e);
+        //if there's no element in the linked list
+        if(head == null)
+            head = temp;
+        
+        //if there are elements present in the linked list
+        else{
+            Node curr = head;
+            while(curr.next != null)
+                curr = curr.next;
+            
+            curr.next = temp;
+        }
+    }
+
+    void addFirst(int e){
+
+        Node temp = new Node(e);
+        if(head == null)
+            head = temp;
+        else{
+            temp.next = head;
+            head = temp;
+        }
     }
 
     
@@ -41,6 +70,8 @@ public class AddElementAtStart {
         ll.addAtEnd(40);
 
         ll.printLinkedList();
+
+        ll.addFirst(5);
 
     }
 
