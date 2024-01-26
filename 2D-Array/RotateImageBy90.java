@@ -30,6 +30,16 @@ public class RotateImageBy90 {
      *                            {9,6,3}}
     */
 
+    static void rotateMatrix(int[][] mat){
 
+        //finding transpose
+        for(int i = 0; i < mat.length-1; i++){
+            for(int j = i+1; j < mat.length; j++){
+                int temp = mat[i][j];
+                mat[i][j] = mat[j][i];
+                mat[j][i] = temp;
+            }
+        }
+    }
 
 }
