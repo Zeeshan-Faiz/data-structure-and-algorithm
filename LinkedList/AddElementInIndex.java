@@ -24,6 +24,7 @@ class LinkedList3{
             System.out.print(curr.data + " ");
             curr = curr.next;
         }
+        System.out.println();
     }
 
     void addAtEnd(int e){
@@ -91,7 +92,8 @@ public class AddElementInIndex {
 
         ll.printLinkedList();
 
+        ll.addAtIndex(2, 25);
+        ll.printLinkedList();
 
     }
-
 }
