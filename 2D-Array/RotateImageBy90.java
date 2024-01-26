@@ -40,6 +40,20 @@ public class RotateImageBy90 {
                 mat[j][i] = temp;
             }
         }
+
+        //reversing the transposed matrix
+        for(int i = 0; i < mat.length; i++){
+            
+            int left = 0, right = mat[0].length-1;
+            while(left < right)
+            {
+                int temp = mat[i][left];
+                mat[i][left] = mat[i][right];
+                mat[i][right] = temp;
+                left++;
+                right--;
+            }
+        }
     }
 
 }
