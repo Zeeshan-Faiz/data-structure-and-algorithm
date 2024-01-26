@@ -2,18 +2,18 @@
  * Write a program to add element at the start of linked list
 */
 
-class Node{
+class Node2{
     
     int data;
     Node next;
 
-    public Node(int data) {
+    public Node2(int data) {
         this.data = data;
         this.next = null;
     }
 }
 
-class LinkedList{
+class LinkedList2{
 
     Node head;
 
@@ -54,15 +54,13 @@ class LinkedList{
             head = temp;
         }
     }
-
-    
 }
 
 public class AddElementAtStart {
     
     public static void main(String[] args) {
         
-        LinkedList ll = new LinkedList();
+        LinkedList2 ll = new LinkedList2();
         
         ll.addAtEnd(10);
         ll.addAtEnd(20);
