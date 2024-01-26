@@ -38,8 +38,6 @@ class LinkedList{
 
 }
 
-
-
 //To create 4 different nodes containing values (10,20,30,40) and then printing them.
 public class IntroToLinkedList {
     
