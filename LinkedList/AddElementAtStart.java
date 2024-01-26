@@ -72,8 +72,7 @@ public class AddElementAtStart {
         ll.printLinkedList();
 
         ll.addFirst(5);
+        ll.printLinkedList();
 
     }
-
-
 }
