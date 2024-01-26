@@ -59,11 +59,5 @@ public class IntroToLinkedList {
 
         LinkedList ll = new LinkedList();
         ll.printLinkedList(head);
-
-
-
-
     }
-
-
 }
