@@ -36,26 +36,11 @@ class DoublyLinkedList{
     DNode head;
     DNode tail;
 
-    void printDoublyLinkedList(){
-
-        DNode curr = head;
-        while(curr != null){
-            System.out.print(curr.data + " ");
-            curr = curr.next;
-        }
-        System.out.println();
-    }
-
     void add(int e){
 
         DNode temp = new DNode(e);
         if(head == null){
             head = temp;
-            tail = temp;
-        }
-        else{
-            tail.next = temp;
-            temp.prev = tail;
             tail = temp;
         }
     }
@@ -69,11 +54,6 @@ public class IntroToDoublyLinkedList {
         DoublyLinkedList ll = new DoublyLinkedList();
 
         ll.add(10);
-        ll.add(20);
-        ll.add(30);
-        ll.add(40);
-        
-        ll.printDoublyLinkedList();
         System.out.println(ll.head.data);
         System.out.println(ll.tail.data);
     }
