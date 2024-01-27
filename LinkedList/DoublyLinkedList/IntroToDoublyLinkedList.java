@@ -44,7 +44,6 @@ class DoublyLinkedList{
             tail = temp;
         }
     }
-
 }
 
 public class IntroToDoublyLinkedList {
