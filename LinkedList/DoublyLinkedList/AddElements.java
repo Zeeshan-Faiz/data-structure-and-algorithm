@@ -45,9 +45,7 @@ class DoublyLinkedList2{
             tail = temp;
         }
     }
-
 }
-
 
 public class AddElements {
 
@@ -63,6 +61,5 @@ public class AddElements {
         ll.printDoublyLinkedList();
         System.out.println(ll.head.data);
         System.out.println(ll.tail.data);
-    }
-    
+    } 
 }
