@@ -63,6 +63,18 @@ class LinkedList8{
 }
 
 public class FindLastIndexOf {
-    
 
+    public static void main(String[] args) {
+    
+        LinkedList8 ll = new LinkedList8();
+        int[] ar = {1,2,3,4,5,5,5,8,9,10};
+
+        for(int element : ar){
+            ll.addAtEnd(element);
+        }
+
+        ll.printLinkedList();
+        System.out.println(ll.lastIndexOf(5));
+
+    }
 }
