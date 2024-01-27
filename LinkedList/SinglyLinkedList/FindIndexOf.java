@@ -75,9 +75,5 @@ public class FindIndexOf {
         ll.printLinkedList();
 
         System.out.println(ll.findIndexOf(5));
-
-
     }
-    
-
 }
