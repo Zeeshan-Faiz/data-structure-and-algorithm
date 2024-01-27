@@ -17,6 +17,48 @@ package DoublyLinkedList;
  * pointer pointing to the node after it.
 */
 
+//creating a blue print of a Node for doubly linked list.
+class DNode{
+    
+    int data;
+    DNode next;
+    DNode prev;
+
+    public DNode(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList{
+
+    DNode head;
+    DNode tail;
+
+    void printDoublyLinkedList(){
+
+        DNode curr = head;
+        while(curr != null){
+            System.out.print(curr.data + " ");
+            curr = curr.next;
+        }
+    }
+
+}
+
 public class IntroToDoublyLinkedList {
+
+    public static void main(String[] args) {
+        
+        //Adding data to a node
+        
+
+        DoublyLinkedList ll = new DoublyLinkedList();
+        
+        ll.printDoublyLinkedList();
+
+
+    }
     
 }
