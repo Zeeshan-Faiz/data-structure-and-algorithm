@@ -46,9 +46,30 @@ class LinkedList9{
         }
     }
 
-    
+    int size(){
+
+        Node9 curr = head;
+        int count = 0;
+        while(curr != null){
+            curr = curr.next;
+            count ++;
+        }
+        return count;
+    }
 }
 
 public class GetSize {
+
+    public static void main(String[] args) {
     
+        LinkedList9 ll = new LinkedList9();
+        int[] ar = {1,2,3,4,5,5,5,8,9,10};
+
+        for(int element : ar){
+            ll.addAtEnd(element);
+        }
+
+        ll.printLinkedList();
+        System.out.println(ll.size());
+    }
 }
