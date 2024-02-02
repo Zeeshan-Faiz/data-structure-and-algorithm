@@ -3,7 +3,7 @@ Given an array containing infinite sorted integers and an element,  write a prog
 element.”
 
 Example 1:
-Input: N = 89, array[] = {9, 11, 17, 26, 37, 52, 89, 111, 129, 144, 198}
+Input: N = 89, arr[] = {9, 11, 17, 26, 37, 52, 89, 111, 129, 144, 198}
 Output: 6
 */
 
@@ -28,6 +28,25 @@ public class FindIndexInIfiniteSortedArray {
                 low = mid + 1;   
         }
         return -1;
+    }
+
+    static int ans(int[] arr, int target){
+
+        //start with window size of 2;
+        int low = 0;
+        int high = 1;
+
+        while(target > arr[high]){
+            //change window size
+            int temp = high + 1;
+            high = (high - low + 1) * 2;
+            low = temp;
+        }
+        return binarySearch(arr, target, low, high);
+    }
+
+    public static void main(String[] args) {
+        
     }
     
 
