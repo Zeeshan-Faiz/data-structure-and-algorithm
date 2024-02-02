@@ -24,13 +24,28 @@ Explanation: There are no characters in letters that is lexicographically greate
 public class SmallestLetter{
 
     static char nextGreatestLetter(char[] letters, char target) {
+
+        int low = 0, high = letters.length-1, mid = 0;
+        while(low <= high){
+
+            mid = (low+high)/2;
+            if(letters[mid] == target)
+                return letters[mid];
+            
+            else if(letters[mid] < target)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        //return 
+        return letters[low % letters.length];
         
     }
 
 
     public static void main(String[] args) {
         
-        System.out.println(nextGreatestLetter(new char[] {'c','f','j'}, 'c'));
+        System.out.println(nextGreatestLetter(new char[] {'c','f','j'}, 'a'));
     }
 
 
