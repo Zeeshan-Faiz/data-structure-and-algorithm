@@ -23,5 +23,15 @@ Explanation: There are no characters in letters that is lexicographically greate
 
 public class SmallestLetter{
 
+    static char nextGreatestLetter(char[] letters, char target) {
+        
+    }
+
+
+    public static void main(String[] args) {
+        
+        System.out.println(nextGreatestLetter(new char[] {'c','f','j'}, 'c'));
+    }
+
 
 }
