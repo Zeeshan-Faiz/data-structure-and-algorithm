@@ -56,5 +56,10 @@ public class SplitArrayLargestSum {
         }
         return end; // here start == end
     }
+
+    public static void main(String[] args) {
+        
+        System.out.println(splitArray(new int[] {7,2,5,10,8}, 2));
+    }
     
 }
