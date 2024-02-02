@@ -11,7 +11,7 @@ public class AgnosticBinarySearch {
         int end = arr.length - 1;
 
         //check whether the given array is Ascending or Descending.
-        boolean isAsc = arr[0] < arr[arr.length-1];
+        boolean isAsc = arr[0] < arr[end];
         
         while(start <= end){
             int mid = (start+end)/2;
