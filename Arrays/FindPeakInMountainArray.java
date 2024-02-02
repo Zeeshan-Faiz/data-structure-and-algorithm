@@ -38,4 +38,10 @@ public class FindPeakInMountainArray {
         }
         return start;
     }
+
+    public static void main(String[] args) {
+        
+        int[] arr = {11,21,30,15};
+        System.out.println(findPeakElement(arr));
+    }
 }
