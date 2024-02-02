@@ -33,5 +33,9 @@ public class AgnosticArray {
         }
         return -1;
     }
-    
+
+    public static void main(String[] args) {
+        
+        System.out.println(agnosticArray(new int[] {9,7,5,3,1}, 1));
+    }
 }
