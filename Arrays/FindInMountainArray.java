@@ -63,9 +63,6 @@ public class FindInMountainArray {
 
     static int agnosticArray(/*MountainArray*/int[] mountainArr, int target, int start, int end){
 
-        start = start;
-        end = end;
-
         //check whether the given array is Ascending or Descending.
         boolean isAsc = mountainArr[start] < mountainArr[end];
         
