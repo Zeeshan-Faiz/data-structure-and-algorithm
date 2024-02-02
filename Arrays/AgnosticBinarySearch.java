@@ -3,7 +3,7 @@ You are given an ordered array not mentioning whether it is ordered in Ascending
 the target element in this array.
 */
 
-public class AgnosticArray {
+public class AgnosticBinarySearch {
 
     static int agnosticArray(int[] arr, int target){
 
