@@ -47,7 +47,7 @@ public class FindIndexInIfiniteSortedArray {
 
     public static void main(String[] args) {
         
+        int[] arr = {9, 11, 17, 26, 37, 52, 89, 111, 129, 144, 198};
+        System.out.println(ans(arr, 89));
     }
-    
-
 }
