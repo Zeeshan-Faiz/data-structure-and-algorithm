@@ -15,9 +15,19 @@ public class FindIndexInIfiniteSortedArray {
      * We'll try to double the window size after every iteration ot maximise optimisation.
     */
 
-    static int binarySearch(int[] arr, int target, int start, int end){
+    static int binarySearch(int[] arr, int target, int low, int high){
 
-        
+        while(low <= high){
+
+            int mid = (low+high)/2;
+            if(arr[mid] == target)
+                return mid;
+            if(arr[mid] > target)
+                high = mid - 1;
+            else
+                low = mid + 1;   
+        }
+        return -1;
     }
     
 
