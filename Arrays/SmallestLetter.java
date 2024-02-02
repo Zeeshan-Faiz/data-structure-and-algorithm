@@ -25,28 +25,24 @@ public class SmallestLetter{
 
     static char nextGreatestLetter(char[] letters, char target) {
 
-        int low = 0, high = letters.length-1, mid = 0;
-        while(low <= high){
+        int start = 0;
+        int end = letters.length - 1;
 
-            mid = (low+high)/2;
-            if(letters[mid] == target)
-                return letters[mid];
+        while(start <= end) {
             
-            else if(letters[mid] < target)
-                low = mid + 1;
-            else
-                high = mid - 1;
-        }
-        //return 
-        return letters[low % letters.length];
-        
-    }
+            int mid = start + (end - start) / 2;
 
+            if (target < letters[mid]) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return letters[start % letters.length];
+    }
 
     public static void main(String[] args) {
         
-        System.out.println(nextGreatestLetter(new char[] {'c','f','j'}, 'a'));
+        System.out.println(nextGreatestLetter(new char[] {'c','f','j'}, 'c'));
     }
-
-
 }
