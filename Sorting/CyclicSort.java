@@ -2,6 +2,8 @@
 Given an array of intergers containing values from 1 to N. Sort the array in ascending order using Cyclic Sort.
 */
 
+import java.util.Arrays;
+
 public class CyclicSort {
     
     /*
@@ -18,4 +20,29 @@ public class CyclicSort {
 
     Time Complexity = O(N)
     */
+
+    static void cyclicSort(int[] arr){
+
+        /*
+        1st approach:
+        for(int i = 0; i < arr.length; i++){
+
+            if(arr[i] != i+1){
+                int temp = arr[i];
+                arr[i] = arr[temp-1];
+                arr[temp-1] = temp;
+                i = -1;
+            }
+            else
+                continue;
+        }
+        */
+    }
+
+    public static void main(String[] args) {
+        
+        int[] arr = {3,5,2,1,4};
+        cyclicSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 }
