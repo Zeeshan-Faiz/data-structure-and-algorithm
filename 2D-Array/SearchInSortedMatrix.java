@@ -11,6 +11,8 @@ target = 37
 O/P = [2,2]
 */
 
+import java.util.Arrays;
+
 public class SearchInSortedMatrix {
 
     /*
@@ -35,6 +37,17 @@ public class SearchInSortedMatrix {
             }
         }
         return new int[]{-1, -1};
+    }
+
+    public static void main(String[] args) {
+        int[][] arr = {
+                {10, 20, 30, 40},
+                {15, 25, 35, 45},
+                {28, 29, 37, 49},
+                {33, 34, 38, 50}
+        };
+
+        System.out.println(Arrays.toString(search(arr, 49)));
     }
 
 
