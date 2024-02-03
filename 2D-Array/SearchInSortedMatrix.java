@@ -49,7 +49,4 @@ public class SearchInSortedMatrix {
 
         System.out.println(Arrays.toString(search(arr, 49)));
     }
-
-
-    
 }
