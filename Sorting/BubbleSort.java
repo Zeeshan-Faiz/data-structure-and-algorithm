@@ -2,6 +2,8 @@
 Given an integer array, sort the array elements using Bubble Sort.
 */
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
     /*
@@ -36,5 +38,11 @@ public class BubbleSort {
                 break;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 4, 1, 2};
+        bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
