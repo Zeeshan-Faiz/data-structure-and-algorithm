@@ -2,6 +2,8 @@
 Given an array of integers, sort the array in ascending order using Insertion Sort technique.
 */
 
+import java.util.Arrays;
+
 public class InsertionSort {
 
     /*
@@ -25,6 +27,12 @@ public class InsertionSort {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 4, 1, 2};
+        insertion(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     
