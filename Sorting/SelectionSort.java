@@ -2,6 +2,8 @@
 Given an array, order its elements in ascending order using selection sort technique.
 */
 
+import java.util.Arrays;
+
 public class SelectionSort {
 
     /*
@@ -11,7 +13,7 @@ public class SelectionSort {
     Time Complexity = O(N^2)
     */
 
-    static void selection(int[] arr) {
+    static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             // find the max item in the remaining array and swap with correct index
             int last = arr.length - i - 1;
@@ -35,5 +37,10 @@ public class SelectionSort {
         }
         return max;
     }
-    
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 4, 1, 2};
+        selectionSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }  
 }
