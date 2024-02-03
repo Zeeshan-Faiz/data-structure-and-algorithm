@@ -11,7 +11,7 @@ target = 37
 O/P = [2,2]
 */
 
-import java.util.Arrays;
+import java.util.Arrays; 
 
 public class SearchInSortedMatrix {
 
