@@ -16,9 +16,11 @@ Input: nums = [1,1]
 Output: [1,2]
 */
 
+import java.util.Arrays;
+
 public class SetMismatch {
 
-    int[] findErrorNums(int[] nums) {
+    static int[] findErrorNums(int[] nums) {
         
         //Apply cyclic sort and sort the array elements
         int i = 0;
@@ -45,5 +47,10 @@ public class SetMismatch {
         arr[first] = arr[second];
         arr[second] = temp;
     }
-    
+
+    public static void main(String[] args) {
+        
+        int[] arr = {2,1,4,2,6,5};
+        System.out.println(Arrays.toString(findErrorNums(arr)));
+    }
 }
