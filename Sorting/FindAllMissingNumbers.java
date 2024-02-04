@@ -18,6 +18,8 @@ import java.util.List;
 public class FindAllMissingNumbers {
 
     static List<Integer> findDisappearedNumbers(int[] nums) {
+
+        //Use Cyclic sort and sort the array elements
         int i = 0;
         while (i < nums.length) {
             int correct = nums[i] - 1;
@@ -28,7 +30,7 @@ public class FindAllMissingNumbers {
             }
         }
 
-        // just find missing numbers
+        //find missing numbers
         List<Integer> ans = new ArrayList<>();
         for (int index = 0; index < nums.length; index++) {
             if (nums[index] != index+1) {
