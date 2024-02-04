@@ -18,6 +18,7 @@ public class FindDuplicate {
 
     static int findDuplicate(int[] arr) {
         
+        //Sort the array elements using Cyclic Sort
         int i = 0;
         while (i < arr.length) {
             int correct = arr[i] -1 ;
@@ -28,7 +29,7 @@ public class FindDuplicate {
             }
         }
 
-        // search for duplicate
+        //search for duplicate element
         for (int index = 0; index < arr.length; index++) {
             if (arr[index] != index+1) {
                 return arr[index];
