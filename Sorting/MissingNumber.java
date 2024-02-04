@@ -26,6 +26,8 @@ since it does not appear in nums.
 public class MissingNumber {
 
     static int missingNumber(int[] arr) {
+
+        //Use Cyclic sort and sort the array elements
         int i = 0;
         while (i < arr.length) {
             int correct = arr[i];
@@ -43,7 +45,7 @@ public class MissingNumber {
             }
         }
 
-        // case 2
+        // case 2 : If N itself is missing from the array
         return arr.length;
     }
 
