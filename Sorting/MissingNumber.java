@@ -52,5 +52,10 @@ public class MissingNumber {
         arr[first] = arr[second];
         arr[second] = temp;
     }
-    
+
+    public static void main(String[] args) {
+        
+        int[] arr = {4,0,2,1};
+        System.out.println(missingNumber(arr));
+    }
 }
