@@ -51,5 +51,9 @@ public class FirstMissingPositive {
         arr[second] = temp;
     }
 
-    
+    public static void main(String[] args) {
+        
+        int[] arr = {3,4,-1,1};
+        System.out.println(firstMissingPositive(arr));
+    }
 }
