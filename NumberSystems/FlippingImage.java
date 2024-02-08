@@ -35,4 +35,15 @@ public class FlippingImage{
         return image;
     }
 
+    public static void main(String[] args) {
+        
+        int[][] mat = flipAndInvertImage(new int[][] {{1,1,0},{1,0,1},{0,0,0}});
+
+        for(int row = 0; row < mat.length; row++){
+            for(int col = 0; col < mat[0].length; col++){
+                System.out.print(mat[row][col]);
+            }
+            System.out.println();
+        }
+    }
 }
