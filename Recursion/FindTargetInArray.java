@@ -21,7 +21,6 @@ public class FindTargetInArray {
             return index;
         else 
             return findIndex(arr, target, index + 1);
-        
     }
 
     static int findIndexLast(int[] arr, int target, int index) {
@@ -32,7 +31,6 @@ public class FindTargetInArray {
             return index;
         else 
             return findIndexLast(arr, target, index - 1);
-        
     }
 
     static ArrayList<Integer> list = new ArrayList<>();
