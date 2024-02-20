@@ -14,6 +14,6 @@ public class FindArrayIsSorted {
 
     public static void main(String[] args) {
         
-        System.out.println(sorted(new int[] {1, 2, 3, 5, 16, 8}, 0));
+        System.out.println(sorted(new int[] {1, 2, 3, 5, 6, 8}, 0));
     }
 }
