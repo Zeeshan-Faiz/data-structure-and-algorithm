@@ -45,5 +45,9 @@ public class NumberOfSteps {
         }
         return helper(num-1, steps+1);
     }
+
+    public static void main(String[] args) {
+        System.out.println(numberOfSteps(14));
+    }
     
 }
