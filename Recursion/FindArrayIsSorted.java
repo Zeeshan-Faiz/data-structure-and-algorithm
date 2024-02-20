@@ -11,4 +11,9 @@ public class FindArrayIsSorted {
 
         return arr[index] < arr[index + 1] && sorted(arr, index + 1);
     }
+
+    public static void main(String[] args) {
+        
+        System.out.println(sorted(new int[] {1, 2, 3, 5, 16, 8}, 0));
+    }
 }
