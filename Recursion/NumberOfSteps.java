@@ -36,9 +36,9 @@ public class NumberOfSteps {
     }
 
     static int helper(int num, int steps) {
-        if (num == 0) {
+        
+        if (num == 0)
             return steps;
-        }
 
         if (num % 2 == 0) {
             return helper(num/2, steps+1);
@@ -49,5 +49,4 @@ public class NumberOfSteps {
     public static void main(String[] args) {
         System.out.println(numberOfSteps(14));
     }
-    
 }
