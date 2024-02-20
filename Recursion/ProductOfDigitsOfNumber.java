@@ -12,5 +12,9 @@ public class ProductOfDigitsOfNumber {
         }
         return (n % 10) * prod(n / 10);
     }
-    
+
+    public static void main(String[] args) {
+        
+        System.out.println(prod(55));
+    }
 }
