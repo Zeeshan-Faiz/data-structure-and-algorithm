@@ -58,6 +58,4 @@ public class MergeSortUsingRecursion {
         arr = mergeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
-
-    
 }
