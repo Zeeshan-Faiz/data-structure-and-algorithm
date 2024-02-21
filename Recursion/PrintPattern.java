@@ -14,7 +14,7 @@ public class PrintPattern {
             return;
 
         if (c < r) {
-            System.out.print("*");
+            System.out.print("* ");
             triangle(r, c+1);
         } 
         else {
@@ -23,5 +23,8 @@ public class PrintPattern {
         }
     }
 
-
+    public static void main(String[] args) {
+        
+        triangle(4, 0);
+    }
 }
