@@ -12,14 +12,12 @@ public class BubbleSortUsingRecursion {
             return;
 
         if (c < r) {
-
             if (arr[c] > arr[c+1]) {
                 // swap
                 int temp = arr[c];
                 arr[c] = arr[c+1];
                 arr[c+1] = temp;
             }
-
             bubble(arr, r, c+1);
         } 
         else 
@@ -29,8 +27,7 @@ public class BubbleSortUsingRecursion {
     public static void main(String[] args) {
         
         int[] arr = {1, 4, 3, 5};
-        bubble(arr, 0, 0);
+        bubble(arr, arr.length-1, 0);
         System.out.println(Arrays.toString(arr));
     }
-    
 }
