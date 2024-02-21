@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SelectionSortUsingRecursion {
 
     /*
@@ -21,5 +23,11 @@ public class SelectionSortUsingRecursion {
             selection(arr, r-1, 0, 0);
         }
     }
-    
+
+    public static void main(String[] args) {
+        
+        int[] arr = {1, 4, 3, 5};
+        selection(arr, arr.length, 0, 0);
+        System.out.println(Arrays.toString(arr));
+    }
 }
