@@ -7,7 +7,7 @@ public class PrintAllSubsetRemovingDuplicates {
     /*
      * Write a program to print all the subsets of a given array, and remove all the duplicate subsets if present.
      * Ex arr[] = {1,2,2}
-     * O/P = 
+     * O/P = [[],[1],[2],[1, 2],[2, 2],[1, 2, 2]]
     */
 
     static List<List<Integer>> subsetDuplicate(int[] arr) {
@@ -37,6 +37,12 @@ public class PrintAllSubsetRemovingDuplicates {
         return outer;
     }
 
-    
-    
+    public static void main(String[] args) {
+        
+        int[] arr = {1, 2, 2};
+        List<List<Integer>> ans = subsetDuplicate(arr);
+        for (List<Integer> list : ans) {
+            System.out.println(list);
+        }
+    }
 }
