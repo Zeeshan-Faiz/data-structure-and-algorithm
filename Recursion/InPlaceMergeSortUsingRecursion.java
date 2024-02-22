@@ -61,5 +61,4 @@ public class InPlaceMergeSortUsingRecursion {
         mergeSortInPlace(arr, 0, arr.length);
         System.out.println(Arrays.toString(arr));
     }
-    
 }
