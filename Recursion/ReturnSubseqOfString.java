@@ -32,7 +32,6 @@ public class ReturnSubseqOfString {
             list.add(ans);
             return list;
         }
-
         char ch = str.charAt(0);
 
         //pick a character
@@ -51,6 +50,4 @@ public class ReturnSubseqOfString {
         //subseq("", "abc");
         System.out.println(subseqRet("", "abc"));
     }
-
-    
 }
