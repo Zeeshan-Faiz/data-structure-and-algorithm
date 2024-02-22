@@ -55,6 +55,6 @@ public class SubseqWithASCII {
     public static void main(String[] args) {
         
         //subseqAscii("", "ab");
+        System.out.println(subseqAsciiRet("", "ab"));
     }
-    
 }
