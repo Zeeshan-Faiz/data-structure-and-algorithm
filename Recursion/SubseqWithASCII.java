@@ -3,7 +3,7 @@ public class SubseqWithASCII {
     /*
      * Given a string, print all of it's subsequences along with it's ASCII values.
      * Ex str = "ab"
-     * O/P = 
+     * O/P = [ab,a,a98,b,98,97b,97b,9798, ]
     */
 
     //Approach 1 : passing the ans in the method argument
@@ -22,6 +22,11 @@ public class SubseqWithASCII {
 
         //take only ASCII values
         subseqAscii(ans + (ch+0), str.substring(1));
+    }
+
+    public static void main(String[] args) {
+        
+        subseqAscii("", "ab");
     }
     
 }
