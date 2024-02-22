@@ -20,5 +20,10 @@ public class SkipCharacterInString {
         else 
             skip(ans + ch, str.substring(1));
     }
+
+    public static void main(String[] args) {
+        
+        skip("","baccad");
+    }
     
 }
