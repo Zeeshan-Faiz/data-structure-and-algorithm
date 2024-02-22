@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class InPlaceMergeSortUsingRecursion {
 
     /*
@@ -51,8 +53,13 @@ public class InPlaceMergeSortUsingRecursion {
         //copy each sorted element from mix[] to original arr[]
         for (int l = 0; l < mix.length; l++) 
             arr[s+l] = mix[l];
-        
     }
 
+    public static void main(String[] args) {
+        
+        int[] arr = {5, 4, 3, 2, 1};
+        mergeSortInPlace(arr, 0, arr.length);
+        System.out.println(Arrays.toString(arr));
+    }
     
 }
