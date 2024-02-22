@@ -7,7 +7,7 @@ public class SkipCharacterInString {
     */
 
     //Approach 1 : Passing the ans string in the function argument
-    static void skip(String ans, String str) {
+    static void skip1(String ans, String str) {
         
         if (str.isEmpty()) {
             System.out.println(ans);
@@ -16,13 +16,13 @@ public class SkipCharacterInString {
         char ch = str.charAt(0);
 
         if (ch == 'a') 
-            skip(ans, str.substring(1));
+            skip1(ans, str.substring(1));
         else 
-            skip(ans + ch, str.substring(1));
+            skip1(ans + ch, str.substring(1));
     }
 
     //Approach 2 : Creating the ans string in the function body
-    static String skip(String str) {
+    static String skip2(String str) {
         
         if (str.isEmpty()) 
             return "";
@@ -30,16 +30,14 @@ public class SkipCharacterInString {
         char ch = str.charAt(0);
 
         if (ch == 'a') 
-            return skip(str.substring(1));
+            return skip2(str.substring(1));
         else 
-            return ch + skip(str.substring(1));
+            return ch + skip2(str.substring(1));
     }
 
     public static void main(String[] args) {
         
-        //skip("","baccad");
-        System.out.println(skip("baccad"));
-
+        //skip1("","baccad");
+        System.out.println(skip2("baccad"));
     }
-    
 }
