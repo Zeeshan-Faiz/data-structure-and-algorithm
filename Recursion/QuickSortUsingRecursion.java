@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class QuickSortUsingRecursion {
 
     /*
@@ -33,5 +35,11 @@ public class QuickSortUsingRecursion {
         sort(nums, low, e);
         sort(nums, s, hi);
     }
-    
+
+    public static void main(String[] args) {
+        
+        int[] arr = {5, 4, 3, 2, 1};
+        sort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    } 
 }
