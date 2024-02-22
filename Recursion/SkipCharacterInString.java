@@ -22,23 +22,23 @@ public class SkipCharacterInString {
     }
 
     //Approach 2 : Creating the ans string in the function body
-    static String skip(String up) {
-        if (up.isEmpty()) {
+    static String skip(String str) {
+        
+        if (str.isEmpty()) 
             return "";
-        }
 
-        char ch = up.charAt(0);
+        char ch = str.charAt(0);
 
-        if (ch == 'a') {
-            return skip(up.substring(1));
-        } else {
-            return ch + skip(up.substring(1));
-        }
+        if (ch == 'a') 
+            return skip(str.substring(1));
+        else 
+            return ch + skip(str.substring(1));
     }
 
     public static void main(String[] args) {
         
         //skip("","baccad");
+        System.out.println(skip("baccad"));
 
     }
     
