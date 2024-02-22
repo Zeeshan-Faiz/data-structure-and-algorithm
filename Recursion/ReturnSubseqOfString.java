@@ -48,7 +48,8 @@ public class ReturnSubseqOfString {
 
     public static void main(String[] args) {
         
-        subseq("", "abc");
+        //subseq("", "abc");
+        System.out.println(subseqRet("", "abc"));
     }
 
     
