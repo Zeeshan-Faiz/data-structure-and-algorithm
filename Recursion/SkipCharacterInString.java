@@ -6,7 +6,7 @@ public class SkipCharacterInString {
      * O/P = "bccd"
     */
 
-    //Approach 1 : Passing the answer string in the function argument
+    //Approach 1 : Passing the ans string in the function argument
     static void skip(String ans, String str) {
         
         if (str.isEmpty()) {
@@ -21,9 +21,25 @@ public class SkipCharacterInString {
             skip(ans + ch, str.substring(1));
     }
 
+    //Approach 2 : Creating the ans string in the function body
+    static String skip(String up) {
+        if (up.isEmpty()) {
+            return "";
+        }
+
+        char ch = up.charAt(0);
+
+        if (ch == 'a') {
+            return skip(up.substring(1));
+        } else {
+            return ch + skip(up.substring(1));
+        }
+    }
+
     public static void main(String[] args) {
         
-        skip("","baccad");
+        //skip("","baccad");
+
     }
     
 }
