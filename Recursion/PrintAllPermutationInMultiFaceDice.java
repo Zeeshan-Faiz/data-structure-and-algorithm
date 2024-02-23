@@ -23,7 +23,7 @@ public class PrintAllPermutationInMultiFaceDice {
     }
 
     // Approach 2 : Add all the ans in an ArrayList and then return the list
-    static ArrayList<String> diceRet(String ans, int target) {
+    static ArrayList<String> diceRet(String ans, int target, int face) {
         
         if (target == 0) {
             ArrayList<String> list = new ArrayList<>();
@@ -31,16 +31,16 @@ public class PrintAllPermutationInMultiFaceDice {
             return list;
         }
         ArrayList<String> res = new ArrayList<>();
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= face; i++) {
             if(i <= target)
-                res.addAll(diceRet(ans + i, target - i));
+                res.addAll(diceRet(ans + i, target - i,face));
         }
         return res;
     }
 
     public static void main(String[] args) {
         
-        //dice("", 4);
-        System.out.println(diceRet("", 4));
+        dice("", 4,8);
+        //System.out.println(diceRet("", 4));
     }
 }
