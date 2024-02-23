@@ -40,7 +40,7 @@ public class PrintAllPermutationInMultiFaceDice {
 
     public static void main(String[] args) {
         
-        dice("", 4,8);
-        //System.out.println(diceRet("", 4));
+        //dice("", 4,8);
+        System.out.println(diceRet("", 4,8));
     }
 }
