@@ -7,7 +7,7 @@ public class CombinationOfKeyPad {
      * pressing the digits
      * of a keypad starting from 1 - 9.
      * Ex = "12"
-     * O/P = []
+     * O/P = [ad, ae, af, bd, be, bf, cd, ce, cf]
      */
 
     // Approach 1 : Printing the ans directly after the recusrive call ends
@@ -48,7 +48,7 @@ public class CombinationOfKeyPad {
 
     public static void main(String[] args) {
 
-        pad("", "12");
+        //pad("", "12");
+        System.out.println(padRet("", "12"));
     }
-
 }
