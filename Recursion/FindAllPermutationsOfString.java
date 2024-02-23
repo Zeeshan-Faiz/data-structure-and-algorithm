@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class FindAllPermutationsOfString {
     
     /*
@@ -6,6 +8,7 @@ public class FindAllPermutationsOfString {
      * O/P = [abc,bac,cab,bca,acb,cba]
     */
 
+    //Approach 1 : Printing the ans directly after the recusrive call ends
     static void permutations(String ans, String str) {
         
         if (str.isEmpty()) {
@@ -22,6 +25,25 @@ public class FindAllPermutationsOfString {
             String s = ans.substring(i, ans.length());
             permutations(f + ch + s, str.substring(1));
         }
+    }
+
+    //Approach 2 : Add all the ans in an ArrayList and then returning the list
+    static ArrayList<String> permutationsList(String ans, String str) {
+        
+        if (str.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(ans);
+            return list;
+        }
+        char ch = str.charAt(0);
+        ArrayList<String> res = new ArrayList<>();
+
+        for (int i = 0; i <= ans.length(); i++) {
+            String f = ans.substring(0, i);
+            String s = ans.substring(i, ans.length());
+            res.addAll(permutationsList(f + ch + s, str.substring(1)));
+        }
+        return res;
     }
 
     public static void main(String[] args) {
