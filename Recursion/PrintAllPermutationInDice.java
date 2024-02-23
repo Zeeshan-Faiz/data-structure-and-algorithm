@@ -6,6 +6,7 @@ public class PrintAllPermutationInDice {
      * O/P = 
     */
     
+    //Approach 1 : Printing the ans directly after the recusrive call ends
     static void dice(String ans, int target) {
         
         if (target == 0) {
@@ -17,5 +18,13 @@ public class PrintAllPermutationInDice {
             if(i <= target)
                 dice(ans + i, target - i);
         }
+    }
+
+    // Approach 2 : Add all the ans in an ArrayList and then return the list
+    
+
+    public static void main(String[] args) {
+        
+        dice("", 4);
     }
 }
