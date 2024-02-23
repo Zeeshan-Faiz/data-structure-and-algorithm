@@ -7,6 +7,20 @@ public class CombinationOfKeyPad {
      * O/P = []
     */
 
-    
+    static void pad(String ans, String str) {
+        
+        if (str.isEmpty()) {
+            System.out.println(ans);
+            return;
+        }
+        int digit = str.charAt(0) - '0'; // this will convert '2' into 2
+
+        //for any given digit suppose 2 (we'll formulate range = [digit - 1 * 3], digit * 3) = [3,6] = 'a' + 3 = d, 'a' + 4 = e, 'a' + 5 = f
+        for (int i = (digit - 1) * 3; i < digit * 3; i++) {
+            char ch = (char) ('a' + i);
+            pad(ans + ch, str.substring(1));
+        }
+    }
+
     
 }
