@@ -23,4 +23,9 @@ public class FindAllPermutationsOfString {
             permutations(f + ch + s, str.substring(1));
         }
     }
+
+    public static void main(String[] args) {
+        
+        permutations("", "abc");
+    }
 }
