@@ -22,5 +22,10 @@ public class CombinationOfKeyPad {
         }
     }
 
+    public static void main(String[] args) {
+        
+        pad("", "12");
+    }
+
     
 }
