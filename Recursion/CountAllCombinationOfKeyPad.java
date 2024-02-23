@@ -7,5 +7,19 @@ public class CountAllCombinationOfKeyPad {
      * Ex = "12"
      * O/P = 9
      */
+
+     static int padCount(String ans, String str) {
+        
+        if (str.isEmpty()) 
+            return 1;
+        
+        int count = 0;
+        int digit = str.charAt(0) - '0'; // this will convert '2' into 2
+        for (int i = (digit - 1) * 3; i < digit * 3; i++) {
+            char ch = (char) ('a' + i);
+            count = count + padCount(ans + ch, str.substring(1));
+        }
+        return count;
+    }
     
 }
