@@ -21,5 +21,9 @@ public class CountAllCombinationOfKeyPad {
         }
         return count;
     }
-    
+
+    public static void main(String[] args) {
+        
+        System.out.println(padCount("", "12"));
+    }   
 }
