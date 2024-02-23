@@ -20,5 +20,9 @@ public class CountAllPermutationOfString {
         }
         return count;
     }
-    
+
+    public static void main(String[] args) {
+        
+        System.out.println(permutationsCount("", "abc"));
+    }
 }
