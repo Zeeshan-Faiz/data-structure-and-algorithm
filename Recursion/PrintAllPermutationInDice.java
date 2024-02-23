@@ -5,7 +5,7 @@ public class PrintAllPermutationInDice {
     /*
      * Given a normal dice print all possible combinations that may be possible for a given target number.
      * Ex = 4
-     * O/P = 
+     * O/P = [1111, 112, 121, 13, 211, 22, 31, 4]
     */
     
     //Approach 1 : Printing the ans directly after the recusrive call ends
@@ -41,5 +41,6 @@ public class PrintAllPermutationInDice {
     public static void main(String[] args) {
         
         //dice("", 4);
+        System.out.println(diceRet("", 4));
     }
 }
