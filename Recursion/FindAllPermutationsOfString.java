@@ -5,7 +5,7 @@ public class FindAllPermutationsOfString {
     /*
      * Given a string find all of it's permutations.
      * Ex str = "abc"
-     * O/P = [abc,bac,cab,bca,acb,cba]
+     * O/P = [cba, bca, bac, cab, acb, abc]
     */
 
     //Approach 1 : Printing the ans directly after the recusrive call ends
@@ -27,7 +27,7 @@ public class FindAllPermutationsOfString {
         }
     }
 
-    //Approach 2 : Add all the ans in an ArrayList and then returning the list
+    //Approach 2 : Add all the ans in an ArrayList and then return the list
     static ArrayList<String> permutationsList(String ans, String str) {
         
         if (str.isEmpty()) {
@@ -48,6 +48,7 @@ public class FindAllPermutationsOfString {
 
     public static void main(String[] args) {
         
-        permutations("", "abc");
+        //permutations("", "abc");
+        System.out.println(permutationsList("", "abc"));
     }
 }
