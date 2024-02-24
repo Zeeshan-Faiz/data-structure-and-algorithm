@@ -10,7 +10,7 @@ public class MoveDiagonal {
     */
 
     //Approach 1 : printing the ans directly after each recursive call
-    static void path(String ans, int r, int c) {
+    static void pathDiagonal(String ans, int r, int c) {
 
         if (r == 1 && c == 1) {
             System.out.println(ans);
@@ -19,10 +19,13 @@ public class MoveDiagonal {
 
         //Going Down
         if (r > 1) 
-            path(ans + 'D', r-1, c);
+        pathDiagonal(ans + 'V', r-1, c);
         //Going Right
         if (c > 1) 
-            path(ans + 'R', r, c-1);
+        pathDiagonal(ans + 'H', r, c-1);
+        //Going Diagonal
+        if (r > 1 && c > 1) 
+        pathDiagonal(ans + 'D', r-1, c-1);
     }
     
     //Approach 2 : Adding all ans in list and then returning the list after each recusrion
@@ -50,7 +53,7 @@ public class MoveDiagonal {
 
     public static void main(String[] args) {
         
+        //pathDiagonal("", 3, 3);
         System.out.println(pathRetDiagonal("", 3, 3));
     }
-
 }
