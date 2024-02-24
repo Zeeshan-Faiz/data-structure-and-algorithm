@@ -8,6 +8,7 @@ public class MoveWithObstacles {
     * 
     */
 
+    //Approach 1 : printing the ans directly after each recursive call
     static void pathRestrictions(String ans, boolean[][] maze, int r, int c) {
         
         if (r == maze.length - 1 && c == maze[0].length - 1) {
@@ -24,6 +25,17 @@ public class MoveWithObstacles {
 
         if (c < maze[0].length - 1) 
             pathRestrictions(ans + 'R', maze, r, c+1);
+    }
+
+    public static void main(String[] args) {
+        
+        boolean[][] board = {
+                            {true, true, true},
+                            {true, false, true},
+                            {true, true, true}
+                            };
+
+        pathRestrictions("", board, 0, 0);
     }
     
 }
