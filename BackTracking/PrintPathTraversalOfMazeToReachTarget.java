@@ -67,7 +67,6 @@ public class PrintPathTraversalOfMazeToReachTarget {
         //unmark the visited cell to avoid infinite recursive calls and also make the cell of path matrix = 0
         maze[r][c] = true;
         path[r][c] = 0;
-
     }
 
     public static void main(String[] args) {
@@ -80,5 +79,4 @@ public class PrintPathTraversalOfMazeToReachTarget {
     int[][] path = new int[board.length][board[0].length];
     allPathPrint("", board, 0, 0, path, 1);
     }
-    
 }
