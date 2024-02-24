@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class PrintAllPathToReachTarget {
     
     /*
@@ -21,6 +23,25 @@ public class PrintAllPathToReachTarget {
         //Going Right
         if (c > 1) 
             path(ans + 'R', r, c-1);
+    }
+
+    //Approach 2 : Adding all ans in list and then returning the list after each recusrion
+    static ArrayList<String> pathRet(String ans, int r, int c) {
+        
+        if (r == 1 && c == 1) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(ans);
+            return list;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (r > 1)
+            list.addAll(pathRet(ans + 'D', r-1, c));
+        if (c > 1) 
+            list.addAll(pathRet(ans + 'R', r, c-1));
+            
+        return list;
     }
 
     public static void main(String[] args) {
