@@ -47,8 +47,8 @@ public class MoveAllDirections {
         if (c > 0) 
             allPath(ans + 'L', maze, r, c-1);
 
-        // this line is where the function will be over
-        // so before the function gets removed, unmark the visited cell to avoid infinite recursive calls
+        //this line is where the function will be over
+        //so before the function gets removed, unmark the visited cell to avoid infinite recursive calls
         maze[r][c] = true;
     }
 
@@ -84,6 +84,7 @@ public class MoveAllDirections {
         if (c > 0) 
             res.addAll(allPathRet(ans + 'L', maze, r, c-1));
 
+        //unmark the visited cell to avoid infinite recursive calls
         maze[r][c] = true;
 
         return res;
@@ -100,7 +101,4 @@ public class MoveAllDirections {
         //allPath("", board, 0, 0);
         System.out.println(allPathRet("", board, 0, 0));
     }
-
-
-    
 }
