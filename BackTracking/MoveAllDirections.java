@@ -6,7 +6,7 @@ public class MoveAllDirections {
      * You are in a maze, print all possible path by which you'll be able to reach the target destination
      * keeping in mind you can move all directions; Right(➡️) OR Down(⬇️) Or Left(⬅️) Or Up(⬆️) as well.
      * Suppose from starting at position (0,0) and destination cell as (2,2) we'll have all possible path as
-     * 
+     * [DDRR, DDRURD, DDRUURDD, DRDR, DRRD, DRURDD, RDDR, RDRD, RDLDRR, RRDD, RRDLDR, RRDLLDRR]
     */
 
     /*
@@ -53,28 +53,41 @@ public class MoveAllDirections {
     }
 
     //Approach 2 : Adding all ans in list and then returning the list after each recusrion
-    static ArrayList<String> pathRetDiagonal(String ans, int r, int c) {
+    static ArrayList<String> allPathRet(String ans, boolean[][] maze, int r, int c) {
         
-        if (r == 1 && c == 1) {
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
             ArrayList<String> list = new ArrayList<>();
             list.add(ans);
             return list;
         }
 
-        ArrayList<String> list = new ArrayList<>();
+        //Check for obstacles or previously marked false cells
+        if (!maze[r][c]) {
+            return new ArrayList<>();
+        }
 
-        if (r > 1 && c > 1) 
-            list.addAll(pathRetDiagonal(ans + 'D', r-1, c-1));
+        //Consider this cell is going to be traversed, hence mark it false
+        maze[r][c] = false;
 
-        if (r > 1) 
-            list.addAll(pathRetDiagonal(ans + 'V', r-1, c));
+        ArrayList<String> res = new ArrayList<>();
 
-        if (c > 1) 
-            list.addAll(pathRetDiagonal(ans + 'H', r, c-1));
+        //Going Down
+        if (r < maze.length - 1)
+            res.addAll(allPathRet(ans + 'D', maze, r+1, c));
+        //Going Right
+        if (c < maze[0].length - 1)
+            res.addAll(allPathRet(ans + 'R', maze, r, c+1));
+        //Going Up
+        if (r > 0) 
+            res.addAll(allPathRet(ans + 'U', maze, r-1, c));
+        //Going Left
+        if (c > 0) 
+            res.addAll(allPathRet(ans + 'L', maze, r, c-1));
 
-        return list;
+        maze[r][c] = true;
+
+        return res;
     }
-
 
     public static void main(String[] args) {
         
@@ -84,7 +97,8 @@ public class MoveAllDirections {
                             {true, true, true}
                             };
     
-        allPath("", board, 0, 0);
+        //allPath("", board, 0, 0);
+        System.out.println(allPathRet("", board, 0, 0));
     }
 
 
