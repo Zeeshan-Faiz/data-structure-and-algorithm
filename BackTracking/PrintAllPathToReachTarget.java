@@ -6,7 +6,7 @@ public class PrintAllPathToReachTarget {
      * You are in a maze, print all possible path by which you'll be able to reach the target destination
      * keeping in mind you can only go Right(➡️) OR Down(⬇️).
      * Suppose from starting at position (3,3) and destination cell as (0,0) we'll have all possible path as 
-     * []
+     * [DDRR, DRDR, DRRD, RDDR, RDRD, RRDD]
     */
     
     //Approach 1 : printing the ans directly after each recursive call
@@ -40,13 +40,13 @@ public class PrintAllPathToReachTarget {
             list.addAll(pathRet(ans + 'D', r-1, c));
         if (c > 1) 
             list.addAll(pathRet(ans + 'R', r, c-1));
-            
+
         return list;
     }
 
     public static void main(String[] args) {
         
-        path("", 3, 3);
+        //path("", 3, 3);
+        System.out.println(pathRet("", 3, 3));
     }
-
 }
