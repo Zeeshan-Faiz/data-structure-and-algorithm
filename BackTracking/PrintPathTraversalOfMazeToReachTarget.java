@@ -6,9 +6,27 @@ public class PrintPathTraversalOfMazeToReachTarget {
     * You are in a maze, print all possible path traversal by which you'll be able to reach the target destination
     * keeping in mind you can move all directions; Right(➡️) OR Down(⬇️) Or Left(⬅️) Or Up(⬆️) as well.
     * Suppose from starting at position (0,0) and destination cell as (2,2) we'll have all possible path as
-    * 
-    * 
+    * [1, 0, 0]
+      [2, 0, 0]
+      [3, 4, 5]
+      DDRR
 
+      [1, 0, 0]
+      [2, 5, 6]
+      [3, 4, 7]
+      DDRURD
+
+      [1, 6, 7]
+      [2, 5, 8]
+      [3, 4, 9]
+      DDRUURDD
+
+      [1, 0, 0]
+      [2, 3, 0]
+      [0, 4, 5]
+      DRDR
+
+      and so on.
     */
 
     static void allPathPrint(String ans, boolean[][] maze, int r, int c, int[][] path, int step) {
@@ -50,6 +68,17 @@ public class PrintPathTraversalOfMazeToReachTarget {
         maze[r][c] = true;
         path[r][c] = 0;
 
+    }
+
+    public static void main(String[] args) {
+        
+        boolean[][] board = {
+                            {true, true, true},
+                            {true, true, true},
+                            {true, true, true}
+                            };
+    int[][] path = new int[board.length][board[0].length];
+    allPathPrint("", board, 0, 0, path, 1);
     }
     
 }
