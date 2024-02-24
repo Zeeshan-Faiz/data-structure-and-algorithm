@@ -7,5 +7,23 @@ public class MoveWithObstacles {
     * Suppose from starting at position (3,3) and destination cell as (0,0) we'll have all possible path as
     * 
     */
+
+    static void pathRestrictions(String ans, boolean[][] maze, int r, int c) {
+        
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            System.out.println(ans);
+            return;
+        }
+
+        //check for the current cell is forbidden/having obstacle
+        if (!maze[r][c]) 
+            return;
+
+        if (r < maze.length - 1) 
+            pathRestrictions(ans + 'D', maze, r+1, c);
+
+        if (c < maze[0].length - 1) 
+            pathRestrictions(ans + 'R', maze, r, c+1);
+    }
     
 }
