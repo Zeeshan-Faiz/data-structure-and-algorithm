@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class MoveAllDirections {
 
      /*
@@ -16,6 +18,7 @@ public class MoveAllDirections {
      * 
     */
 
+    //Approach 1 : printing the ans directly after each recursive call
     static void allPath(String ans, boolean[][] maze, int r, int c) {
         
         if (r == maze.length - 1 && c == maze[0].length - 1) {
@@ -23,6 +26,7 @@ public class MoveAllDirections {
             return;
         }
 
+        //Check for obstacles or previously marked false cells
         if (!maze[r][c]) {
             return;
         }
@@ -46,6 +50,41 @@ public class MoveAllDirections {
         // this line is where the function will be over
         // so before the function gets removed, unmark the visited cell to avoid infinite recursive calls
         maze[r][c] = true;
+    }
+
+    //Approach 2 : Adding all ans in list and then returning the list after each recusrion
+    static ArrayList<String> pathRetDiagonal(String ans, int r, int c) {
+        
+        if (r == 1 && c == 1) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(ans);
+            return list;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (r > 1 && c > 1) 
+            list.addAll(pathRetDiagonal(ans + 'D', r-1, c-1));
+
+        if (r > 1) 
+            list.addAll(pathRetDiagonal(ans + 'V', r-1, c));
+
+        if (c > 1) 
+            list.addAll(pathRetDiagonal(ans + 'H', r, c-1));
+
+        return list;
+    }
+
+
+    public static void main(String[] args) {
+        
+        boolean[][] board = {
+                            {true, true, true},
+                            {true, true, true},
+                            {true, true, true}
+                            };
+    
+        allPath("", board, 0, 0);
     }
 
 
