@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class MoveWithObstacles {
 
     /*
@@ -5,7 +7,7 @@ public class MoveWithObstacles {
     * maze has some obstacle denoted as false to which you can land and need to take some other path otherwise. 
     * keeping in mind you can only go Right(➡️) OR Down(⬇️).
     * Suppose from starting at position (3,3) and destination cell as (0,0) we'll have all possible path as
-    * 
+    * [DDRR, RRDD]
     */
 
     //Approach 1 : printing the ans directly after each recursive call
@@ -27,6 +29,29 @@ public class MoveWithObstacles {
             pathRestrictions(ans + 'R', maze, r, c+1);
     }
 
+    //Approach 2 : Adding all ans in list and then returning the list after each recusrion
+    static ArrayList<String> pathRetRestrictions(String ans, boolean[][] maze, int r, int c) {
+        
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(ans);
+            return list;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (!maze[r][c]) 
+            return new ArrayList<>();
+
+        if (r < maze.length - 1) 
+            list.addAll(pathRetRestrictions(ans + 'D', maze, r+1, c));
+
+        if (c < maze[0].length - 1) 
+            list.addAll(pathRetRestrictions(ans + 'R', maze, r, c+1));
+
+        return list;
+    }
+
     public static void main(String[] args) {
         
         boolean[][] board = {
@@ -35,7 +60,8 @@ public class MoveWithObstacles {
                             {true, true, true}
                             };
 
-        pathRestrictions("", board, 0, 0);
+        //pathRestrictions("", board, 0, 0);
+        System.out.println(pathRetRestrictions("", board, 0, 0));
     }
     
 }
