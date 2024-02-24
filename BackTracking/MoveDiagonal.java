@@ -37,18 +37,18 @@ public class MoveDiagonal {
             return list;
         }
 
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> res = new ArrayList<>();
 
         if (r > 1 && c > 1) 
-            list.addAll(pathRetDiagonal(ans + 'D', r-1, c-1));
+            res.addAll(pathRetDiagonal(ans + 'D', r-1, c-1));
 
         if (r > 1) 
-            list.addAll(pathRetDiagonal(ans + 'V', r-1, c));
+            res.addAll(pathRetDiagonal(ans + 'V', r-1, c));
 
         if (c > 1) 
-            list.addAll(pathRetDiagonal(ans + 'H', r, c-1));
+            res.addAll(pathRetDiagonal(ans + 'H', r, c-1));
 
-        return list;
+        return res;
     }
 
     public static void main(String[] args) {
