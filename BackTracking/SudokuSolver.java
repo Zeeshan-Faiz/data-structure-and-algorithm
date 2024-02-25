@@ -47,7 +47,7 @@ public class SudokuSolver {
         }
         return false;
     }
-
+ 
     static boolean isSafe(int[][] board, int row, int col, int num) {
         
         // check the row
