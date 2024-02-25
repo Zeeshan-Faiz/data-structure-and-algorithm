@@ -48,5 +48,40 @@ public class SudokuSolver {
         return false;
     }
 
+    static boolean isSafe(int[][] board, int row, int col, int num) {
+        
+        // check the row
+        for (int i = 0; i < board.length; i++) {
+            // check if the number is already there in the row previosuly
+            if (board[row][i] == num) {
+                return false;
+            }
+        }
+
+        // check the col
+        for (int[] nums : board) {
+            // check if the number is already there in the col previosuly
+            if (nums[col] == num) {
+                return false;
+            }
+        }
+
+        //check for (3x3) sub matrix
+        int sqrt = (int)(Math.sqrt(board.length));
+        int rowStart = row - row % sqrt;
+        int colStart = col - col % sqrt;
+
+        for (int r = rowStart; r < rowStart + sqrt; r++) {
+            for (int c = colStart; c < colStart + sqrt; c++) {
+                if (board[r][c] == num) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    
+
     
 }
