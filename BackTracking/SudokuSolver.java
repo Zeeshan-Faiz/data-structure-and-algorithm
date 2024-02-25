@@ -7,13 +7,11 @@ public class SudokuSolver {
     */
 
     static boolean solve(int[][] board) {
-        int n = board.length;
-        int row = -1;
-        int col = -1;
-
+        
+        int n = board.length, row = -1, col = -1;
         boolean emptyLeft = true;
 
-        // this is how we are replacing the r,c from arguments
+        // Everytime find an empty cell and assign it's index to row and col
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == 0) {
@@ -29,12 +27,12 @@ public class SudokuSolver {
             }
         }
 
+        // soduko is solved
         if (emptyLeft == true) {
             return true;
-            // soduko is solved
         }
 
-        // backtrack
+        //Put (1-9) in the matrix
         for (int number = 1; number <= 9; number++) {
             if (isSafe(board, row, col, number)) {
                 board[row][col] = number;
