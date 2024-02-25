@@ -35,4 +35,37 @@ public class NKnights {
         //move ahead if cell is not fit to place the knight
         knight(board, row, col + 1, knights);
     }
+
+    private static boolean isSafe(boolean[][] board, int row, int col) {
+        
+        if (isValid(board, row - 2, col - 1)) {
+            if (board[row - 2][col - 1]) {
+                //knight is already present in this cell can't put the new knight in the current cell
+                return false;
+            }
+        }
+
+        if (isValid(board, row - 1, col - 2)) {
+            if (board[row - 1][col - 2]) {
+                //knight is already present in this cell can't put the new knight in the current cell
+                return false;
+            }
+        }
+
+        if (isValid(board, row - 2, col + 1)) {
+            if (board[row - 2][col + 1]) {
+                //knight is already present in this cell can't put the new knight in the current cell
+                return false;
+            }
+        }
+
+        if (isValid(board, row - 1, col + 2)) {
+            if (board[row - 1][col + 2]) {
+                //knight is already present in this cell can't put the new knight in the current cell
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
