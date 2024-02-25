@@ -29,9 +29,11 @@ public class NQueens {
     }
 
     private static boolean isSafe(boolean[][] board, int row, int col) {
+        
         // check vertical row
         for (int i = 0; i < row; i++) {
             if (board[i][col]) {
+                //queen is already present in the vertical position, so this current cell is not safe
                 return false;
             }
         }
@@ -40,6 +42,7 @@ public class NQueens {
         int maxLeft = Math.min(row, col);
         for (int i = 1; i <= maxLeft; i++) {
             if(board[row-i][col-i]) {
+                //queen is already present in upper left diagonal, this current cell is not safe
                 return false;
             }
         }
@@ -48,10 +51,11 @@ public class NQueens {
         int maxRight = Math.min(row, board.length - col - 1);
         for (int i = 1; i <= maxRight; i++) {
             if(board[row-i][col+i]) {
+                //queen is already present in upper reight diagonal, this current cell is not safe
                 return false;
             }
         }
-
-        return tr
+        return true;
+    }
     
 }
