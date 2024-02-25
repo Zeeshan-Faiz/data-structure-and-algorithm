@@ -3,6 +3,21 @@ public class NQueens {
     /*
      * You are given n size of a board, print all the possibilities of adding n queens such that no 2 queens
      * eliminate each other.
+     * Ex if n = 4 (size of board) and 4 (number of queens to be placed on board)
+     * 
+     * O/P = 2 (possibilites)
+       X Q X X 
+       X X X Q
+       Q X X X
+       X X Q X
+
+       X X Q X
+       Q X X X
+       X X X Q
+       X Q X X
+     
+     * Time Complexity = O(N!)
+     * Space Complexity = O(NxN)
     */
 
     static int queens(boolean[][] board, int row) {
@@ -70,6 +85,13 @@ public class NQueens {
             }
             System.out.println();
         }
+    }
+
+    public static void main(String[] args) {
+        
+        int n = 4;
+        boolean[][] board = new boolean[n][n];
+        System.out.println(queens(board, 0));
     }
 
     
