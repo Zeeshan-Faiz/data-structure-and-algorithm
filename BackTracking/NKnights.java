@@ -7,5 +7,32 @@ public class NKnights {
      * 
     */
 
-    
+    static void knight(boolean[][] board, int row, int col, int knights) {
+        
+        if (knights == 0) {
+            display(board);
+            System.out.println();
+            return;
+        }
+
+        //reached last cell do nothing
+        if (row == board.length - 1 && col == board.length) {
+            return;
+        }
+
+        //When you reach the last column of a row, start checking for new rows keeping the previous positions of knights intact
+        if (col == board.length) {
+            knight(board, row + 1, 0, knights);
+            return;
+        }
+
+        if (isSafe(board, row, col)) {
+            board[row][col] = true;
+            knight(board, row, col + 1, knights - 1);
+            board[row][col] = false;
+        }
+
+        //move ahead if cell is not fit to place the knight
+        knight(board, row, col + 1, knights);
+    }
 }
