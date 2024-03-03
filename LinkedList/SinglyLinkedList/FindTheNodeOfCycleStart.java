@@ -24,4 +24,25 @@ public class FindTheNodeOfCycleStart {
     Output: no cycle
     Explanation: There is no cycle in the linked list.
     */
+
+    public ListNode detectCycle(ListNode head) {
+        
+        int length = 0;
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+        return null;
+    }
 }
