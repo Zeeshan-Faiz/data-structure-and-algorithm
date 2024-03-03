@@ -13,4 +13,29 @@ public class ReverseAListUsingRecursion {
     Input: head = [1,2]
     Output: [2,1]
     */
+
+    /*
+     * Approach : Firstly move forward until you reach the tail of the list, and from there start coming back
+     * while changing the direction of the list.
+    */
+
+    private Node head;
+    private Node tail;
+    private int size;
+
+    public ReverseAListUsingRecursion() {
+        this.size = 0;
+    }
+
+    public void reverse(Node node) {
+        if (node == tail) {
+            head = tail;
+            return;
+        }
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
 }
