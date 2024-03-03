@@ -15,6 +15,14 @@ public class SortListUsingBubbleSort {
      * Output: [-1,0,3,4,5]
     */
 
+    private Node head;
+    private Node tail;
+    private int size;
+
+    public SortListUsingBubbleSort() {
+        this.size = 0;
+    }
+
     public void bubbleSort() {
         bubbleSort(size - 1, 0);
     }
@@ -51,6 +59,14 @@ public class SortListUsingBubbleSort {
         } else {
             bubbleSort(row - 1, 0);
         }
+    }
+
+    public Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
     }
 
     
