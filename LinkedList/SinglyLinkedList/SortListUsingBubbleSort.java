@@ -3,8 +3,7 @@ package SinglyLinkedList;
 public class SortListUsingBubbleSort {
 
     /*
-    /*
-     * Given the head of a linked list, return the list after sorting it in ascending order.
+     * Given the a linked list, sort it in ascending order using Bubble sort.
     
      * Example 1:
      * Input: head = [4,2,1,3]
@@ -57,9 +56,9 @@ public class SortListUsingBubbleSort {
                 }
             }
             bubbleSort(row, col + 1);
-        } else {
+        } 
+        else 
             bubbleSort(row - 1, 0);
-        }
     }
 
     public ListNode get(int index) {
@@ -80,7 +79,5 @@ public class SortListUsingBubbleSort {
             val = x;
             next = null;
         }
-    }
-
-    
+    }   
 }
