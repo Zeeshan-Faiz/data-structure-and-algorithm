@@ -13,4 +13,19 @@ public class SortListUsingMergeSort {
     Input: head = [-1,5,3,4,0]
     Output: [-1,0,3,4,5]
     */
+
+    ListNode sortList(ListNode head) {
+        
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode mid = getMid(head);
+        ListNode left = sortList(head);
+        ListNode right = sortList(mid);
+
+        return merge(left, right);
+    }
+
+
 }
