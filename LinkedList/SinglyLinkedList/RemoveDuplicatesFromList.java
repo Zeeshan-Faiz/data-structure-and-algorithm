@@ -24,7 +24,7 @@ public class RemoveDuplicatesFromList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
-    ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         
         ListNode current = head;
 
@@ -35,7 +35,10 @@ public class RemoveDuplicatesFromList {
                 current = current.next;
             }
         }
-
         return head;
+    }
+
+    public static void main(String[] args) {
+        
     }
 }
