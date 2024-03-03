@@ -10,6 +10,7 @@ public class FindLengthOfCycle {
     //let the slow pointer to traverse, keeping the count of nodes until it reached back to fast pointer.
 
     public int lengthCycle(ListNode head) {
+        
         ListNode fast = head;
         ListNode slow = head;
 
@@ -38,5 +39,4 @@ public class FindLengthOfCycle {
         next = null;
         }
     }
-    
 }
