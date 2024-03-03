@@ -1,21 +1,17 @@
 package SinglyLinkedList;
 
 public class InsertUsingRecursion {
-    
+
     /*
      * Insert a node in a singly list using recursion.
-    */
+     */
 
     private Node head;
+    private Node tail;
     private int size;
 
     public InsertUsingRecursion() {
         this.size = 0;
-    }
-
-    public InsertUsingRecursion(Node head, int size) {
-        this.head = head;
-        this.size = size;
     }
 
     public void insertRec(int val, int index) {
@@ -28,9 +24,30 @@ public class InsertUsingRecursion {
             size++;
             return temp;
         }
-
-        node.next = insertRec(val, index-1, node.next);
+        node.next = insertRec(val, index - 1, node.next);
         return node;
+    }
+
+    public void insertFirst(int val) {
+        Node node = new Node(val);
+        node.next = head;
+        head = node;
+
+        if (tail == null) {
+            tail = head;
+        }
+        size += 1;
+    }
+
+    public void insertLast(int val) {
+        if (tail == null) {
+            insertFirst(val);
+            return;
+        }
+        Node node = new Node(val);
+        tail.next = node;
+        tail = node;
+        size++;
     }
 
 
@@ -46,5 +63,27 @@ public class InsertUsingRecursion {
             this.value = value;
             this.next = next;
         }
+    }
+
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.value + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
+
+    public static void main(String[] args) {
+        
+        InsertUsingRecursion ll = new InsertUsingRecursion();
+        ll.insertLast(1);
+        ll.insertLast(5);
+        ll.insertLast(15);
+        ll.insertLast(20);
+        ll.display();
+
+        ll.insertRec(25, 2);
+        ll.display();
     }
 }
