@@ -69,5 +69,4 @@ public class SortListUsingMergeSort {
             next = null;
         }
     }
-
 }
