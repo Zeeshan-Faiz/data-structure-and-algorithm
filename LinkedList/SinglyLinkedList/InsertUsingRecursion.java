@@ -8,7 +8,7 @@ public class InsertUsingRecursion {
 
     private Node head;
     private Node tail;
-    private int size;
+    int size;
 
     public InsertUsingRecursion() {
         this.size = 0;
