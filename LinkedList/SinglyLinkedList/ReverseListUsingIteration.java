@@ -14,6 +14,8 @@ public class ReverseListUsingIteration {
      * Output: [2,1]
     */
 
+    //Take three pointers--> prev,present & next and then try reversing the list accordingly
+
     public ListNode reverseList(ListNode head) {
         
         if (head == null) {
@@ -24,12 +26,12 @@ public class ReverseListUsingIteration {
         ListNode next = present.next;
 
         while (present != null) {
-            present.next = prev;
+            present.next = prev;//change direction
+            
             prev = present;
             present = next;
-            if (next != null) {
+            if (next != null) 
                 next = next.next;
-            }
         }
         return prev;
     }
@@ -43,5 +45,4 @@ public class ReverseListUsingIteration {
             next = null;
         }
     }
-    
 }
