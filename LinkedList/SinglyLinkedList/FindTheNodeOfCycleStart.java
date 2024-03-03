@@ -27,7 +27,6 @@ public class FindTheNodeOfCycleStart {
 
     public ListNode detectCycle(ListNode head) {
         
-        int length = 0;
         ListNode fast = head;
         ListNode slow = head;
 
