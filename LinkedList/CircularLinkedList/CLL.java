@@ -1,5 +1,12 @@
 package CircularLinkedList;
 
+/*
+ * A circular linked list forms a circle and the last node connects to the head.
+ * 
+ *      1 ➡️ 2 ➡️ 3 ➡️ 4
+ *     ⬆️               ⬇️
+ *       ⬅️    ⬅️    ⬅️
+*/
 
 public class CLL {
 
@@ -77,7 +84,7 @@ public class CLL {
 
     public static void main(String[] args) {
         
-        
+
     }
 
 }
