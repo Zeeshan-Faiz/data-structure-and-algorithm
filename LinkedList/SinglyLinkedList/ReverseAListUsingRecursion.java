@@ -3,8 +3,7 @@ package SinglyLinkedList;
 public class ReverseAListUsingRecursion {
 
     /*
-     * Given the head of a singly linked list, reverse the list, and return the
-     * reversed list.
+     * Given the head of a singly linked list, reverse the list, and return the reversed list.
      * 
      * Example 1:
      * Input: head = [1,2,3,4,5]
@@ -17,9 +16,8 @@ public class ReverseAListUsingRecursion {
 
     /*
      * Approach : Firstly move forward until you reach the tail of the list, and
-     * from there start coming back
-     * while changing the direction of the list.
-     */
+     * from there start coming back while changing the direction of the list.
+    */
 
     private Node head;
     private Node tail;
@@ -30,11 +28,16 @@ public class ReverseAListUsingRecursion {
     }
 
     public void reverse(Node node) {
+        
         if (node == tail) {
             head = tail;
             return;
         }
+
+        //to reach to the tail of the list
         reverse(node.next);
+
+        //while coming back start reversing the direction
         tail.next = node;
         tail = node;
         tail.next = null;
