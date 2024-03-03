@@ -37,8 +37,4 @@ public class RemoveDuplicatesFromList {
         }
         return head;
     }
-
-    public static void main(String[] args) {
-        
-    }
 }
