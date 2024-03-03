@@ -21,5 +21,15 @@ public class MiddleOfLinkedList {
     //more than the other pointer such that when the first pointer reaches the end of LL, the other slower pointer
     //will reach exactly half of the linkedlist, hence return the node of this slow pointer.
 
-    
+    public ListNode middleNode(ListNode head) {
+        
+        ListNode s = head;
+        ListNode f = head;
+
+        while (f != null && f.next != null) {
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
+    }
 }
