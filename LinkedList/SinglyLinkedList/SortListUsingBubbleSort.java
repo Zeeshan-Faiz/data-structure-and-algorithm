@@ -15,14 +15,15 @@ public class SortListUsingBubbleSort {
      * Output: [-1,0,3,4,5]
     */
 
-    private Node head;
-    private Node tail;
+    private ListNode head;
+    private ListNode tail;
     private int size;
 
     public SortListUsingBubbleSort() {
         this.size = 0;
     }
 
+    //Approach : Using bubble Sort Recursively
     public void bubbleSort() {
         bubbleSort(size - 1, 0);
     }
@@ -33,23 +34,23 @@ public class SortListUsingBubbleSort {
         }
 
         if (col < row) {
-            Node first = get(col);
-            Node second = get(col + 1);
+            ListNode first = get(col);
+            ListNode second = get(col + 1);
 
-            if (first.value > second.value) {
+            if (first.val > second.val) {
                 // swap
                 if (first == head) {
                     head = second;
                     first.next = second.next;
                     second.next = first;
                 } else if (second == tail) {
-                    Node prev = get(col - 1);
+                    ListNode prev = get(col - 1);
                     prev.next = second;
                     tail = first;
                     first.next = null;
                     second.next = tail;
                 } else {
-                    Node prev = get(col - 1);
+                    ListNode prev = get(col - 1);
                     prev.next = second;
                     first.next = second.next;
                     second.next = first;
@@ -61,12 +62,24 @@ public class SortListUsingBubbleSort {
         }
     }
 
-    public Node get(int index) {
-        Node node = head;
+    public ListNode get(int index) {
+        ListNode node = head;
         for (int i = 0; i < index; i++) {
             node = node.next;
         }
         return node;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(){}
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 
     
