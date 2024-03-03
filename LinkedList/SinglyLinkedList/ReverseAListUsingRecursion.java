@@ -19,9 +19,9 @@ public class ReverseAListUsingRecursion {
      * from there start coming back while changing the direction of the list.
     */
 
-    private Node head;
+    Node head;
     private Node tail;
-    private int size;
+    int size;
 
     public ReverseAListUsingRecursion() {
         this.size = 0;
