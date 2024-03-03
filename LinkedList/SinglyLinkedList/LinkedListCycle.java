@@ -13,5 +13,24 @@ public class LinkedListCycle {
     Output: true
     Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
     */
+
+    //Approach : Whenever in the question the word 'cycle' is used always try to solve it using fast and slow pointer.
+
+    public boolean hasCycle(ListNode head) {
+        
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     
 }
