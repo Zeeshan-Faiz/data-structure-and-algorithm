@@ -10,6 +10,20 @@ public class InsertUsingRecursion {
     private Node tail;
     private int size;
 
+    private class Node {
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+
     public InsertUsingRecursion() {
         this.size = 0;
     }
@@ -48,21 +62,6 @@ public class InsertUsingRecursion {
         tail.next = node;
         tail = node;
         size++;
-    }
-
-
-    private class Node {
-        private int value;
-        private Node next;
-
-        public Node(int value) {
-            this.value = value;
-        }
-
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
     }
 
     public void display() {
