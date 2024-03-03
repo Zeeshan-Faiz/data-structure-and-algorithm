@@ -39,5 +39,4 @@ public class LinkedListCycle {
         next = null;
         }
     }
-    
 }
