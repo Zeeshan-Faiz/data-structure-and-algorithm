@@ -3,7 +3,7 @@ package SinglyLinkedList;
 public class RotateList {
     
     /*
-    Given the head of a linked list, rotate the list to the right by k places.
+    (Q61 Leetcode QUestion(Medium))Given the head of a linked list, rotate the list to the right by k places.
 
     Example 1:
     Input: head = [1,2,3,4,5], k = 2
@@ -15,6 +15,7 @@ public class RotateList {
     */
 
     public ListNode rotateRight(ListNode head, int k) {
+        
         if (k <= 0 || head == null || head.next == null) {
             return head;
         }
