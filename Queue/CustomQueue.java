@@ -1,9 +1,7 @@
 public class CustomQueue {
 
     private int[] data;
-
     private static final int DEFAULT_SIZE = 10;
-
     int end = 0;
 
     public CustomQueue() {
@@ -23,18 +21,19 @@ public class CustomQueue {
     }
 
     public boolean insert(int item) {
-        if (isFull()) {
+        
+        if (isFull()) 
             return false;
-        }
+        
         data[end++] = item;
         return true;
     }
 
     public int remove() throws Exception {
+        
         if (isEmpty()) {
             throw new Exception("Queue is empty");
         }
-
         int removed = data[0];
 
         // shift the elements to left
@@ -46,9 +45,10 @@ public class CustomQueue {
     }
 
     public int front() throws Exception {
-        if (isEmpty()) {
+        
+        if (isEmpty()) 
             throw new Exception("Queue is empty");
-        }
+        
         return data[0];
     }
 
