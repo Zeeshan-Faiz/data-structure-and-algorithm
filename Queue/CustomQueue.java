@@ -71,6 +71,5 @@ public class CustomQueue {
 
         queue.remove();
         queue.display();
-
     }
 }
