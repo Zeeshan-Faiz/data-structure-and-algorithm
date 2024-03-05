@@ -1,5 +1,5 @@
 public class CircularQueue {
-    
+
     protected int[] data;
     private static final int DEFAULT_SIZE = 10;
 
@@ -7,7 +7,7 @@ public class CircularQueue {
     protected int front = 0;
     private int size = 0;
 
-    public CircularQueue(){
+    public CircularQueue() {
         this(DEFAULT_SIZE);
     }
 
@@ -24,8 +24,18 @@ public class CircularQueue {
     }
 
     public boolean insert(int item) {
-        if (isFull()) {
-            return false;
+
+        if (this.isFull()) {
+            // double the array size
+            int[] temp = new int[data.length * 2];
+
+            // copy all previous items in new data
+            for (int i = 0; i < data.length; i++) {
+                temp[i] = data[(front + i) % data.length];
+            }
+            front = 0;
+            end = data.length;
+            data = temp;
         }
         data[end++] = item;
         end = end % data.length;
@@ -44,13 +54,25 @@ public class CircularQueue {
         return removed;
     }
 
-    public int front() throws Exception{
+    public int front() throws Exception {
         if (isEmpty()) {
             throw new Exception("Queue is empty");
         }
         return data[front];
     }
 
-    
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Empty");
+            return;
+        }
+        int i = front;
+        do {
+            System.out.print(data[i] + " -> ");
+            i++;
+            i %= data.length;
+        } while (i != end);
+        System.out.println("END");
+    }
 
 }
