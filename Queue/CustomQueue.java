@@ -59,5 +59,19 @@ public class CustomQueue {
         System.out.println("END");
     }
 
+    public static void main(String[] args) throws Exception {
+        
+        CustomQueue queue = new CustomQueue();
+        queue.insert(3);
+        queue.insert(6);
+        queue.insert(9);
+        queue.insert(12);
+
+        queue.display();
+    
+        queue.remove();
+        queue.display();
+
+    }
     
 }
