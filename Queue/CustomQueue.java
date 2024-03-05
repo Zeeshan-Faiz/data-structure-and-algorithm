@@ -1,12 +1,12 @@
 public class CustomQueue {
-    
+
     private int[] data;
 
     private static final int DEFAULT_SIZE = 10;
 
     int end = 0;
 
-    public CustomQueue(){
+    public CustomQueue() {
         this(DEFAULT_SIZE);
     }
 
@@ -39,13 +39,13 @@ public class CustomQueue {
 
         // shift the elements to left
         for (int i = 1; i < end; i++) {
-            data[i-1] = data[i];
+            data[i - 1] = data[i];
         }
         end--;
         return removed;
     }
 
-    public int front() throws Exception{
+    public int front() throws Exception {
         if (isEmpty()) {
             throw new Exception("Queue is empty");
         }
@@ -60,7 +60,7 @@ public class CustomQueue {
     }
 
     public static void main(String[] args) throws Exception {
-        
+
         CustomQueue queue = new CustomQueue();
         queue.insert(3);
         queue.insert(6);
@@ -68,10 +68,9 @@ public class CustomQueue {
         queue.insert(12);
 
         queue.display();
-    
+
         queue.remove();
         queue.display();
 
     }
-    
 }
