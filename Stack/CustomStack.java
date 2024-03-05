@@ -13,5 +13,25 @@ public class CustomStack {
         this.data = new int[size];
     }
 
+    public boolean push(int item) {
+        
+        if (isFull()) {
+            System.out.println("Stack is full!!");
+            return false;
+        }
+        ptr++;
+        data[ptr] = item;
+        return true;
+    }
+
+    public int pop() throws Exception {
+        
+        if (isEmpty()) {
+            throw new Exception("Cannot pop from an empty stack!!");
+        }
+
+        return data[ptr--];
+    }
+
     
 }
