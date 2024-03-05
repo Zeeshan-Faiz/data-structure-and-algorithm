@@ -5,7 +5,7 @@ public class CustomStack {
 
     int ptr = -1;
 
-    public CustomStack(){
+    public CustomStack() {
         this(DEFAULT_SIZE);
     }
 
@@ -14,10 +14,17 @@ public class CustomStack {
     }
 
     public boolean push(int item) {
-        
-        if (isFull()) {
-            System.out.println("Stack is full!!");
-            return false;
+
+        // this takes care of it being full
+        if (this.isFull()) {
+            // double the array size
+            int[] temp = new int[data.length * 2];
+
+            // copy all previous items in new data
+            for (int i = 0; i < data.length; i++) {
+                temp[i] = data[i];
+            }
+            data = temp;
         }
         ptr++;
         data[ptr] = item;
@@ -25,16 +32,16 @@ public class CustomStack {
     }
 
     public int pop() throws Exception {
-        
-        if (isEmpty()) 
+
+        if (isEmpty())
             throw new Exception("Cannot pop from an empty stack!!");
 
         return data[ptr--];
     }
 
     public int peek() throws Exception {
-        
-        if (isEmpty()) 
+
+        if (isEmpty())
             throw new Exception("Cannot peek from an empty stack!!");
 
         return data[ptr];
@@ -49,7 +56,7 @@ public class CustomStack {
     }
 
     public static void main(String[] args) throws Exception {
-        
+
         CustomStack stack = new CustomStack();
         stack.push(2);
         stack.push(4);
