@@ -13,4 +13,23 @@ public class CustomQueue {
     public CustomQueue(int size) {
         this.data = new int[size];
     }
+
+    public boolean isFull() {
+        return end == data.length; // ptr is at last index
+    }
+
+    public boolean isEmpty() {
+        return end == 0;
+    }
+
+    public boolean insert(int item) {
+        if (isFull()) {
+            return false;
+        }
+        data[end++] = item;
+        return true;
+    }
+
+    
+
 }
