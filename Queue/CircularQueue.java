@@ -14,4 +14,25 @@ public class CircularQueue {
     public CircularQueue(int size) {
         this.data = new int[size];
     }
+
+    public boolean isFull() {
+        return size == data.length; // ptr is at last index
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public boolean insert(int item) {
+        if (isFull()) {
+            return false;
+        }
+        data[end++] = item;
+        end = end % data.length;
+        size++;
+        return true;
+    }
+
+
+
 }
