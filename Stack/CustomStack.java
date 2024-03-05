@@ -46,5 +46,16 @@ public class CustomStack {
 
     public boolean isEmpty() {
         return ptr == -1;
-    } 
+    }
+
+    public static void main(String[] args) throws Exception {
+        
+        CustomStack stack = new CustomStack();
+        stack.push(2);
+        stack.push(4);
+        stack.push(6);
+        stack.push(8);
+
+        System.out.println(stack.pop());
+    }
 }
