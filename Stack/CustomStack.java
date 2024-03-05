@@ -26,12 +26,25 @@ public class CustomStack {
 
     public int pop() throws Exception {
         
-        if (isEmpty()) {
+        if (isEmpty()) 
             throw new Exception("Cannot pop from an empty stack!!");
-        }
 
         return data[ptr--];
     }
 
-    
+    public int peek() throws Exception {
+        
+        if (isEmpty()) 
+            throw new Exception("Cannot peek from an empty stack!!");
+
+        return data[ptr];
+    }
+
+    public boolean isFull() {
+        return ptr == data.length - 1; // ptr is at last index
+    }
+
+    public boolean isEmpty() {
+        return ptr == -1;
+    } 
 }
