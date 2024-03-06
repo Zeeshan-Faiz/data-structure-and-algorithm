@@ -48,18 +48,21 @@ public class GameOfTwoStacks {
         Scanner s = new Scanner(System.in);
         int t = s.nextInt();
         for (int i = 0; i < t; i++) {
-        int n = s.nextInt();
-        int m = s.nextInt();
-        int x = s.nextInt();
-        int[] a = new int[n];
-        int[] b = new int[m];
-        for (int j = 0; j < n; j++) {
-            a[j] = s.nextInt();
-        }
-        for (int j = 0; j < m; j++) {
-            b[j] = s.nextInt();
-        }
-        System.out.println(twoStacks(x, a, b));
+            
+            int n = s.nextInt();
+            int m = s.nextInt();
+            int x = s.nextInt();
+            int[] a = new int[n];
+            int[] b = new int[m];
+            
+            for (int j = 0; j < n; j++) 
+                a[j] = s.nextInt();
+            
+            
+            for (int j = 0; j < m; j++) 
+                b[j] = s.nextInt();
+            
+            System.out.println(twoStacks(x, a, b));
         }
         s.close();
     }
