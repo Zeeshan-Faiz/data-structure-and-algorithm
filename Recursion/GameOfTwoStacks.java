@@ -16,6 +16,8 @@ public class GameOfTwoStacks {
     The maximum number of values Nick can remove is 4.There are two sets of choices with this result.
     1)Remove 1,2,3,4 from a with the sum of 10 
     2)Remove 1,2,3 from a and 6 from b with a sum of 12
+
+    Returns - int: the maximum number of selections Nick can make 
     */
     
 }
