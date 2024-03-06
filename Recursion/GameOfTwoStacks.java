@@ -61,5 +61,6 @@ public class GameOfTwoStacks {
         }
         System.out.println(twoStacks(x, a, b));
         }
-  }
+        s.close();
+    }
 }
