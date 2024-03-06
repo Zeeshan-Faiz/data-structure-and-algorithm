@@ -9,7 +9,13 @@ public class GameOfTwoStacks {
     beginning of the game. Nick's final score is the total number of integers he has removed from the two stacks.
     
     Given a,b and maxSum for games, find the maximum possible score Nick can achieve.
-    
+    Example:
+    a = {1,2,3,4,5}
+    b = {6,7,8,9}
+
+    The maximum number of values Nick can remove is 4.There are two sets of choices with this result.
+    1)Remove 1,2,3,4 from a with the sum of 10 
+    2)Remove 1,2,3 from a and 6 from b with a sum of 12
     */
     
 }
