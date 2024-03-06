@@ -19,5 +19,9 @@ public class GameOfTwoStacks {
 
     Returns - int: the maximum number of selections Nick can make 
     */
+
+    static int twoStacks(int x, int[] a, int[] b) {
+        return twoStacks(x, a, b, 0, 0) - 1;
+    }
     
 }
