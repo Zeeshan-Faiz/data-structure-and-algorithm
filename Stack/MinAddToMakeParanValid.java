@@ -38,6 +38,11 @@ public class MinAddToMakeParanValid {
             else
             stack.push(ch);
         }
-    return stack.size();
+        return stack.size();
+    }
+
+    public static void main(String[] args) {
+     
+        System.out.println(minAddToMakeValid("())"));
     }
 }
