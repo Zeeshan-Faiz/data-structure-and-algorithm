@@ -54,4 +54,8 @@ public class ValidParenthesis {
     return stack.isEmpty();
     }
 
+    public static void main(String[] args) {
+        
+        System.out.println(isValid("()[]{}"));
+    }
 }
