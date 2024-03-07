@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class LargestRectangle {
     
     /*
@@ -9,4 +11,28 @@ public class LargestRectangle {
     Explanation: The above is a histogram where width of each bar is 1.
     The largest rectangle is shown in the red area, which has an area = 10 units.
     */
+
+    static int largestRectangleArea(int[] heights) {
+        
+        Stack<Integer> stack = new Stack<>();
+        int max = 0;
+
+        stack.push(0);
+
+        for (int i = 1; i < heights.length; i++) {
+        while (!stack.isEmpty() && heights[i] < heights[stack.peek()]) {
+            max = getMax(heights, stack, max, i);
+        }
+        stack.push(i);
+        }
+
+        int i = heights.length;
+        while (!stack.isEmpty()) {
+            max = getMax(heights, stack, max, i);
+        }
+
+        return max;
+    }
+
+
 }
