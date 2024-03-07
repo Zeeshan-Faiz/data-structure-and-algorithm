@@ -32,7 +32,7 @@ public class MinInsertionToBalanceParanString {
     Output: 3
     Explanation: Add '(' to match the first '))', Add '))' to match the last '('.
     */
-
+ 
     static int minInsertions(String s) {
         
         Stack<Character> stack = new Stack<>();
