@@ -95,9 +95,9 @@ public class BinarySearchTree {
     //to check whether the tree is balanced or not
     private boolean balanced(Node node) {
         
-        if (node == null) {
+        if (node == null) 
             return true;
-        }
+        
         return Math.abs(height(node.left) - height(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
     }
 
@@ -106,9 +106,10 @@ public class BinarySearchTree {
     }
 
     private void display(Node node, String details) {
-        if (node == null) {
+        
+        if (node == null) 
             return;
-        }
+        
         System.out.println(details + node.value);
         display(node.left, "Left child of " + node.value + " : ");
         display(node.right, "Right child of " + node.value + " : ");
