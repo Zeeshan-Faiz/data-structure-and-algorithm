@@ -68,14 +68,18 @@ public class BinarySearchTree {
     //If we have sorted numbers to be inserted in BST then the tree can be skewed which is not good
     //in order to tackle this we'll devide the array from middle and start inserting into the tree accordingly
     private void populatedSorted(int[] nums, int start, int end) {
-        if (start >= end) {
+        
+        if (start >= end) 
             return;
-        }
-
+        
         int mid = (start + end) / 2;
 
         this.insert(nums[mid]);
+
+        //add in left hand
         populatedSorted(nums, start, mid);
+
+        //add in right hand
         populatedSorted(nums, mid + 1, end);
     }
 
@@ -83,7 +87,9 @@ public class BinarySearchTree {
         return balanced(root);
     }
 
+    //to check whether the tree is balanced or not
     private boolean balanced(Node node) {
+        
         if (node == null) {
             return true;
         }
@@ -102,5 +108,4 @@ public class BinarySearchTree {
         display(node.left, "Left child of " + node.value + " : ");
         display(node.right, "Right child of " + node.value + " : ");
     }
-
 }
