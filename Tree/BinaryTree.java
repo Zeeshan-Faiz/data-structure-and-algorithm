@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class BinaryTree {
 
+    /*
+    A binary tree is a recursive data structure where each node can have 2 children at most.
+    */
+
     public BinaryTree() {
     }
 
