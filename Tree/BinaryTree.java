@@ -89,4 +89,12 @@ public class BinaryTree {
         //print all left nodess
         prettyDisplay(node.left, level + 1);
     }
+
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
+        BinaryTree tree = new BinaryTree();
+        tree.populate(scanner);
+        tree.prettyDisplay();
+    }
 }
