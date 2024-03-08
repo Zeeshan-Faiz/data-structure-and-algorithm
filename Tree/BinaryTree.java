@@ -3,14 +3,15 @@ import java.util.Scanner;
 public class BinaryTree {
 
     /*
-    A binary tree is a recursive data structure where each node can have 2 children at most.
-    */
+     * A binary tree is a recursive data structure where each node can have 2
+     * children at most.
+     */
 
     public BinaryTree() {
     }
 
     private static class Node {
-        
+
         int value;
         Node left;
         Node right;
@@ -19,11 +20,12 @@ public class BinaryTree {
             this.value = value;
         }
     }
+
     private Node root;
 
     // insert elements
     public void populate(Scanner scanner) {
-        
+
         System.out.println("Enter the root Node: ");
         int value = scanner.nextInt();
         root = new Node(value);
@@ -31,11 +33,11 @@ public class BinaryTree {
     }
 
     private void populate(Scanner scanner, Node node) {
-        
+
         System.out.println("Do you want to enter left of " + node.value);
         boolean left = scanner.nextBoolean();
 
-        //add nodes to the left of current node
+        // add nodes to the left of current node
         if (left) {
             System.out.println("Enter the value of the left of " + node.value);
             int value = scanner.nextInt();
@@ -46,7 +48,7 @@ public class BinaryTree {
         System.out.println("Do you want to enter right of " + node.value);
         boolean right = scanner.nextBoolean();
 
-        //add nodes to the right of current node
+        // add nodes to the right of current node
         if (right) {
             System.out.println("Enter the value of the right of " + node.value);
             int value = scanner.nextInt();
@@ -60,8 +62,8 @@ public class BinaryTree {
     }
 
     private void display(Node node, String indent) {
-        
-        if (node == null) 
+
+        if (node == null)
             return;
 
         System.out.println(indent + node.value);
@@ -74,11 +76,11 @@ public class BinaryTree {
     }
 
     private void prettyDisplay(Node node, int level) {
-        
-        if (node == null) 
+
+        if (node == null)
             return;
 
-        //print all right nodes first
+        // print all right nodes first
         prettyDisplay(node.right, level + 1);
 
         if (level != 0) {
@@ -86,16 +88,57 @@ public class BinaryTree {
                 System.out.print("|\t\t");
             }
             System.out.println("|------->" + node.value);
-        } 
-        else 
+        } else
             System.out.println(node.value);
-        
-        //print all left nodess
+
+        // print all left nodess
         prettyDisplay(node.left, level + 1);
     }
 
+    // Pre-Order = N --> L --> R
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(Node node) {
+
+        if (node == null)
+            return;
+
+        System.out.print(node.value + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    private void inOrder(Node node) {
+
+        if (node == null)
+            return;
+
+        inOrder(node.left);
+        System.out.print(node.value + " ");
+        inOrder(node.right);
+    }
+
+    public void postOrder() {
+        preOrder(root);
+    }
+
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        preOrder(node.left);
+        preOrder(node.right);
+        System.out.print(node.value + " ");
+    }
+
     public static void main(String[] args) {
-    
+
         Scanner scanner = new Scanner(System.in);
         BinaryTree tree = new BinaryTree();
         tree.populate(scanner);
