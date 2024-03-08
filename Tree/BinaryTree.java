@@ -30,6 +30,8 @@ public class BinaryTree {
         
         System.out.println("Do you want to enter left of " + node.value);
         boolean left = scanner.nextBoolean();
+
+        //add nodes to the left of current node
         if (left) {
             System.out.println("Enter the value of the left of " + node.value);
             int value = scanner.nextInt();
@@ -39,6 +41,8 @@ public class BinaryTree {
 
         System.out.println("Do you want to enter right of " + node.value);
         boolean right = scanner.nextBoolean();
+
+        //add nodes to the right of current node
         if (right) {
             System.out.println("Enter the value of the right of " + node.value);
             int value = scanner.nextInt();
