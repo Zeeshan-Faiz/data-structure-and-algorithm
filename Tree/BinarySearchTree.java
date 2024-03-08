@@ -36,20 +36,22 @@ public class BinarySearchTree {
     }
 
     private Node insert(int value, Node node) {
+        
+        //if node is null then add a node at that particular position either right or left
         if (node == null) {
             node = new Node(value);
             return node;
         }
 
-        if (value < node.value) {
+        if (value < node.value)
             node.left = insert(value, node.left);
-        }
-
-        if (value > node.value) {
+        
+        if (value > node.value) 
             node.right = insert(value, node.right);
-        }
 
         node.height = Math.max(height(node.left), height(node.right)) + 1;
+
+        //if there's already a node present towards left or right return the same node without modifying it
         return node;
     }
 
@@ -63,6 +65,8 @@ public class BinarySearchTree {
         populatedSorted(nums, 0, nums.length);
     }
 
+    //If we have sorted numbers to be inserted in BST then the tree can be skewed which is not good
+    //in order to tackle this we'll devide the array from middle and start inserting into the tree accordingly
     private void populatedSorted(int[] nums, int start, int end) {
         if (start >= end) {
             return;
