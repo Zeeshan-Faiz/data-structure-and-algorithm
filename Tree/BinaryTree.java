@@ -49,7 +49,6 @@ public class BinaryTree {
             node.right = new Node(value);
             populate(scanner, node.right);
         }
-
     }
 
     public void display() {
@@ -57,9 +56,10 @@ public class BinaryTree {
     }
 
     private void display(Node node, String indent) {
-        if (node == null) {
+        
+        if (node == null) 
             return;
-        }
+
         System.out.println(indent + node.value);
         display(node.left, indent + "\t");
         display(node.right, indent + "\t");
@@ -70,10 +70,11 @@ public class BinaryTree {
     }
 
     private void prettyDisplay(Node node, int level) {
-        if (node == null) {
+        
+        if (node == null) 
             return;
-        }
 
+        //print all right nodes first
         prettyDisplay(node.right, level + 1);
 
         if (level != 0) {
@@ -81,9 +82,11 @@ public class BinaryTree {
                 System.out.print("|\t\t");
             }
             System.out.println("|------->" + node.value);
-        } else {
+        } 
+        else 
             System.out.println(node.value);
-        }
+        
+        //print all left nodess
         prettyDisplay(node.left, level + 1);
     }
 }
