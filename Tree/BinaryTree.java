@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class BinaryTree {
 
     public BinaryTree() {
-
     }
 
     private static class Node {
+        
         int value;
         Node left;
         Node right;
@@ -15,11 +15,11 @@ public class BinaryTree {
             this.value = value;
         }
     }
-
     private Node root;
 
     // insert elements
     public void populate(Scanner scanner) {
+        
         System.out.println("Enter the root Node: ");
         int value = scanner.nextInt();
         root = new Node(value);
@@ -27,6 +27,7 @@ public class BinaryTree {
     }
 
     private void populate(Scanner scanner, Node node) {
+        
         System.out.println("Do you want to enter left of " + node.value);
         boolean left = scanner.nextBoolean();
         if (left) {
