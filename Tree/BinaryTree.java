@@ -110,6 +110,7 @@ public class BinaryTree {
         preOrder(node.right);
     }
 
+    //In-Order = L --> N --> R
     public void inOrder() {
         inOrder(root);
     }
@@ -124,16 +125,18 @@ public class BinaryTree {
         inOrder(node.right);
     }
 
+    //Post-Order = L --> R --> N
     public void postOrder() {
-        preOrder(root);
+        postOrder(root);
     }
 
     private void postOrder(Node node) {
-        if (node == null) {
+        
+        if (node == null) 
             return;
-        }
-        preOrder(node.left);
-        preOrder(node.right);
+        
+        postOrder(node.left);
+        postOrder(node.right);
         System.out.print(node.value + " ");
     }
 
