@@ -102,23 +102,32 @@ public class SegmentTree {
             return this.query(node.left, qsi, qei) + this.query(node.right, qsi, qei);  
     }
 
-    // update
+    //Update the data at a given index
     public void update(int index, int value) {
         this.root.data = update(this.root, index, value);
     }
 
     private int update(Node node, int index, int value) {
+        
+        //When the given index is withing the interval range of current node
         if (index >= node.startInterval && index <= node.endInterval) {
-            if (index == node.startInterval && index == node.endInterval) {
+            
+            //When you reach the leaf node of the given index just update it's data
+            if (index == node.startInterval && index == node.endInterval) 
+            {
                 node.data = value;
                 return node.data;
-            } else {
+            } 
+            //or else update the upper node's data which might get change due to a change in leaf data
+            else 
+            {
                 int leftAns = update(node.left, index, value);
                 int rightAns = update(node.right, index, value);
                 node.data = leftAns + rightAns;
                 return node.data;
             }
         }
+        // the given index doesn't lie within the range, therefore just return the node's data unchanged
         return node.data;
     }
 
