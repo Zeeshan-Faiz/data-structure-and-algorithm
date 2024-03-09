@@ -1,11 +1,9 @@
 public class SegmentTree {
 
     /*
-     * A Segment Tree is a data structure that stores information about array
-     * intervals as a tree.
+     * A Segment Tree is a data structure that stores information about array intervals as a tree.
      * This allows answering range queries over an array efficiently, while still
-     * being flexible enough to
-     * allow quick modification of the array.
+     * being flexible enough to allow quick modification of the array.
      */
 
     private static class Node {
@@ -25,20 +23,20 @@ public class SegmentTree {
     Node root;
 
     public SegmentTree(int[] arr) {
-        // create a tree using this array
+        //create a tree using this array
         this.root = constructTree(arr, 0, arr.length - 1);
     }
 
     private Node constructTree(int[] arr, int start, int end) {
 
-        // leaf node
+        //leaf node
         if (start == end) {
             Node leaf = new Node(start, end);// here both start and end are equal
             leaf.data = arr[start];
             return leaf;
         }
 
-        // create new node with index you are at
+        //create new node with index you are at
         Node node = new Node(start, end);
         int mid = (start + end) / 2;
 
@@ -64,7 +62,7 @@ public class SegmentTree {
         else
             str = str + "No left child";
 
-        // for current node
+        //for current node
         str = str + "Interval=[" + node.startInterval + "-" + node.endInterval + "] and data: " + node.data + " <= ";
 
         if (node.right != null)
@@ -76,7 +74,7 @@ public class SegmentTree {
 
         System.out.println(str + '\n');
 
-        // call recursively for whole tree
+        //call recursively for whole tree
         if (node.left != null)
             display(node.left);
 
