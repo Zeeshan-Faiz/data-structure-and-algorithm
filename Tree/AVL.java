@@ -182,7 +182,14 @@ public class AVL {
 
     public static void main(String[] args) {
         
+        AVL tree = new AVL();
+
+        for(int i=0; i < 1000; i++) {
+          tree.insert(i);
+        }
+    
+        //As AVL will implement self balancing if we add 1000 items in ordered it will balance it self 
+        //and the total hieght will be 3 and not 1000
+        System.out.println(tree.height());
     }
-    
-    
 }
