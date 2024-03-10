@@ -1,3 +1,10 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+import javax.swing.tree.TreeNode;
+
 public class LevelOrderTraversalII {
     
     /*
@@ -18,5 +25,36 @@ public class LevelOrderTraversalII {
     Output: []
     */
 
-    
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        
+        List<List<Integer>> result = new ArrayList<>();
+
+        if (root == null) 
+        return result;
+
+        //Use queue to add nodes levelwise
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+
+            int levelSize = queue.size();
+            List<Integer> currentLevelResult = new ArrayList<>(levelSize);
+            for (int i=0; i < levelSize; i++) {
+
+                //take out node from queue and add it in the list
+                TreeNode currentNode = queue.poll();
+                currentLevelResult.add(currentNode.val);
+                
+                //adding the children of current node in the queue
+                if (currentNode.left != null) 
+                queue.offer(currentNode.left);
+                
+                if (currentNode.right != null) 
+                queue.offer(currentNode.right);
+            }
+            result.add(0,currentLevelResult);//just add all the new list to the front of main list
+        }
+        return result;
+    }
 }
