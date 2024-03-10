@@ -40,30 +40,32 @@ public class ZigZagLevelOrderTraversal {
             int levelSize = deque.size();
             List<Integer> currentLevelResult = new ArrayList<>(levelSize);
             for (int i=0; i < levelSize; i++) {
-                
+
                 if (!reverse) {
-                TreeNode currentNode = deque.pollFirst();
-                currentLevelResult.add(currentNode.val);
-                if (currentNode.left != null) {
-                    deque.addLast(currentNode.left);
+                    /
+                    TreeNode currentNode = deque.pollFirst();
+                    currentLevelResult.add(currentNode.val);
+                    if (currentNode.left != null) {
+                        deque.addLast(currentNode.left);
+                    }
+                    if (currentNode.right != null) {
+                        deque.addLast(currentNode.right);
+                    }
+                } 
+                else {
+                    TreeNode currentNode = deque.pollLast();
+                    currentLevelResult.add(currentNode.val);
+                    if (currentNode.right != null) {
+                        deque.addFirst(currentNode.right);
+                    }
+                    if (currentNode.left != null) {
+                        deque.addFirst(currentNode.left);
+                    }
                 }
-                if (currentNode.right != null) {
-                    deque.addLast(currentNode.right);
-                }
-                } else {
-                TreeNode currentNode = deque.pollLast();
-                currentLevelResult.add(currentNode.val);
-                if (currentNode.right != null) {
-                    deque.addFirst(currentNode.right);
-                }
-                if (currentNode.left != null) {
-                    deque.addFirst(currentNode.left);
-                }
-                }
-        }
-        reverse = !reverse;
-        result.add(currentLevelResult);
-        }
+            }
+            reverse = !reverse;
+            result.add(currentLevelResult);
+            }
         return result;
     }
     
