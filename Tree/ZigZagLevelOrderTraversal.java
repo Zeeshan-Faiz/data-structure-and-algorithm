@@ -42,25 +42,28 @@ public class ZigZagLevelOrderTraversal {
             for (int i=0; i < levelSize; i++) {
 
                 if (!reverse) {
-                    /
+                    //add the nodes normall to the list
                     TreeNode currentNode = deque.pollFirst();
                     currentLevelResult.add(currentNode.val);
-                    if (currentNode.left != null) {
+                    
+                    if (currentNode.left != null) 
                         deque.addLast(currentNode.left);
-                    }
-                    if (currentNode.right != null) {
+                    
+                    if (currentNode.right != null) 
                         deque.addLast(currentNode.right);
-                    }
+                    
                 } 
                 else {
+                    //add the nodes in reverse order to the list
                     TreeNode currentNode = deque.pollLast();
                     currentLevelResult.add(currentNode.val);
-                    if (currentNode.right != null) {
+                    
+                    if (currentNode.right != null) 
                         deque.addFirst(currentNode.right);
-                    }
-                    if (currentNode.left != null) {
+                    
+                    if (currentNode.left != null) 
                         deque.addFirst(currentNode.left);
-                    }
+                    
                 }
             }
             reverse = !reverse;
