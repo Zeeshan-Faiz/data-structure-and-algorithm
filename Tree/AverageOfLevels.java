@@ -26,30 +26,32 @@ public class AverageOfLevels {
     public List<Double> averageOfLevels(TreeNode root) {
         List<Double> result = new ArrayList<>();
 
-    if (root == null) {
-      return result;
-    }
+        if (root == null) 
+            return result;
 
-    Queue<TreeNode> queue = new LinkedList<>();
-    queue.offer(root);
+        //Use queue to add nodes levelwise
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
 
-    while (!queue.isEmpty()) {
-      int levelSize = queue.size();
-      double averageLevel = 0;
-      for (int i=0; i < levelSize; i++) {
-        TreeNode currentNode = queue.poll();
-        averageLevel += currentNode.val;
-        if (currentNode.left != null) {
-          queue.offer(currentNode.left);
+        while (!queue.isEmpty()) {
+
+            int levelSize = queue.size();
+            double averageLevel = 0;
+            for (int i=0; i < levelSize; i++) {
+                
+                //take out node from queue and add it in the list
+                TreeNode currentNode = queue.poll();
+                averageLevel = averageLevel + currentNode.val; //find the sum of the nodes in that level
+
+                if (currentNode.left != null) 
+                queue.offer(currentNode.left);
+                
+                if (currentNode.right != null) 
+                queue.offer(currentNode.right); 
+            }
+            averageLevel = averageLevel / levelSize; //calculate the average of that level and store in the list
+            result.add(averageLevel);
         }
-        if (currentNode.right != null) {
-          queue.offer(currentNode.right);
-        }
-      }
-        averageLevel = averageLevel / levelSize;
-        result.add(averageLevel);
+        return result;
     }
-    return result;
-    }
-
 }
