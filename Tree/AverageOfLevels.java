@@ -43,6 +43,7 @@ public class AverageOfLevels {
                 TreeNode currentNode = queue.poll();
                 averageLevel = averageLevel + currentNode.val; //find the sum of the nodes in that level
 
+                //adding the children of current node in the queue
                 if (currentNode.left != null) 
                 queue.offer(currentNode.left);
                 
@@ -53,5 +54,20 @@ public class AverageOfLevels {
             result.add(averageLevel);
         }
         return result;
+    }
+
+    public class TreeNode {
+        
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }
