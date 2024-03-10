@@ -39,7 +39,7 @@ public class ZigZagLevelOrderTraversal {
 
             int levelSize = deque.size();
             List<Integer> currentLevelResult = new ArrayList<>(levelSize);
-            for (int i=0; i < levelSize; i++) {
+            for (int i = 0; i < levelSize; i++) {
 
                 if (!reverse) {
                     //add the nodes normall to the list
@@ -62,14 +62,13 @@ public class ZigZagLevelOrderTraversal {
                         deque.addFirst(currentNode.right);
                     
                     if (currentNode.left != null) 
-                        deque.addFirst(currentNode.left);
-                    
+                        deque.addFirst(currentNode.left);   
                 }
             }
             reverse = !reverse;
             result.add(currentLevelResult);
-            }
-        return result;
+        }
+    return result;
     }
     
 }
