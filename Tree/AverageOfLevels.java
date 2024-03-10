@@ -3,8 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import javax.swing.tree.TreeNode;
-
 public class AverageOfLevels {
     
     /*
@@ -24,8 +22,8 @@ public class AverageOfLevels {
     */
 
     public List<Double> averageOfLevels(TreeNode root) {
+        
         List<Double> result = new ArrayList<>();
-
         if (root == null) 
             return result;
 
