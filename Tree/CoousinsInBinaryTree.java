@@ -42,5 +42,18 @@ public class CoousinsInBinaryTree {
         
         //node not found in left part try to find in the right side of tree
         return findNode(node.right, x);
-      }
+    }
+
+    boolean isSibling (TreeNode node, TreeNode x, TreeNode y) {
+        
+        if (node == null) 
+          return false;
+    
+        return (
+          (node.left == x && node.right == y) || (node.left == y && node.right == x)
+          || isSibling(node.left, x, y) || isSibling(node.right, x, y)
+        );
+    }
+
+    
 }
