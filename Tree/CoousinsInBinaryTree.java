@@ -26,4 +26,21 @@ public class CoousinsInBinaryTree {
         (level(root, xx, 0) == level(root, yy, 0)) && (!isSibling(root, xx, yy))
         );
     }
+
+    TreeNode findNode(TreeNode node, int x) {
+        
+        if (node == null) 
+          return null;
+        
+        if (node.val == x) 
+          return node;
+        
+        //find the node in left of the tree
+        TreeNode n = findNode(node.left, x);
+        if (n != null)
+          return n;
+        
+        //node not found in left part try to find in the right side of tree
+        return findNode(node.right, x);
+      }
 }
