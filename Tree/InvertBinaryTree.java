@@ -1,3 +1,5 @@
+import javax.swing.tree.TreeNode;
+
 public class InvertBinaryTree {
     
     /*
@@ -12,5 +14,19 @@ public class InvertBinaryTree {
     Output: [2,3,1]
     */
 
-    
+    public TreeNode invertTree(TreeNode root) {
+        
+        if (root == null) 
+            return null;
+
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+
+        //swap the left with right node
+        root.left = right;
+        root.right = left;
+
+        return root;
+    }
+
 }
