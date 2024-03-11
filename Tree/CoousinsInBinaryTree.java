@@ -1,3 +1,5 @@
+import javax.swing.tree.TreeNode;
+
 public class CoousinsInBinaryTree {
     
     /*
@@ -14,4 +16,14 @@ public class CoousinsInBinaryTree {
     Input: root = [1,2,3,null,4,null,5], x = 5, y = 4
     Output: true
     */
+
+    public boolean isCousins(TreeNode root, int x, int y) {
+        
+        TreeNode xx = findNode(root, x);
+        TreeNode yy = findNode(root, y);
+
+        return (
+        (level(root, xx, 0) == level(root, yy, 0)) && (!isSibling(root, xx, yy))
+        );
+    }
 }
