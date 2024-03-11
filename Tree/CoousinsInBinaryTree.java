@@ -1,5 +1,3 @@
-import javax.swing.tree.TreeNode;
-
 public class CoousinsInBinaryTree {
     
     /*
@@ -70,5 +68,20 @@ public class CoousinsInBinaryTree {
         
         //if node not found in left side, find the level of the given node in right side of the tree
         return level(node.right, x, lev+1);
+    }
+
+    public class TreeNode {
+        
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }
