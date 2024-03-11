@@ -30,15 +30,15 @@ public class CoousinsInBinaryTree {
     TreeNode findNode(TreeNode node, int x) {
         
         if (node == null) 
-          return null;
+            return null;
         
         if (node.val == x) 
-          return node;
+            return node;
         
         //find the node in left of the tree
         TreeNode n = findNode(node.left, x);
         if (n != null)
-          return n;
+            return n;
         
         //node not found in left part try to find in the right side of tree
         return findNode(node.right, x);
@@ -47,7 +47,7 @@ public class CoousinsInBinaryTree {
     boolean isSibling (TreeNode node, TreeNode x, TreeNode y) {
         
         if (node == null) 
-          return false;
+            return false;
     
         return (
           (node.left == x && node.right == y) || (node.left == y && node.right == x)
@@ -55,5 +55,20 @@ public class CoousinsInBinaryTree {
         );
     }
 
+    int level (TreeNode node, TreeNode x, int lev) {
+        
+        if(node == null) 
+            return 0;
+        
+        if(node == x) 
+          return lev;
     
+        //find the level of the given node in left side of the tree
+        int l = level(node.left, x, lev+1);
+        if (l != 0) 
+          return l;
+        
+        //if node not found in left side, find the level of the given node in right side of the tree
+        return level(node.right, x, lev+1);
+    }
 }
