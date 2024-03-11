@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class PopulateNextRightNode {
     
     /*
@@ -18,5 +20,25 @@ public class PopulateNextRightNode {
     Output: []
     */
 
-    
+    public Node connect(Node root) {
+        
+        if (root == null)
+            return null;
+
+        Node leftMost = root;//always start from left for each level
+
+        while (leftMost.left != null) {
+            
+            Node current = leftMost;
+            while(current != null) {
+                current.left.next = current.right;
+                if(current.next != null) 
+                current.right.next = current.next.left; //connect 5&6
+                
+                current = current.next; //switch to next node in the same level
+            }
+            leftMost = leftMost.left; //goto leftmost node of the next level
+        }
+        return root;
+    }
 }
