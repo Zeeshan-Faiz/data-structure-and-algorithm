@@ -20,15 +20,21 @@ public class FlattenBinaryToLinkedList {
         while (current != null) {
             if (current.left != null) {
                     TreeNode temp = current.left;
-                    
+                    //Find the rightmost null value for this current.left node
                     while(temp.right != null) {
                         temp = temp.right;
                 }
 
+                //add all the left sub-tree to the right most node having null value to it's right
                 temp.right = current.right;
+
+                //add all the shifted nodes to right of the current node
                 current.right = current.left;
+
+                //make all the left side of the node as null
                 current.left= null;
             }
+        //move on to the next right node
         current = current.right;
         }
     }
