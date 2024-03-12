@@ -51,5 +51,4 @@ public class FlattenBinaryToLinkedList {
             this.right = right;
         }
     }
-
 }
