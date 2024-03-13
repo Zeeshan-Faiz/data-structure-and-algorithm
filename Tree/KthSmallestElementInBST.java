@@ -34,7 +34,7 @@ public class KthSmallestElementInBST {
         if(count == k) //found the kth smallest element in the left
             return root;
 
-        return helper(root.right, k);
+        return helper(root.right, k); //check in the right side of the tree if can't find in the left part
     }
 
     public class TreeNode {
