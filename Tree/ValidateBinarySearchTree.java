@@ -19,5 +19,20 @@ public class ValidateBinarySearchTree {
     Explanation: The root node's value is 5 but its right child's value is 4.
     */
 
-    
+
+
+    public class TreeNode {
+        
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 }
