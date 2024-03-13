@@ -19,6 +19,23 @@ public class LowestCommonAncestor {
     to the LCA definition.
     */
 
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        
+        if (root == null) 
+            return null;
+
+        if (root == p || root == q) //as a node can be an ancestor of itself
+            return root;
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        if (left != null && right != null) //return the current node as it'll be the LCA for p and q
+            return root;
+
+        return left == null ? right : left; //if can't find either p or q in left then return from right itself and vice-versa
+    }
+
     public class TreeNode {
         
         int val;
