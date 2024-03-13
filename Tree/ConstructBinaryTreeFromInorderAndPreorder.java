@@ -14,16 +14,17 @@ public class ConstructBinaryTreeFromInorderAndPreorder {
      * Example 2
      * Input: preorder = [-1], inorder = [-1]
      * Output: [-1]
-     */
+    */
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
 
         if (preorder.length == 0)
             return null;
 
-        int r = preorder[0];
+        int r = preorder[0];//root in preorder is always the first element
         int index = 0;
 
+        //now find the index of this root 'r' in in-order array to distinguish the left and right elements of the tree
         for (int i = 0; i < inorder.length; i++) {
             if (inorder[i] == r) {
                 index = i;
@@ -38,7 +39,6 @@ public class ConstructBinaryTreeFromInorderAndPreorder {
                 Arrays.copyOfRange(inorder, index + 1, inorder.length));
 
         return node;
-
     }
 
     public class TreeNode {
@@ -49,11 +49,9 @@ public class ConstructBinaryTreeFromInorderAndPreorder {
 
         TreeNode() {
         }
-
         TreeNode(int val) {
             this.val = val;
         }
-
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
