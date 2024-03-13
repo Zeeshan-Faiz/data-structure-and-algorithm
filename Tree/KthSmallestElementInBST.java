@@ -13,6 +13,30 @@ public class KthSmallestElementInBST {
     Output: 3
     */
 
+    int count = 0;
+    public int kthSmallest(TreeNode root, int k) {
+        return helper(root, k).val;
+    }
+
+    public TreeNode helper(TreeNode root, int k) {
+        
+        if (root == null) 
+            return null;
+    
+        //In-order traversal
+        TreeNode left = helper(root.left, k);
+
+        if (left != null) //found an element which might be kth smallest but need to check in the below condition
+            return left;
+
+        count++;
+
+        if(count == k) //found the kth smallest element in the left
+            return root;
+
+        return helper(root.right, k);
+    }
+
     public class TreeNode {
         
         int val;
