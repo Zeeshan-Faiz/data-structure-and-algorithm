@@ -20,6 +20,33 @@ public class BinaryTreeMaximumPathSum {
     Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
     */
 
+    int ans = Integer.MIN_VALUE;
+    public int maxPathSum(TreeNode root) {
+        helper(root);
+        return ans;
+    }
+
+    public int helper(TreeNode node) {
+        
+        if(node == null) 
+            return 0;
+
+        int left = helper(node.left);
+        int right = helper(node.right);
+
+        //make both left and right as 0 if it contains negative value(otherwise negative values can affect the overall sum)
+        left = Math.max(0, left);
+        right = Math.max(0, right);
+
+        //find the sum of individual path of the current node
+        int pathSum = left + right + node.val;
+
+        //update the sum of the global variable
+        ans = Math.max(ans, pathSum);
+
+        return Math.max(left, right) + node.val;
+    }
+
     public class TreeNode {
         
         int val;
