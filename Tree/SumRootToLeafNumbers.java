@@ -30,10 +30,13 @@ public class SumRootToLeafNumbers {
     }
 
     public int helper(TreeNode node, int sum) {
-        if (node == null) {
+        
+        if (node == null) 
             return 0;
-        }
+        
         sum = sum * 10 + node.val;
+
+        //return the sum only when you reach the leaf node
         if (node.left == null && node.right == null) {
             return sum;
         }
@@ -48,11 +51,9 @@ public class SumRootToLeafNumbers {
 
         TreeNode() {
         }
-
         TreeNode(int val) {
             this.val = val;
         }
-
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
