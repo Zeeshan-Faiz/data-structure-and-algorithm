@@ -18,6 +18,20 @@ public class PathSum {
     There is no root-to-leaf path with sum = 5.
     */
 
+    public boolean hasPathSum(TreeNode root, int sum) {
+        
+        if (root == null) 
+            return false;
+        
+        //if we got the total sum by the time we reach the leaf node, return true
+        if (root.val == sum && root.left == null && root.right == null) 
+            return true;
+    
+        //otherwise traverse in left and right side of the tree
+        return hasPathSum(root.left, sum-root.val) || 
+                    hasPathSum(root.right, sum-root.val);
+    }
+
     public class TreeNode {
         
         int val;
