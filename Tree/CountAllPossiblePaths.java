@@ -40,7 +40,6 @@ public class CountAllPossiblePaths {
         // backtrack and remove the current node after we've calculated all of it's pathss
         path.remove(path.size() - 1);
         return count;
-
     }
 
     public class TreeNode {
@@ -51,11 +50,9 @@ public class CountAllPossiblePaths {
 
         TreeNode() {
         }
-
         TreeNode(int val) {
             this.val = val;
         }
-
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
