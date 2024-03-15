@@ -1,6 +1,4 @@
-import javax.swing.tree.TreeNode;
-
-import org.w3c.dom.Node;
+import java.util.Stack;
 
 public class ImplementDFSUsingStack {
 
@@ -10,8 +8,22 @@ public class ImplementDFSUsingStack {
      */
 
     public void dfsStack(TreeNode node) {
-        if (node == null) {
+        
+        if (node == null) 
             return;
+        
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(node);
+
+        while (!stack.isEmpty()) {
+            TreeNode removed = stack.pop();
+            System.out.print(removed.val + " ");
+            if (removed.right != null) {
+                stack.push(removed.right);
+            }
+            if (removed.left != null) {
+                stack.push(removed.left);
+            }
         }
     }
 
@@ -23,9 +35,11 @@ public class ImplementDFSUsingStack {
 
         TreeNode() {
         }
+
         TreeNode(int val) {
             this.val = val;
         }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
