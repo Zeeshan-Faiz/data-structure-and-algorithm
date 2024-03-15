@@ -16,14 +16,16 @@ public class ImplementDFSUsingStack {
         stack.push(node);
 
         while (!stack.isEmpty()) {
+
             TreeNode removed = stack.pop();
             System.out.print(removed.val + " ");
-            if (removed.right != null) {
+
+            //as we are traversing via preorder we'll add right node in the stack first
+            if (removed.right != null) 
                 stack.push(removed.right);
-            }
-            if (removed.left != null) {
+            
+            if (removed.left != null) 
                 stack.push(removed.left);
-            }
         }
     }
 
