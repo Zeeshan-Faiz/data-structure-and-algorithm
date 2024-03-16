@@ -15,6 +15,24 @@ public class HashMap<K, V> {
         }
     }
 
+    public void put(K key, V value) {
+        int hash = Math.abs(key.hashCode() % list.size());
+
+        LinkedList<Entity> entities = list.get(hash);
+
+        for (Entity entity : entities) {
+            if (entity.key.equals(key)) {
+                entity.value = value;
+                return;
+            }
+        }
+        if ((float) (size) / list.size() > lf) 
+            reHash();
+
+        entities.add(new Entity(key, value));
+        size++;
+    }
+
     private class Entity {
         K key;
         V value;
