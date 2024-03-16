@@ -16,7 +16,7 @@ public class HashMap<K, V> {
     }
 
     public void put(K key, V value) {
-        
+
         int hash = Math.abs(key.hashCode() % list.size());
         LinkedList<Entity> entities = list.get(hash);
 
@@ -34,7 +34,7 @@ public class HashMap<K, V> {
     }
 
     private class Entity {
-        
+
         K key;
         V value;
 
@@ -64,7 +64,7 @@ public class HashMap<K, V> {
     }
 
     public V get(K key) {
-        
+
         int hash = Math.abs(key.hashCode() % list.size());
         LinkedList<Entity> entities = list.get(hash);
         for (Entity entity : entities) {
@@ -76,7 +76,7 @@ public class HashMap<K, V> {
     }
 
     public void remove(K key) {
-        
+
         int hash = Math.abs(key.hashCode() % list.size());
         LinkedList<Entity> entities = list.get(hash);
         Entity target = null;
@@ -92,4 +92,24 @@ public class HashMap<K, V> {
         size--;
     }
 
+    public boolean containsKey(K key) {
+        return get(key) != null;
+    }
+
+    @Override
+    public String toString() {
+        
+        StringBuilder builder = new StringBuilder();
+        builder.append("{");
+        for (LinkedList<Entity> entities : list) {
+            for (Entity entity : entities) {
+                builder.append(entity.key);
+                builder.append(" = ");
+                builder.append(entity.value);
+                builder.append(" , ");
+            }
+        }
+        builder.append("}");
+        return builder.toString();
+    }
 }
