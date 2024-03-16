@@ -26,7 +26,7 @@ public class HashMap<K, V> {
                 return;
             }
         }
-        if ((float) (size) / list.size() > lf) 
+        if ((float) (size) / list.size() > lf)
             reHash();
 
         entities.add(new Entity(key, value));
@@ -40,6 +40,25 @@ public class HashMap<K, V> {
         public Entity(K key, V value) {
             this.key = key;
             this.value = value;
+        }
+    }
+
+    private void reHash() {
+        
+        System.out.println("We are now rehashing!");
+
+        ArrayList<LinkedList<Entity>> old = list;
+        list = new ArrayList<>();
+        size = 0;
+
+        for (int i = 0; i < old.size() * 2; i++) {
+            list.add(new LinkedList<>());
+        }
+
+        for (LinkedList<Entity> entries : old) {
+            for (Entity entry : entries) {
+                put(entry.key, entry.value);
+            }
         }
     }
 
