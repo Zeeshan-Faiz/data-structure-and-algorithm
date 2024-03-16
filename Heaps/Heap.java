@@ -31,22 +31,63 @@ public class Heap<T extends Comparable<T>> {
         return index * 2 + 2;
     }
 
-    //inserting an element at the last index and then place it in the correct order according to it's value
+    // inserting an element at the last index and then place it in the correct order
+    // according to it's value
     public void insert(T value) {
         list.add(value);
         upheap(list.size() - 1);
     }
 
     private void upheap(int index) {
-        
-        //return when you reach the starting index/top of the tree
-        if (index == 0) 
+
+        // return when you reach the starting index/top of the tree
+        if (index == 0)
             return;
-        
+
+        // compare parent with the inserted value and swap if parent is greater than the
+        // current inserted value
         int p = parent(index);
         if (list.get(index).compareTo(list.get(p)) < 0) {
             swap(index, p);
             upheap(p);
+        }
+    }
+
+    //removing an element from the top of the heap.
+    public T remove() throws Exception {
+        
+        if (list.isEmpty()) {
+            throw new Exception("Removing from an empty heap!");
+        }
+
+        //take the first element to be removed
+        T temp = list.get(0);
+
+        //now add the last element to the first index and traverse top to bottom to place this current value to it's correct position
+        T last = list.remove(list.size() - 1);
+        if (!list.isEmpty()) {
+            list.set(0, last);
+            downheap(0);
+        }
+        return temp;
+    }
+
+    private void downheap(int index) {
+        int min = index;
+        int left = left(index);
+        int right = right(index);
+
+        if (left < list.size() && list.get(min).compareTo(list.get(left)) > 0) {
+            min = left;
+        }
+
+        if (right < list.size() && list.get(min).compareTo(list.get(right)) > 0) {
+            min = right;
+        }
+
+        if (min != index) {
+            swap(min, index);
+            downheap(min);
         }
     }
 
