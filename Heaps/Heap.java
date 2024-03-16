@@ -73,7 +73,9 @@ public class Heap<T extends Comparable<T>> {
     }
 
     private void downheap(int index) {
+        
         int min = index;
+        //find left and right of the current index, compare it from both left and right and place it accordingly
         int left = left(index);
         int right = right(index);
 
@@ -85,6 +87,7 @@ public class Heap<T extends Comparable<T>> {
             min = right;
         }
 
+        //if there are certain values smaller than the current value, just swap
         if (min != index) {
             swap(min, index);
             downheap(min);
