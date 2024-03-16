@@ -115,6 +115,8 @@ public class Heap<T extends Comparable<T>> {
         minHeap.insert(89);
         minHeap.insert(76);
 
+        //System.out.println(minHeap.remove());
+
         ArrayList<Integer> list = minHeap.heapSort();
         System.out.println(list);
     }
