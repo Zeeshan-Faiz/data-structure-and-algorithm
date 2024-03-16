@@ -53,17 +53,18 @@ public class Heap<T extends Comparable<T>> {
         }
     }
 
-    //removing an element from the top of the heap.
+    // removing an element from the top of the heap.
     public T remove() throws Exception {
-        
+
         if (list.isEmpty()) {
             throw new Exception("Removing from an empty heap!");
         }
 
-        //take the first element to be removed
+        // take the first element to be removed
         T temp = list.get(0);
 
-        //now add the last element to the first index and traverse top to bottom to place this current value to it's correct position
+        // now add the last element to the first index and traverse top to bottom to
+        // place this current value to it's correct position
         T last = list.remove(list.size() - 1);
         if (!list.isEmpty()) {
             list.set(0, last);
@@ -73,9 +74,10 @@ public class Heap<T extends Comparable<T>> {
     }
 
     private void downheap(int index) {
-        
+
         int min = index;
-        //find left and right of the current index, compare it from both left and right and place it accordingly
+        // find left and right of the current index, compare it from both left and right
+        // and place it accordingly
         int left = left(index);
         int right = right(index);
 
@@ -87,11 +89,19 @@ public class Heap<T extends Comparable<T>> {
             min = right;
         }
 
-        //if there are certain values smaller than the current value, just swap
+        // if there are certain values smaller than the current value, just swap
         if (min != index) {
             swap(min, index);
             downheap(min);
         }
     }
 
+    //heapSort - Remove all the elements from heap and add to a list
+    public ArrayList<T> heapSort() throws Exception {
+        ArrayList<T> data = new ArrayList<>();
+        while (!list.isEmpty()) {
+            data.add(this.remove());
+        }
+        return data;
+    }
 }
