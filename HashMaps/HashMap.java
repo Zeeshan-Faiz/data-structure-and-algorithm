@@ -98,7 +98,7 @@ public class HashMap<K, V> {
 
     @Override
     public String toString() {
-        
+
         StringBuilder builder = new StringBuilder();
         builder.append("{");
         for (LinkedList<Entity> entities : list) {
@@ -111,5 +111,16 @@ public class HashMap<K, V> {
         }
         builder.append("}");
         return builder.toString();
+    }
+
+    public static void main(String[] args) {
+
+        HashMap<String, String> map = new HashMap<>();
+
+        map.put("Mango", "King of fruits");
+        map.put("Apple", "A sweet red fruit");
+        map.put("Litchi", "My favourite fruit");
+
+        System.out.println(map);
     }
 }
