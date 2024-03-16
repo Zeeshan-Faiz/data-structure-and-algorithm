@@ -16,8 +16,8 @@ public class HashMap<K, V> {
     }
 
     public void put(K key, V value) {
+        
         int hash = Math.abs(key.hashCode() % list.size());
-
         LinkedList<Entity> entities = list.get(hash);
 
         for (Entity entity : entities) {
@@ -34,6 +34,7 @@ public class HashMap<K, V> {
     }
 
     private class Entity {
+        
         K key;
         V value;
 
@@ -44,7 +45,7 @@ public class HashMap<K, V> {
     }
 
     private void reHash() {
-        
+
         System.out.println("We are now rehashing!");
 
         ArrayList<LinkedList<Entity>> old = list;
@@ -60,6 +61,35 @@ public class HashMap<K, V> {
                 put(entry.key, entry.value);
             }
         }
+    }
+
+    public V get(K key) {
+        
+        int hash = Math.abs(key.hashCode() % list.size());
+        LinkedList<Entity> entities = list.get(hash);
+        for (Entity entity : entities) {
+            if (entity.key.equals(key)) {
+                return entity.value;
+            }
+        }
+        return null;
+    }
+
+    public void remove(K key) {
+        
+        int hash = Math.abs(key.hashCode() % list.size());
+        LinkedList<Entity> entities = list.get(hash);
+        Entity target = null;
+
+        for (Entity entity : entities) {
+            if (entity.key.equals(key)) {
+                target = entity;
+                break;
+            }
+        }
+
+        entities.remove(target);
+        size--;
     }
 
 }
