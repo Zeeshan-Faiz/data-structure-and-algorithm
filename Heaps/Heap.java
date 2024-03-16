@@ -96,12 +96,26 @@ public class Heap<T extends Comparable<T>> {
         }
     }
 
-    //heapSort - Remove all the elements from heap and add to a list
+    // heapSort - Remove all the elements from heap and add to a list
     public ArrayList<T> heapSort() throws Exception {
         ArrayList<T> data = new ArrayList<>();
         while (!list.isEmpty()) {
             data.add(this.remove());
         }
         return data;
+    }
+
+    public static void main(String[] args) throws Exception {
+        
+        Heap<Integer> minHeap = new Heap<>();
+
+        minHeap.insert(34);
+        minHeap.insert(45);
+        minHeap.insert(22);
+        minHeap.insert(89);
+        minHeap.insert(76);
+
+        ArrayList<Integer> list = minHeap.heapSort();
+        System.out.println(list);
     }
 }
