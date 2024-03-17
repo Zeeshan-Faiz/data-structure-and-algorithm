@@ -60,8 +60,8 @@ public class HuffmanCoder {
         }
 
         while (((Set<Entry<Character, Integer>>) minHeap).size() != 1) {
-            
-            //take two minimum nodes, combine them and add back in the heap
+
+            // take two minimum nodes, combine them and add back in the heap
             Node first = minHeap.remove();
             Node second = minHeap.remove();
 
@@ -80,4 +80,39 @@ public class HuffmanCoder {
         this.initEncoderDecoder(ft, "");
     }
 
+    //recursive call to create a heap tree with all the nodes
+    private void initEncoderDecoder(Node node, String osf) {
+        
+        if (node == null) 
+            return;
+        
+        if (node.left == null && node.right == null) {
+            this.encoder.put(node.data, osf);
+            this.decoder.put(osf, node.data);
+        }
+        initEncoderDecoder(node.left, osf + "0");
+        initEncoderDecoder(node.right, osf + "1");
+    }
+
+    public String encode(String source) {
+        
+        String ans = "";
+        for (int i = 0; i < source.length(); i++) {
+            ans = ans + encoder.get(source.charAt(i));
+        }
+        return ans;
+    }
+
+    public String decode(String codedString) {
+        String key = "";
+        String ans = "";
+        for (int i = 0; i < codedString.length(); i++) {
+            key = key + codedString.charAt(i);
+            if (decoder.containsKey(key)) {
+                ans = ans + decoder.get(key);
+                key = "";
+            }
+        }
+        return ans;
+    }
 }
