@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CountSort {
 
     /*
@@ -32,5 +34,12 @@ public class CountSort {
                 countArray[i]--;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        
+        int[] arr = {6, 3, 10, 9, 2, 4, 9, 7};
+        countSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
