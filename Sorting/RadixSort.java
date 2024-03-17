@@ -3,8 +3,8 @@ import java.util.Arrays;
 public class RadixSort {
 
     /*
-     * Given an array, sort the array using Radix Sort.
-     */
+    Given an array, sort the array using Radix Sort.
+    */
 
     public static void radixSort(int[] arr) {
         
@@ -37,5 +37,15 @@ public class RadixSort {
             output[count[(arr[i] / exp) % 10] - 1] = arr[i];
             count[(arr[i] / exp) % 10]--;
         }
+        System.arraycopy(output, 0, arr, 0, n);        
+    }
+
+    public static void main(String[] args) {
+        
+        int[] arr = {29, 83, 471, 36, 91, 8};
+
+        System.out.println("Original array: " + Arrays.toString(arr));
+        radixSort(arr);
+        System.out.println("Sorted array: " + Arrays.toString(arr));
     }
 }
