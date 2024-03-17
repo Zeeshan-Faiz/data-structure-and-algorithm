@@ -1,10 +1,11 @@
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class HuffmanCoder {
 
     /*
-    You are given a string in java, use it Huffman Encoder to compress it and decode it as well.
+    You are given a string in java, use Huffman Encoder to compress it and decode it as well.
     */
 
     HashMap<Character, String> encoder;
@@ -33,7 +34,7 @@ public class HuffmanCoder {
 
     public HuffmanCoder(String feeder) throws Exception {
 
-        HashMap<Character, Integer> fmap = new HashMap<>();
+        Map<Character, Integer> fmap = new HashMap<>();
 
         // find the frequency of each character in the given string and add in the
         // frequency map
@@ -50,7 +51,7 @@ public class HuffmanCoder {
 
         Heap<Node> minHeap = new Heap<>();
         // by using Set we'll be able to get the set of the frequency map one at a time
-        Set<Map.Entry<Character, Integer>> entrySet = ((Map) fmap).entrySet();
+        Set<Map.Entry<Character, Integer>> entrySet = fmap.entrySet();
 
         for (Map.Entry<Character, Integer> entry : entrySet) {
             Node node = new Node(entry.getKey(), entry.getValue());
