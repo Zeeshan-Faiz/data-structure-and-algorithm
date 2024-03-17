@@ -80,12 +80,12 @@ public class HuffmanCoder {
         this.initEncoderDecoder(ft, "");
     }
 
-    //recursive call to create a heap tree with all the nodes
+    // recursive call to create a heap tree with all the nodes
     private void initEncoderDecoder(Node node, String osf) {
-        
-        if (node == null) 
+
+        if (node == null)
             return;
-        
+
         if (node.left == null && node.right == null) {
             this.encoder.put(node.data, osf);
             this.decoder.put(osf, node.data);
@@ -95,7 +95,7 @@ public class HuffmanCoder {
     }
 
     public String encode(String source) {
-        
+
         String ans = "";
         for (int i = 0; i < source.length(); i++) {
             ans = ans + encoder.get(source.charAt(i));
@@ -114,5 +114,15 @@ public class HuffmanCoder {
             }
         }
         return ans;
+    }
+
+    public static void main(String[] args) throws Exception {
+        
+        String str = "abbccda";
+        HuffmanCoder hf = new HuffmanCoder(str);
+        String cs = hf.encode(str);
+        System.out.println(cs);
+        String dc = hf.decode(cs);
+        System.out.println(dc);
     }
 }
