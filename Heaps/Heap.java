@@ -38,6 +38,10 @@ public class Heap<T extends Comparable<T>> {
         upheap(list.size() - 1);
     }
 
+    public int size(){
+        return list.size();
+    }
+
     private void upheap(int index) {
 
         // return when you reach the starting index/top of the tree
