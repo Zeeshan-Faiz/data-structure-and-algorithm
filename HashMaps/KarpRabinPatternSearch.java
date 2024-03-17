@@ -43,4 +43,10 @@ public class KarpRabinPatternSearch {
                 textHash = updateHash(textHash, text.charAt(i), text.charAt(i + patternLength), patternLength);  
         }
     }
+
+    public static void main(String[] args) {
+        
+        KarpRabinPatternSearch algo = new KarpRabinPatternSearch();
+        algo.search("ShaZeeshSal", "Zeesh");
+    }
 }
