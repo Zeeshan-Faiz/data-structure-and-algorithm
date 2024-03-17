@@ -5,7 +5,7 @@ import java.util.Map;
 public class CountSortUsingHash {
 
     /*
-    Given an array, sort the array using CountSort.
+    Given an array, sort the array using CountSort via HashMap.
     */
 
     public static void countSortHash(int[] arr) {
