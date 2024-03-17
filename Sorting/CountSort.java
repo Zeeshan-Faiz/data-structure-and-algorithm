@@ -2,27 +2,35 @@ public class CountSort {
 
     /*
      * Given an array, sort the array using CountSort.
-    */
+     */
 
     public static void countSort(int[] array) {
-        
-        if(array == null || array.length <= 1) {
-          return;
+
+        if (array == null || array.length <= 1) {
+            return;
         }
-    
-        //find the max element from the array
+
+        // find the max element from the array
         int max = array[0];
-        for(int num : array) {
-          if(num > max) 
-            max = num;
+        for (int num : array) {
+            if (num > max)
+                max = num;
         }
-    
-        //create a frequencyArray to track the numbers in the original array
+
+        // create a frequencyArray to track the numbers in the original array
         int[] countArray = new int[max + 1];
-    
-        for(int num : array) {
-          countArray[num]++;
+
+        for (int num : array) {
+            countArray[num]++;
         }
-        
+
+        int index = 0;
+        for (int i = 0; i <= max; i++) {
+            while (countArray[i] > 0) {
+                array[index] = i;
+                index++;
+                countArray[i]--;
+            }
+        }
     }
 }
