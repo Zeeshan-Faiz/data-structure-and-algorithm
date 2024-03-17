@@ -7,6 +7,7 @@ public class RadixSort {
      */
 
     public static void radixSort(int[] arr) {
+        
         int max = Arrays.stream(arr).max().getAsInt();
 
         // do count sort for every digit place
@@ -16,32 +17,25 @@ public class RadixSort {
     }
 
     private static void countSort(int[] arr, int exp) {
+        
         int n = arr.length;
         int[] output = new int[n];
-        int[] count = new int[10];
+        int[] count = new int[10];//as each digit in a number contains only between 0-9
 
-        Arrays.fill(count, 0);
-
+        //Count the frequency of each digit
         for (int i = 0; i < n; i++) {
             count[(arr[i] / exp) % 10]++;
         }
 
-        System.out.println("\nCount array for " + exp + " : " + Arrays.toString(count));
-
+        //update the count array
         for (int i = 1; i < 10; i++) {
             count[i] = count[i] + count[i - 1];
         }
 
-        System.out.println("Updated count array " + Arrays.toString(count));
-
+        //update the output array and place original array elements to this output array for each base
         for (int i = n - 1; i >= 0; i--) {
             output[count[(arr[i] / exp) % 10] - 1] = arr[i];
             count[(arr[i] / exp) % 10]--;
         }
-
-        System.out.println("Output array " + Arrays.toString(output));
-
-        System.arraycopy(output, 0, arr, 0, n);
-
     }
 }
