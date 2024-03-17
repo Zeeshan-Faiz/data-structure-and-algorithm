@@ -1,13 +1,11 @@
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 public class HuffmanCoder {
 
     /*
-     * You are given a string in java, use it Huffman Encoder to compress it and
-     * decode it as well.
-     */
+    You are given a string in java, use it Huffman Encoder to compress it and decode it as well.
+    */
 
     HashMap<Character, String> encoder;
     HashMap<String, Character> decoder;
@@ -59,7 +57,7 @@ public class HuffmanCoder {
             minHeap.insert(node);
         }
 
-        while (((Set<Entry<Character, Integer>>) minHeap).size() != 1) {
+        while(minHeap.size() != 1) {
 
             // take two minimum nodes, combine them and add back in the heap
             Node first = minHeap.remove();
