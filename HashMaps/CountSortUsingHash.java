@@ -21,6 +21,7 @@ public class CountSortUsingHash {
             countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
 
+        //now update the original array using the key-value pair of this map
         int index = 0;
         for (int i = min; i <= max; i++) {
             int count = countMap.getOrDefault(i, 0);
