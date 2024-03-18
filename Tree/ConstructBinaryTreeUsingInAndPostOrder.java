@@ -34,12 +34,10 @@ public class ConstructBinaryTreeUsingInAndPostOrder {
         
         int current = preOrder[index[0]];
         index[0]++;
-
         TreeNode node = new TreeNode(current);
 
-        if (left == right) {
+        if (left == right) 
             return node;
-        }
 
         //use hashmap to get the element from inorder along with it index
         int inOrderIndex = map.get(current);
