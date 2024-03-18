@@ -62,7 +62,7 @@ public class SquareRootDecomposition {
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 3, 5, 2, 7, 6, 3, 1, 4, 8};
+        int[] arr = {1, 3, 5, 2, 7, 6, 1, 4, 8};
         bulidBlocks(arr);
     }
 }
