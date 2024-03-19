@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,7 +36,7 @@ public class WordLadder {
      * Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence.
     */
 
-    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if (!wordList.contains(endWord))
             return 0;
         int cnt = 0;
@@ -64,5 +66,13 @@ public class WordLadder {
             }
         }
         return 0;
+    }
+
+    public static void main(String[] args) {
+        
+        String beginWord = "hit", endWord = "cog";
+        ArrayList<String> wordList = new ArrayList<>(Arrays.asList("hot","dot","dog","lot","log","cog"));
+
+        System.out.println(ladderLength(beginWord, endWord, wordList));
     }
 }
