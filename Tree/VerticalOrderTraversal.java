@@ -40,7 +40,7 @@ public class VerticalOrderTraversal {
     Column 2: Only node 7 is in this column.
     */
 
-    class Pair{
+    class Pair {
     TreeNode node;
     int row, col;
 
@@ -52,6 +52,7 @@ public class VerticalOrderTraversal {
 }
 
 class Solution {
+    
     public List<List<Integer>> verticalTraversal(TreeNode root) {
 
         Queue<Pair> q = new LinkedList<>();
@@ -86,7 +87,6 @@ class Solution {
         }
 
         System.out.print(map);
-
         List<List<Integer>> ans = new ArrayList<>();
 
         for(TreeMap<Integer, PriorityQueue<Integer>> key : map.values()){
@@ -99,11 +99,8 @@ class Solution {
             }
             System.out.print(currList);
             ans.add(new ArrayList<>(currList));
-
         }
-    
         return ans;
-        
     }
 }
 
