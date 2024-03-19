@@ -32,4 +32,22 @@ public class VerticalOrderTraversal {
     Column 1: Only node 3 is in this column.
     Column 2: Only node 7 is in this column.
     */
+
+    public class TreeNode {
+
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+        TreeNode(int val) {
+            this.val = val;
+        }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 }
