@@ -8,9 +8,9 @@ public class ConvertBSTtoDLL {
     DLLNode tail;
 
     public TreeNode convert(TreeNode root) {
-        if (root == null) {
+        
+        if (root == null)
             return null;
-        }
 
         helper(root);
         return root;
