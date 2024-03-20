@@ -12,4 +12,24 @@ public class KthSmallestElementApproach2 {
     Input: root = [5,3,6,2,4,null,null,1], k = 3
     Output: 3
     */
+
+    public class TreeNode {
+
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 }
