@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class TwoNodesSwap {
 
     /*
@@ -53,9 +51,6 @@ public class TwoNodesSwap {
         int val;
         TreeNode left;
         TreeNode right;
-
-        TreeNode() {
-        }
 
         TreeNode(int val) {
             this.val = val;
