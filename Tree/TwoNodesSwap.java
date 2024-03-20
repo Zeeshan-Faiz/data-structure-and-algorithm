@@ -12,7 +12,7 @@ public class TwoNodesSwap {
     TreeNode second;
     TreeNode prev;
 
-    public void helper(Node root) {
+    public void helper(TreeNode root) {
         inOrderTraversal(root);
 
         // swap
@@ -22,9 +22,9 @@ public class TwoNodesSwap {
     }
 
     private void inOrderTraversal(TreeNode node) {
-        if (node == null) {
+        
+        if (node == null) 
             return;
-        }
 
         inOrderTraversal(node.left);
 
