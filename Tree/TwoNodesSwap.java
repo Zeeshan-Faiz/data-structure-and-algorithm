@@ -38,13 +38,14 @@ public class TwoNodesSwap {
         inOrderTraversal(node.right);
     }
 
-    public void printIOT(Node node) {
-        if (node == null) {
+    public void printTree(TreeNode node) {
+        
+        if (node == null)
             return;
-        }
-        printIOT(node.left);
+    
+        printTree(node.left);
         System.out.print(node.val + " ");
-        printIOT(node.right);
+        printTree(node.right);
     }
 
     public class TreeNode {
