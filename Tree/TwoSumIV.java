@@ -11,4 +11,19 @@ public class TwoSumIV {
     Input: root = [5,3,6,2,4,null,7], k = 28
     Output: false
     */
+
+    public class TreeNode {
+        
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 }
