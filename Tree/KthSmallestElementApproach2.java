@@ -1,3 +1,5 @@
+import javax.swing.tree.TreeNode;
+
 public class KthSmallestElementApproach2 {
     
     /*
@@ -12,6 +14,29 @@ public class KthSmallestElementApproach2 {
     Input: root = [5,3,6,2,4,null,null,1], k = 3
     Output: 3
     */
+
+    private int k;
+    private int ans;
+  
+    public int kthSmallest(TreeNode root, int k) {
+            this.k = k;
+            helper(root);
+            return ans;
+        }
+
+    private void helper(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+
+        helper(node.left);
+
+        k--;
+        if(k==0) {
+            ans = node.val;
+            return;
+        }
+    }
 
     public class TreeNode {
 
