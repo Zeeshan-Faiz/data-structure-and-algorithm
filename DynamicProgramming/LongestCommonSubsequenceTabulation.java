@@ -1,5 +1,9 @@
 /*
 Given two strings of length m and n, find the longest common subsequence between them.
+The idea behind tabulation is to fill all the cells of the matrix and get the final answer at the last cell.
+Follow two rules for that:
+i)If A <--> A is same then take the top left diagonal element and add 1 to it.
+ii)If A <--> B is different then compute the max value from either the left or top cell.
 */
 
 public class LongestCommonSubsequenceTabulation {
