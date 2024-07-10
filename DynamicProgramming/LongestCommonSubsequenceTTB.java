@@ -31,8 +31,6 @@ public class LongestCommonSubsequenceTTB {
                 dp[i][j] = -1;
             }
         }
-
-        System.out.println("Length of LCS is "
-                + lcs(X, Y, m, n, dp));
+        System.out.println("Length of LCS is " + lcs(X, Y, m, n, dp));
     }
 }
