@@ -22,4 +22,18 @@ public class MaxSumSubMatrix {
         }
         return maxSum;
     }
+
+    int kadans(int[] a){
+        
+        int size = a.length;
+        int max = Integer.MIN_VALUE, max_end = 0;
+        for(int i = 0; i < size; i++){
+            max_end = max_end + a[i];
+            if(max < max_end)
+                max = max_end;
+            if(max_end < 0)
+                max_end = 0;
+        }
+        return max;
+    }
 }
