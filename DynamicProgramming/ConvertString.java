@@ -22,12 +22,14 @@ public class ConvertString {
         for (int j = 0; j <= m; j++)
             dp[0][j] = j;
 
-        for(int i = 0; i <=m; i++){
-            for(int j = 0; j <=n; j++){
-
+        for(int i = 0; i <=m; i++)
+        {
+            for(int j = 0; j <=n; j++)
+            {
                 //rule 1 : If characters are same
                 if(s1.charAt(i) == s2.charAt(j))
                     dp[i][j] = dp[i-1][j-1];
+                //rule 2 : If characters are not same
                 else
                     dp[i][j] = 1 + Math.min(Math.min(dp[i][j-1], dp[i-1][j]),dp[i-1][j-1]);
             }
