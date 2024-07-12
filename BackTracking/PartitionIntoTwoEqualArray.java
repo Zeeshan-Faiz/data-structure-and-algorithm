@@ -40,5 +40,4 @@ public class PartitionIntoTwoEqualArray {
         ans.remove(ans.size() - 1);
         return partition(a, sum, i + 1, ans); // go right
     }
-
 }
