@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class ShortestPath{
 
-    private static boolean bfs(ArrayList<ArrayList<Integer>> adj, int src, int dest, int v, int[] pred, int[] dist){
+    static boolean bfs(ArrayList<ArrayList<Integer>> adj, int src, int dest, int v, int[] pred, int[] dist){
 
         LinkedList<Integer> queue = new LinkedList<>();
         boolean[] vis = new boolean[v];
@@ -39,6 +39,6 @@ public class ShortestPath{
             }
             u++;
         }
+        return false;
     }
-
 }
