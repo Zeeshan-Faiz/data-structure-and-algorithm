@@ -22,4 +22,15 @@ public class TopologicalSortUsingDFS {
             ans[i++] = stack.pop();
         return ans;
     }
+
+    private void dfs(ArrayList<ArrayList<Integer>> adj, int v, Stack<Integer> stack, boolean[] vis) {
+        
+        vis[v] = true;
+        for (Integer neighbor : adj.get(v)) {
+            if (!vis[neighbor]) {
+                dfs(adj, neighbor, stack, vis);
+            }
+        }
+        stack.push(v);
+    }
 }
