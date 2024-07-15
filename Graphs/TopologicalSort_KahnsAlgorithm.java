@@ -6,7 +6,6 @@ of vertices in topological order using BFS(Kahn's Algorithm).
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 public class TopologicalSort_KahnsAlgorithm {
     
@@ -22,6 +21,13 @@ public class TopologicalSort_KahnsAlgorithm {
 
         ArrayList<Integer> ansList = new ArrayList<>();
         bfs(adj,V,ansList,inDeg);
+
+        //add the list results into an array and return
+        int[] ans = new int[V];
+        int i = 0;
+        for(int e : ansList){
+            ans[i++] = e;
+        }
         
         return ans;
     }
