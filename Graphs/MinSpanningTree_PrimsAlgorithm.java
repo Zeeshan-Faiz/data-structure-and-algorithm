@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 
 public class MinSpanningTree_PrimsAlgorithm {
 
-    class Pair implements Comparable<Pair> {
+    public class Pair implements Comparable<Pair> {
 
         int wt;
         int v;
@@ -23,7 +23,7 @@ public class MinSpanningTree_PrimsAlgorithm {
         }
     }
 
-    static int spanningTree(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj) {
+    int spanningTree(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj) {
 
         boolean[] vis = new boolean[V];
         PriorityQueue<Pair> pq = new PriorityQueue<>();
@@ -33,7 +33,21 @@ public class MinSpanningTree_PrimsAlgorithm {
         while (!pq.isEmpty()) {
 
             Pair cur = pq.remove();
+            int u = cur.v;
+            // vertex already visited
+            if (vis[u])
+                continue;
 
+            ans += cur.wt;
+            vis[u] = true;
+            ArrayList<ArrayList<Integer>> neighbor = new ArrayList<>();
+            for (ArrayList<Integer> list : neighbor) {
+                int vertex = list.get(0);
+                int wt = list.get(1);
+                if (vis[vertex] == false)
+                    pq.add(new Pair(vertex, wt));
+            }
         }
+        return ans;
     }
 }
