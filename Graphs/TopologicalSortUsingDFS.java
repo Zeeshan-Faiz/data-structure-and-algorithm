@@ -8,7 +8,7 @@ import java.util.Stack;
 
 public class TopologicalSortUsingDFS {
     
-    public int[] isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
+    public int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
 
         boolean[] vis = new boolean[V];
         Stack<Integer> stack = new Stack<>();
