@@ -11,7 +11,6 @@ public class TopologicalSort_KahnsAlgorithm {
     
     public int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
 
-
         int[] inDeg = new int[V];
         //calculate In-Degree for each vertex
         for(ArrayList<Integer> list : adj){
@@ -28,7 +27,6 @@ public class TopologicalSort_KahnsAlgorithm {
         for(int e : ansList){
             ans[i++] = e;
         }
-        
         return ans;
     }
 
