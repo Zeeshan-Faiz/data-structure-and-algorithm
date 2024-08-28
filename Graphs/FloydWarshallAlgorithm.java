@@ -21,6 +21,7 @@ public class FloydWarshallAlgorithm {
         int n = matrix.length;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
+                //precheck if node contains -1
                 if (matrix[i][j] == -1) {
                     matrix[i][j] = (int) (1e9);
                 }
@@ -28,7 +29,7 @@ public class FloydWarshallAlgorithm {
                     matrix[i][j] = 0;
             }
         }
-
+        //Floyd Marshall Algoritm, compute cost for each node via K node
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
